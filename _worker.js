@@ -24,7 +24,7 @@ export default {
 					return new Response(JSON.stringify(request.cf, null, 4), { status: 200 });
 				case `/${password}`:
 					const host = request.headers.get('Host');
-					return new Response(`trojan://${password}@${host}:443/?type=ws&host=${host}&security=tls`, {
+					return new Response(`trojan://${encodeURIComponent(password)}@${host}:443/?type=ws&host=${host}&security=tls`, {
 						status: 200,
 						headers: {
 							"Content-Type": "text/plain;charset=utf-8",
