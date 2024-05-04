@@ -1,18 +1,32 @@
 // src/worker.js
 import { connect } from "cloudflare:sockets";
-let password = 'ca110us';
-let sha224Password = '08f32643dbdacf81d0d511f1ee24b06de759e90f8edf742bbdc57d88';
+let password = 'auto';
+let sha224Password = '10f9b41e385c211fdcdd92491cf3068d036618b61602807abb06316d';
 let proxyIP = "";
+
+let sub = 'workertrojan2sub.pages.dev';// 内置优选订阅生成器，可自行搭建 https://github.com/cmliu/WorkerTrojan2sub
+let subconverter = 'apiurl.v1.mk';// clash订阅转换后端，目前使用肥羊的订阅转换功能。自带虚假uuid和host订阅。
+let subconfig = "https://raw.githubusercontent.com/cmliu/ACL4SSR/main/Clash/config/ACL4SSR_Online_Full_MultiMode.ini"; //订阅配置文件
+let RproxyIP = 'false';
+
+let fakeUserID = generateUUID();
+let fakeHostName = generateRandomString();
 
 export default {
 	async fetch(request, env, ctx) {
 		try {
+			const UA = request.headers.get('User-Agent') || 'null';
+			const userAgent = UA.toLowerCase();
 			proxyIP = env.PROXYIP || proxyIP;
+			const proxyIPs = await ADD(proxyIP);
+			proxyIP = proxyIPs[Math.floor(Math.random() * proxyIPs.length)];
 			password = env.PASSWORD || password;
 			sha224Password = env.SHA224 || sha224Password;
+			RproxyIP = env.RPROXYIP || !proxyIP ? 'true' : 'false';
+			const url = new URL(request.url);
 			const upgradeHeader = request.headers.get("Upgrade");
 			if (!upgradeHeader || upgradeHeader !== "websocket") {
-				const url = new URL(request.url);
+				//const url = new URL(request.url);
 				switch (url.pathname) {
 				case '/':
 					const envKey = env.URL302 ? 'URL302' : (env.URL ? 'URL' : null);
@@ -23,6 +37,22 @@ export default {
 					}
 					return new Response(JSON.stringify(request.cf, null, 4), { status: 200 });
 				case `/${password}`:
+					const trojanConfig = await getTrojanConfig(password, request.headers.get('Host'), sub, UA, RproxyIP, url);
+					const now = Date.now();
+					//const timestamp = Math.floor(now / 1000);
+					const expire = 4102329600;//2099-12-31
+					const today = new Date(now);
+					today.setHours(0, 0, 0, 0);
+					const UD = Math.floor(((now - today.getTime())/86400000) * 24 * 1099511627776 / 2);
+					return new Response(`${trojanConfig}`, {
+						status: 200,
+						headers: {
+							"Content-Type": "text/plain;charset=utf-8",
+							"Profile-Update-Interval": "6",
+							"Subscription-Userinfo": `upload=${UD}; download=${UD}; total=${24 * 1099511627776}; expire=${expire}`,
+						}
+					});
+					/*
 					const host = request.headers.get('Host');
 					return new Response(`trojan://${encodeURIComponent(password)}@${host}:443/?type=ws&host=${host}&security=tls`, {
 						status: 200,
@@ -30,10 +60,15 @@ export default {
 							"Content-Type": "text/plain;charset=utf-8",
 						}
 					});
+					*/
 				default:
 					return new Response("Incorrect password!!!", { status: 404 });
 				}
 			} else {
+				proxyIP = url.searchParams.get('proxyip') || proxyIP;
+				if (new RegExp('/proxyip=', 'i').test(url.pathname)) proxyIP = url.pathname.toLowerCase().split('/proxyip=')[1];
+				else if (new RegExp('/proxyip.', 'i').test(url.pathname)) proxyIP = `proxyip.${url.pathname.toLowerCase().split("/proxyip.")[1]}`;
+				else if (!proxyIP || proxyIP == '') proxyIP = 'proxyip.fxxk.dedyn.io';
 				return await trojanOverWSHandler(request);
 			}
 		} catch (err) {
@@ -338,6 +373,45 @@ export {
 //# sourceMappingURL=worker.js.map
 */
 
+function revertFakeInfo(content, userID, hostName, isBase64) {
+	if (isBase64) content = atob(content);//Base64解码
+	content = content.replace(new RegExp(fakeUserID, 'g'), userID).replace(new RegExp(fakeHostName, 'g'), hostName);
+	if (isBase64) content = btoa(content);//Base64编码
+
+	return content;
+}
+
+function generateRandomNumber() {
+	let minNum = 100000;
+	let maxNum = 999999;
+	return Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
+}
+
+function generateRandomString() {
+	let minLength = 2;
+	let maxLength = 3;
+	let length = Math.floor(Math.random() * (maxLength - minLength + 1)) + minLength;
+	let characters = 'abcdefghijklmnopqrstuvwxyz';
+	let result = '';
+	for (let i = 0; i < length; i++) {
+		result += characters[Math.floor(Math.random() * characters.length)];
+	}
+	return result;
+}
+
+function generateUUID() {
+	let uuid = '';
+	for (let i = 0; i < 32; i++) {
+		let num = Math.floor(Math.random() * 16);
+		if (num < 10) {
+			uuid += num;
+		} else {
+			uuid += String.fromCharCode(num + 55);
+		}
+	}
+	return uuid.replace(/(.{8})(.{4})(.{4})(.{4})(.{12})/, '$1-$2-$3-$4-$5').toLowerCase();
+}
+
 async function ADD(envadd) {
 	var addtext = envadd.replace(/[	 "'\r\n]+/g, ',').replace(/,+/g, ',');  // 将空格、双引号、单引号和换行符替换为逗号
 	//console.log(addtext);
@@ -346,4 +420,125 @@ async function ADD(envadd) {
 	const add = addtext.split(',');
 	//console.log(add);
 	return add ;
+}
+
+function 配置信息(密码, 域名地址) {
+	const 啥啥啥_写的这是啥啊 = 'dHJvamFu';
+	const 协议类型 = atob(啥啥啥_写的这是啥啊);
+	
+	const 别名 = 域名地址;
+	let 地址 = 域名地址;
+	let 端口 = 443;
+	
+	const 传输层协议 = 'ws';
+	const 伪装域名 = 域名地址;
+	const 路径 = '/?ed=2560';
+	
+	let 传输层安全 = ['tls',true];
+
+	const v2ray = `${协议类型}://${encodeURIComponent(密码)}@${地址}:${端口}?security=${传输层安全[0]}&type=${传输层协议}&host=${伪装域名}&path=${encodeURIComponent(路径)}#${encodeURIComponent(别名)}`
+	
+	const clash = `- {"name":"${别名}","type":"${协议类型}","server":"${地址}","port":${端口},"udp":false,"password":"${密码}","skip-cert-verify":true,"network":"${传输层协议}","ws-opts":{"path":"${路径}","headers":{"host":"${伪装域名}"}}}`;
+	return [v2ray,clash];
+}
+
+async function getTrojanConfig(password, hostName, sub, UA, RproxyIP, _url) {
+	const subParams = ['sub','base64','b64','clash','singbox','sb'];
+	const userAgent = UA.toLowerCase();
+	const Config = 配置信息(password , hostName);
+	const v2ray = Config[0];
+	const clash = Config[1];
+	// 如果sub为空，则显示原始内容
+	if ((!sub || sub === '') && !subParams.some(_searchParams => _url.searchParams.has(_searchParams))) {
+		
+		return `
+################################################################
+v2ray
+---------------------------------------------------------------
+${v2ray}
+---------------------------------------------------------------
+################################################################
+clash-meta
+---------------------------------------------------------------
+${clash}
+---------------------------------------------------------------
+################################################################
+`;
+	} else if (sub && userAgent.includes('mozilla') && !subParams.some(_searchParams => _url.searchParams.has(_searchParams))) {
+		
+		return `
+################################################################
+Subscribe / sub 订阅地址, 支持 Base64、clash-meta、sing-box 订阅格式, 您的订阅内容由 ${sub} 提供维护支持, 自动获取ProxyIP: ${RproxyIP}.
+---------------------------------------------------------------
+快速自适应订阅地址:
+https://${hostName}/${password}
+
+Base64订阅地址:
+https://${hostName}/${password}?sub
+https://${hostName}/${password}?b64
+https://${hostName}/${password}?base64
+
+clash订阅地址:
+https://${hostName}/${password}?clash
+
+singbox订阅地址:
+https://${hostName}/${password}?sb
+https://${hostName}/${password}?singbox
+---------------------------------------------------------------
+################################################################
+v2ray
+---------------------------------------------------------------
+${v2ray}
+---------------------------------------------------------------
+################################################################
+clash-meta
+---------------------------------------------------------------
+${clash}
+---------------------------------------------------------------
+################################################################
+telegram 交流群 技术大佬~在线发牌!
+https://t.me/CMLiussss
+---------------------------------------------------------------
+github 项目地址 Star!Star!Star!!!
+https://github.com/cmliu/epeius
+---------------------------------------------------------------
+################################################################
+`;
+	} else {
+		if (typeof fetch != 'function') {
+			return 'Error: fetch is not available in this environment.';
+		}
+		// 如果是使用默认域名，则改成一个workers的域名，订阅器会加上代理
+		if (hostName.includes(".workers.dev") || hostName.includes(".pages.dev")){
+			fakeHostName = `${fakeHostName}.${generateRandomString()}${generateRandomNumber()}.workers.dev`;
+		} else {
+			fakeHostName = `${fakeHostName}.${generateRandomNumber()}.xyz`
+		}
+
+		let url = `https://${sub}/sub?host=${fakeHostName}&pw=${fakeUserID}&epeius=cmliu&proxyip=${RproxyIP}`;
+		let isBase64 = true;
+		
+		if (!userAgent.includes(('CF-Workers-SUB').toLowerCase())){
+			if ((userAgent.includes('clash') && !userAgent.includes('nekobox')) || ( _url.searchParams.has('clash') && !userAgent.includes('subconverter'))) {
+				url = `https://${subconverter}/sub?target=clash&url=${encodeURIComponent(url)}&insert=false&config=${encodeURIComponent(subconfig)}&emoji=true&list=false&tfo=false&scv=true&fdn=false&sort=false&new_name=true`;
+				isBase64 = false;
+			} else if (userAgent.includes('sing-box') || userAgent.includes('singbox') || (( _url.searchParams.has('singbox') || _url.searchParams.has('sb')) && !userAgent.includes('subconverter'))) {
+				url = `https://${subconverter}/sub?target=singbox&url=${encodeURIComponent(url)}&insert=false&config=${encodeURIComponent(subconfig)}&emoji=true&list=false&tfo=false&scv=true&fdn=false&sort=false&new_name=true`;
+				isBase64 = false;
+			}
+		}
+		
+		try {
+			const response = await fetch(url ,{
+			headers: {
+				'User-Agent': `${UA} CF-Workers-epeius/cmliu`
+			}});
+			const content = await response.text();
+			return revertFakeInfo(content, password, hostName, isBase64);
+		} catch (error) {
+			console.error('Error fetching content:', error);
+			return `Error fetching content: ${error.message}`;
+		}
+
+	}
 }
