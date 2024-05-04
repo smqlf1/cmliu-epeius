@@ -6,7 +6,7 @@ let proxyIP = "";
 
 let sub = 'workertrojan2sub.pages.dev';// 内置优选订阅生成器，可自行搭建 https://github.com/cmliu/WorkerTrojan2sub
 let subconverter = 'apiurl.v1.mk';// clash订阅转换后端，目前使用肥羊的订阅转换功能。自带虚假uuid和host订阅。
-let subconfig = "https://raw.githubusercontent.com/cmliu/ACL4SSR/main/Clash/config/ACL4SSR_Online_Full_MultiMode.ini"; //订阅配置文件
+let subconfig = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Mini.ini"; //订阅配置文件
 let RproxyIP = 'false';
 
 let fakeUserID = generateUUID();
