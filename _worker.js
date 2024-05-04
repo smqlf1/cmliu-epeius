@@ -44,14 +44,26 @@ export default {
 					const today = new Date(now);
 					today.setHours(0, 0, 0, 0);
 					const UD = Math.floor(((now - today.getTime())/86400000) * 24 * 1099511627776 / 2);
-					return new Response(`${trojanConfig}`, {
-						status: 200,
-						headers: {
-							"Content-Type": "text/plain;charset=utf-8",
-							"Profile-Update-Interval": "6",
-							"Subscription-Userinfo": `upload=${UD}; download=${UD}; total=${24 * 1099511627776}; expire=${expire}`,
-						}
-					});
+					if (userAgent && userAgent.includes('mozilla')){
+						return new Response(`${trojanConfig}`, {
+							status: 200,
+							headers: {
+								"Content-Type": "text/plain;charset=utf-8",
+								"Profile-Update-Interval": "6",
+								"Subscription-Userinfo": `upload=${UD}; download=${UD}; total=${24 * 1099511627776}; expire=${expire}`,
+							}
+						});
+					} else {
+						return new Response(`${trojanConfig}`, {
+							status: 200,
+							headers: {
+								"Content-Disposition": "attachment; filename=edgetunnel; filename*=utf-8''epeius",
+								"Content-Type": "text/plain;charset=utf-8",
+								"Profile-Update-Interval": "6",
+								"Subscription-Userinfo": `upload=${UD}; download=${UD}; total=${24 * 1099511627776}; expire=${expire}`,
+							}
+						});
+					}
 					/*
 					const host = request.headers.get('Host');
 					return new Response(`trojan://${encodeURIComponent(password)}@${host}:443/?type=ws&host=${host}&security=tls`, {
