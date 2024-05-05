@@ -33,7 +33,7 @@ export default {
 			const proxyIPs = await ADD(proxyIP);
 			proxyIP = proxyIPs[Math.floor(Math.random() * proxyIPs.length)];
 			password = env.PASSWORD || password;
-			sha224Password = env.SHA224 || sha224Password;
+			sha224Password = env.SHA224 || env.SHA224PASS || sha224Password;
 
 			const url = new URL(request.url);
 			const upgradeHeader = request.headers.get("Upgrade");
