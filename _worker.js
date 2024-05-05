@@ -4,7 +4,7 @@ let password = 'auto';
 let sha224Password = '10f9b41e385c211fdcdd92491cf3068d036618b61602807abb06316d';
 let proxyIP = '';
 
-let sub = 'trojan.fxxk.dedyn.io';// 'trojan.fxxk.dedyn.io' Trojan优选订阅生成器，可自行搭建 https://github.com/cmliu/WorkerTrojan2sub
+let sub = '';// 'trojan.fxxk.dedyn.io' Trojan优选订阅生成器，可自行搭建 https://github.com/cmliu/WorkerTrojan2sub
 let addresses = [
 	//当sub为空时启用本地优选域名ip
 	'www.visa.com.sg',
