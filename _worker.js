@@ -529,9 +529,6 @@ https://${hostName}/${password}?clash
 singbox订阅地址:
 https://${hostName}/${password}?sb
 https://${hostName}/${password}?singbox
-
-surge订阅地址:
-https://${hostName}/${password}?surge
 ---------------------------------------------------------------
 ################################################################
 v2ray
