@@ -485,29 +485,6 @@ async function getTrojanConfig(password, hostName, sub, UA, RproxyIP, _url) {
 	const Config = 配置信息(password , hostName);
 	const v2ray = Config[0];
 	const clash = Config[1];
-	if(hostName.includes('workers.dev') || hostName.includes('pages.dev')) {
-		if (proxyhostsURL && (!proxyhosts || proxyhosts.length == 0)) {
-			try {
-				const response = await fetch(proxyhostsURL); 
-			
-				if (!response.ok) {
-					console.error('获取地址时出错:', response.status, response.statusText);
-					return; // 如果有错误，直接返回
-				}
-			
-				const text = await response.text();
-				const lines = text.split('\n');
-				// 过滤掉空行或只包含空白字符的行
-				const nonEmptyLines = lines.filter(line => line.trim() !== '');
-			
-				proxyhosts = proxyhosts.concat(nonEmptyLines);
-			} catch (error) {
-				console.error('获取地址时出错:', error);
-			}
-		}
-		// 使用Set对象去重
-		proxyhosts = [...new Set(proxyhosts)];
-	}
 
 	if ( userAgent.includes('mozilla') && !subParams.some(_searchParams => _url.searchParams.has(_searchParams))) {
 		
@@ -580,6 +557,29 @@ https://github.com/cmliu/epeius
 		try {
 			let content;
 			if ((!sub || sub == "") && (userAgent.includes('subconverter') || isBase64 == true)) {
+				if(hostName.includes('workers.dev') || hostName.includes('pages.dev')) {
+					if (proxyhostsURL && (!proxyhosts || proxyhosts.length == 0)) {
+						try {
+							const response = await fetch(proxyhostsURL); 
+						
+							if (!response.ok) {
+								console.error('获取地址时出错:', response.status, response.statusText);
+								return; // 如果有错误，直接返回
+							}
+						
+							const text = await response.text();
+							const lines = text.split('\n');
+							// 过滤掉空行或只包含空白字符的行
+							const nonEmptyLines = lines.filter(line => line.trim() !== '');
+						
+							proxyhosts = proxyhosts.concat(nonEmptyLines);
+						} catch (error) {
+							console.error('获取地址时出错:', error);
+						}
+					}
+					// 使用Set对象去重
+					proxyhosts = [...new Set(proxyhosts)];
+				}
 				content = await subAddresses(fakeHostName,fakeUserID,userAgent);
 			} else {
 				const response = await fetch(url ,{
@@ -635,7 +635,7 @@ function subAddresses(host,pw,userAgent) {
 		let 伪装域名 = host ;
 		let 最终路径 = '/?ed=2560' ;
 		let 节点备注 = '';
-		if(proxyhosts && (伪装域名.includes('.workers.dev') || 伪装域名.includes('pages.dev'))) {
+		if(proxyhosts.length > 0 && (伪装域名.includes('.workers.dev') || 伪装域名.includes('pages.dev'))) {
 			最终路径 = `/${伪装域名}${最终路径}`;
 			伪装域名 = proxyhosts[Math.floor(Math.random() * proxyhosts.length)];
 			节点备注 = ` 已启用临时域名中转服务，请尽快绑定自定义域！`;
