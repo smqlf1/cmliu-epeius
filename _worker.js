@@ -75,7 +75,7 @@ export default {
 						return new Response(`${trojanConfig}`, {
 							status: 200,
 							headers: {
-								"Content-Disposition": "attachment; filename=edgetunnel; filename*=utf-8''epeius",
+								//"Content-Disposition": "attachment; filename=edgetunnel; filename*=utf-8''epeius",
 								"Content-Type": "text/plain;charset=utf-8",
 								"Profile-Update-Interval": "6",
 								"Subscription-Userinfo": `upload=${UD}; download=${UD}; total=${24 * 1099511627776}; expire=${expire}`,
@@ -470,10 +470,8 @@ function 配置信息(密码, 域名地址) {
 	const clash = `- {"name":"${别名}","type":"${协议类型}","server":"${地址}","port":${端口},"udp":false,"password":"${密码}","skip-cert-verify":true,"network":"${传输层协议}","ws-opts":{"path":"${路径}","headers":{"host":"${伪装域名}"}}}`;
 	return [v2ray,clash];
 }
-
+let subParams = ['sub','base64','b64','clash','singbox','sb'];
 async function getTrojanConfig(password, hostName, sub, UA, RproxyIP, _url) {
-	//console.log(_url);
-	const subParams = ['sub','base64','b64','clash','singbox','sb'];
 	const userAgent = UA.toLowerCase();
 	const Config = 配置信息(password , hostName);
 	const v2ray = Config[0];
@@ -501,7 +499,7 @@ async function getTrojanConfig(password, hostName, sub, UA, RproxyIP, _url) {
 		// 使用Set对象去重
 		proxyhosts = [...new Set(proxyhosts)];
 	}
-	
+
 	if ( userAgent.includes('mozilla') && !subParams.some(_searchParams => _url.searchParams.has(_searchParams))) {
 		
 		return `
@@ -557,11 +555,11 @@ https://github.com/cmliu/epeius
 		if (!sub || sub == "") url = `${_url.href}`;
 		let isBase64 = true;
 		
-		if (!userAgent.includes(('CF-Workers-SUB').toLowerCase())){
-			if ((userAgent.includes('clash') && !userAgent.includes('nekobox')) || ( _url.searchParams.has('clash') && !userAgent.includes('subconverter'))) {
+		if (!userAgent.includes(('CF-Workers-SUB').toLowerCase()) || !userAgent.includes('subconverter')){
+			if ((userAgent.includes('clash') && !userAgent.includes('nekobox')) || ( _url.searchParams.has('clash'))) {
 				url = `https://${subconverter}/sub?target=clash&url=${encodeURIComponent(url)}&insert=false&config=${encodeURIComponent(subconfig)}&emoji=true&list=false&tfo=false&scv=true&fdn=false&sort=false&new_name=true`;
 				isBase64 = false;
-			} else if (userAgent.includes('sing-box') || userAgent.includes('singbox') || (( _url.searchParams.has('singbox') || _url.searchParams.has('sb')) && !userAgent.includes('subconverter'))) {
+			} else if (userAgent.includes('sing-box') || userAgent.includes('singbox') || _url.searchParams.has('singbox') || _url.searchParams.has('sb')) {
 				url = `https://${subconverter}/sub?target=singbox&url=${encodeURIComponent(url)}&insert=false&config=${encodeURIComponent(subconfig)}&emoji=true&list=false&tfo=false&scv=true&fdn=false&sort=false&new_name=true`;
 				isBase64 = false;
 			}
@@ -569,7 +567,7 @@ https://github.com/cmliu/epeius
 		
 		try {
 			let content;
-			if ((!sub || sub == "") && isBase64 != false ) {
+			if ((!sub || sub == "") && isBase64 == true) {
 				content = await subAddresses(fakeHostName,fakeUserID,userAgent);
 			} else {
 				const response = await fetch(url ,{
@@ -632,9 +630,7 @@ function subAddresses(host,pw,userAgent) {
 		}
 
 		let 密码 = pw;
-		if (!userAgent.includes('subconverter')){
-			密码 = encodeURIComponent(pw);
-		}
+		if (!userAgent.includes('subconverter')) 密码 = encodeURIComponent(pw);
 
 		const 啥啥啥_写的这是啥啊 = 'dHJvamFu';
 		const 协议类型 = atob(啥啥啥_写的这是啥啊);
