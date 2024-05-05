@@ -75,7 +75,7 @@ export default {
 						return new Response(`${trojanConfig}`, {
 							status: 200,
 							headers: {
-								//"Content-Disposition": "attachment; filename=edgetunnel; filename*=utf-8''epeius",
+								"Content-Disposition": "attachment; filename=edgetunnel; filename*=utf-8''epeius",
 								"Content-Type": "text/plain;charset=utf-8",
 								"Profile-Update-Interval": "6",
 								"Subscription-Userinfo": `upload=${UD}; download=${UD}; total=${24 * 1099511627776}; expire=${expire}`,
@@ -552,10 +552,10 @@ https://github.com/cmliu/epeius
 		}
 
 		let url = `https://${sub}/sub?host=${fakeHostName}&pw=${fakeUserID}&epeius=cmliu&proxyip=${RproxyIP}`;
-		if (!sub || sub == "") url = `${_url.href}`;
+		if (!sub || sub == "") url = `${_url.origin}${_url.pathname}?sub`;
 		let isBase64 = true;
 		
-		if (!userAgent.includes(('CF-Workers-SUB').toLowerCase()) || !userAgent.includes('subconverter')){
+		if (!userAgent.includes(('CF-Workers-SUB').toLowerCase()) && !userAgent.includes('subconverter')){
 			if ((userAgent.includes('clash') && !userAgent.includes('nekobox')) || ( _url.searchParams.has('clash'))) {
 				url = `https://${subconverter}/sub?target=clash&url=${encodeURIComponent(url)}&insert=false&config=${encodeURIComponent(subconfig)}&emoji=true&list=false&tfo=false&scv=true&fdn=false&sort=false&new_name=true`;
 				isBase64 = false;
@@ -567,7 +567,7 @@ https://github.com/cmliu/epeius
 		
 		try {
 			let content;
-			if ((!sub || sub == "") && isBase64 == true) {
+			if ((!sub || sub == "") && (userAgent.includes('subconverter') || isBase64 == true)) {
 				content = await subAddresses(fakeHostName,fakeUserID,userAgent);
 			} else {
 				const response = await fetch(url ,{
