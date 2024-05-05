@@ -6,10 +6,10 @@ let proxyIP = '';
 
 let sub = '';// 'trojan.fxxk.dedyn.io' Trojan优选订阅生成器，可自行搭建 https://github.com/cmliu/WorkerTrojan2sub
 let addresses = [
-	//当sub为空时启用本地优选域名ip
-	'www.visa.com.sg',
-	'www.csgo.com',
-	'www.wto.org',
+	//当sub为空时启用本地优选域名/优选IP
+	'www.visa.com.sg#官方优选域名',
+	'www.wto.org:8443#官方优选域名',
+	'www.csgo.com:2087',
 	'icook.hk',
 ];
 
@@ -23,6 +23,10 @@ const regex = /^(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}|\[.*\]):?(\d+)?#?(.*)?$/;
 
 let proxyhosts = [];//本地代理域名池
 let proxyhostsURL = 'https://raw.githubusercontent.com/cmliu/CFcdnVmess2sub/main/proxyhosts';//在线代理域名池URL
+
+if (!isValidSHA224(sha224Password)) {
+    throw new Error('sha224Password is not valid');
+}
 
 export default {
 	async fetch(request, env, ctx) {
@@ -368,6 +372,11 @@ async function remoteSocketToWS(remoteSocket, webSocket, retry, log) {
 	}
 }
 
+function isValidSHA224(hash) {
+	const sha224Regex = /^[0-9a-f]{56}$/i;
+	return sha224Regex.test(hash);
+}
+
 function base64ToArrayBuffer(base64Str) {
 	if (!base64Str) {
 		return { error: null };
@@ -520,6 +529,9 @@ https://${hostName}/${password}?clash
 singbox订阅地址:
 https://${hostName}/${password}?sb
 https://${hostName}/${password}?singbox
+
+surge订阅地址:
+https://${hostName}/${password}?surge
 ---------------------------------------------------------------
 ################################################################
 v2ray
@@ -561,6 +573,9 @@ https://github.com/cmliu/epeius
 				isBase64 = false;
 			} else if (userAgent.includes('sing-box') || userAgent.includes('singbox') || _url.searchParams.has('singbox') || _url.searchParams.has('sb')) {
 				url = `https://${subconverter}/sub?target=singbox&url=${encodeURIComponent(url)}&insert=false&config=${encodeURIComponent(subconfig)}&emoji=true&list=false&tfo=false&scv=true&fdn=false&sort=false&new_name=true`;
+				isBase64 = false;
+			} else if (userAgent.includes('surge') || _url.searchParams.has('surge')) {
+				url = `https://${subconverter}/sub?target=surge&url=${encodeURIComponent(url)}&insert=false&config=${encodeURIComponent(subconfig)}&emoji=true&list=false&tfo=false&scv=true&fdn=false&sort=false&new_name=true`;
 				isBase64 = false;
 			}
 		}
