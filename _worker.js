@@ -24,6 +24,10 @@ const regex = /^(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}|\[.*\]):?(\d+)?#?(.*)?$/;
 let proxyhosts = [];//本地代理域名池
 let proxyhostsURL = 'https://raw.githubusercontent.com/cmliu/CFcdnVmess2sub/main/proxyhosts';//在线代理域名池URL
 
+if (!isValidSHA224(sha224Password)) {
+    throw new Error('sha224Password is not valid');
+}
+
 export default {
 	async fetch(request, env, ctx) {
 		try {
@@ -368,6 +372,11 @@ async function remoteSocketToWS(remoteSocket, webSocket, retry, log) {
 	}
 }
 
+function isValidSHA224(hash) {
+	const sha224Regex = /^[0-9a-f]{56}$/i;
+	return sha224Regex.test(hash);
+}
+
 function base64ToArrayBuffer(base64Str) {
 	if (!base64Str) {
 		return { error: null };
@@ -470,7 +479,7 @@ function 配置信息(密码, 域名地址) {
 	const clash = `- {"name":"${别名}","type":"${协议类型}","server":"${地址}","port":${端口},"udp":false,"password":"${密码}","skip-cert-verify":true,"network":"${传输层协议}","ws-opts":{"path":"${路径}","headers":{"host":"${伪装域名}"}}}`;
 	return [v2ray,clash];
 }
-let subParams = ['sub','base64','b64','clash','singbox','sb'];
+let subParams = ['sub','base64','b64','clash','singbox','sb','surge'];
 async function getTrojanConfig(password, hostName, sub, UA, RproxyIP, _url) {
 	const userAgent = UA.toLowerCase();
 	const Config = 配置信息(password , hostName);
@@ -520,6 +529,9 @@ https://${hostName}/${password}?clash
 singbox订阅地址:
 https://${hostName}/${password}?sb
 https://${hostName}/${password}?singbox
+
+surge订阅地址:
+https://${hostName}/${password}?surge
 ---------------------------------------------------------------
 ################################################################
 v2ray
@@ -561,6 +573,9 @@ https://github.com/cmliu/epeius
 				isBase64 = false;
 			} else if (userAgent.includes('sing-box') || userAgent.includes('singbox') || _url.searchParams.has('singbox') || _url.searchParams.has('sb')) {
 				url = `https://${subconverter}/sub?target=singbox&url=${encodeURIComponent(url)}&insert=false&config=${encodeURIComponent(subconfig)}&emoji=true&list=false&tfo=false&scv=true&fdn=false&sort=false&new_name=true`;
+				isBase64 = false;
+			} else if (userAgent.includes('surge') || _url.searchParams.has('surge')) {
+				url = `https://${subconverter}/sub?target=surge&ver=4&url=${encodeURIComponent(url)}&insert=false&config=${encodeURIComponent(subconfig)}&emoji=true&list=false&xudp=false&udp=false&tfo=false&expand=true&scv=true&fdn=false`;
 				isBase64 = false;
 			}
 		}
