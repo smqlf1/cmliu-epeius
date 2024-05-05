@@ -6,10 +6,10 @@ let proxyIP = '';
 
 let sub = '';// 'trojan.fxxk.dedyn.io' Trojan优选订阅生成器，可自行搭建 https://github.com/cmliu/WorkerTrojan2sub
 let addresses = [
-	//当sub为空时启用本地优选域名ip
-	'www.visa.com.sg',
-	'www.csgo.com',
-	'www.wto.org',
+	//当sub为空时启用本地优选域名/优选IP
+	'www.visa.com.sg#官方优选域名',
+	'www.wto.org:8443#官方优选域名',
+	'www.csgo.com:2087',
 	'icook.hk',
 ];
 
