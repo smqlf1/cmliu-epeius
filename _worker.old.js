@@ -13,10 +13,10 @@ let addresses = [
 	'www.csgo.com:2087#节点名放在井号之后即可',
 	'icook.hk#若不带端口号默认端口为443',
 	'104.17.152.41#IP也可以',
-	'[2606:4700:e7:25:4b9:f8f8:9bfb:774a]#IPv6也OK',
+	//'[2606:4700:e7:25:4b9:f8f8:9bfb:774a]#IPv6也OK',
 ];
 
-let sub = '';// 'trojan.fxxk.dedyn.io' Trojan优选订阅生成器，可自行搭建 https://github.com/cmliu/WorkerTrojan2sub
+let sub = '';// 'trojan.fxxk.dedyn.io' 
 let subconverter = 'apiurl.v1.mk';// clash订阅转换后端，目前使用肥羊的订阅转换功能。自带虚假节点信息防泄露
 let subconfig = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Mini.ini"; //订阅配置文件
 let RproxyIP = 'false';
@@ -31,9 +31,10 @@ let ChatID ='';
 let proxyhosts = [];//本地代理域名池
 let proxyhostsURL = 'https://raw.githubusercontent.com/cmliu/CFcdnVmess2sub/main/proxyhosts';//在线代理域名池URL
 
-let sha224Password = '10f9b41e385c211fdcdd92491cf3068d036618b61602807abb06316d';
 let fakeUserID = generateUUID();
 let fakeHostName = generateRandomString();
+let proxyIPs ;
+let sha224Password ;
 const regex = /^(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}|\[.*\]):?(\d+)?#?(.*)?$/;
 /*
 if (!isValidSHA224(sha224Password)) {
@@ -46,11 +47,10 @@ export default {
 			const UA = request.headers.get('User-Agent') || 'null';
 			const userAgent = UA.toLowerCase();
 			proxyIP = env.PROXYIP || proxyIP;
-			const proxyIPs = await ADD(proxyIP);
+			proxyIPs = await ADD(proxyIP);
 			proxyIP = proxyIPs[Math.floor(Math.random() * proxyIPs.length)];
 			password = env.PASSWORD || password;
-			//sha224Password = env.SHA224 || env.SHA224PASS || sha224Password;
-			sha224Password = sha256.sha224(password);
+			sha224Password = env.SHA224 || env.SHA224PASS || sha256.sha224(password);
 			//console.log(sha224Password);
 
 			const url = new URL(request.url);
@@ -511,9 +511,20 @@ async function getTrojanConfig(password, hostName, sub, UA, RproxyIP, _url) {
 	if ( userAgent.includes('mozilla') && !subParams.some(_searchParams => _url.searchParams.has(_searchParams))) {
 		let surge = `Surge订阅地址:\nhttps://${hostName}/${password}?surge`;
 		if (hostName.includes(".workers.dev") || hostName.includes(".pages.dev")) surge = "Surge订阅必须绑定自定义域";
+		
+		let 订阅器 = `您的订阅内容由 ${sub} 提供维护支持, 自动获取ProxyIP: ${RproxyIP}`;
+		if (!sub || sub == '') {
+			if (!proxyIP || proxyIP =='') {
+				订阅器 = '您的订阅内容由 内置 addresses/ADD 参数提供, 当前使用的ProxyIP为空, 推荐您设置 proxyIP/PROXYIP ！！！';
+			} else {
+				订阅器 = `您的订阅内容由 内置 addresses/ADD 参数提供, 当前使用的ProxyIP： ${proxyIPs.join(',')}`;
+			}
+		} else if (RproxyIP != 'true'){
+			订阅器 += `, 当前使用的ProxyIP： ${proxyIPs.join(',')}`;
+		}
 		return `
 ################################################################
-Subscribe / sub 订阅地址, 支持 Base64、clash-meta、sing-box 订阅格式, 您的订阅内容由 ${sub} 提供维护支持, 自动获取ProxyIP: ${RproxyIP}.
+Subscribe / sub 订阅地址, 支持 Base64、clash-meta、sing-box 订阅格式, ${订阅器}
 ---------------------------------------------------------------
 快速自适应订阅地址:
 https://${hostName}/${password}
@@ -740,7 +751,7 @@ async function getAddressesapi(api) {
 			method: 'get', 
 			headers: {
 				'Accept': 'text/html,application/xhtml+xml,application/xml;',
-				'User-Agent': 'cmliu/WorkerTrojan2sub'
+				'User-Agent': 'CF-Workers-epeius/cmliu'
 			},
 			signal: controller.signal // 将AbortController的信号量添加到fetch请求中，以便于需要时可以取消请求
 		}).then(response => response.ok ? response.text() : Promise.reject())));
