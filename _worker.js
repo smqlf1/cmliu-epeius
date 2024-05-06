@@ -85,7 +85,7 @@ export default {
 					const today = new Date(now);
 					today.setHours(0, 0, 0, 0);
 					const UD = Math.floor(((now - today.getTime())/86400000) * 24 * 1099511627776 / 2);
-					if (userAgent && userAgent.includes('mozilla')){
+					if (userAgent && (userAgent.includes('mozilla') || userAgent.includes('subconverter'))){
 						return new Response(`${trojanConfig}`, {
 							status: 200,
 							headers: {
@@ -557,11 +557,45 @@ https://github.com/cmliu/epeius
 			fakeHostName = `${fakeHostName}.${generateRandomNumber()}.xyz`
 		}
 
+		if(hostName.includes('workers.dev') || hostName.includes('pages.dev')) {
+			if (proxyhostsURL && (!proxyhosts || proxyhosts.length == 0)) {
+				try {
+					const response = await fetch(proxyhostsURL); 
+				
+					if (!response.ok) {
+						console.error('获取地址时出错:', response.status, response.statusText);
+						return; // 如果有错误，直接返回
+					}
+				
+					const text = await response.text();
+					const lines = text.split('\n');
+					// 过滤掉空行或只包含空白字符的行
+					const nonEmptyLines = lines.filter(line => line.trim() !== '');
+				
+					proxyhosts = proxyhosts.concat(nonEmptyLines);
+				} catch (error) {
+					console.error('获取地址时出错:', error);
+				}
+			}
+			// 使用Set对象去重
+			proxyhosts = [...new Set(proxyhosts)];
+		}
+
+		const newAddressesapi = await getAddressesapi(addressesapi);
+		const newAddressescsv = await getAddressescsv('TRUE');
+
 		let url = `https://${sub}/sub?host=${fakeHostName}&pw=${fakeUserID}&epeius=cmliu&proxyip=${RproxyIP}`;
-		if (!sub || sub == "") url = `${_url.origin}${_url.pathname}?sub`;
 		let isBase64 = true;
-		
-		if (!userAgent.includes(('CF-Workers-SUB').toLowerCase()) && !userAgent.includes('subconverter')){
+
+		if (!sub || sub == ""){
+			const 生成本地节点 = await subAddresses(fakeHostName,fakeUserID,'subconverter',newAddressesapi,newAddressescsv);
+			const 解码本地节点 = atob(生成本地节点)
+			const 本地节点数组 = 解码本地节点.split('\n');
+			url = 本地节点数组.join('|');
+			//console.log(url);
+		} 
+
+		if (!userAgent.includes(('CF-Workers-SUB').toLowerCase())){
 			if ((userAgent.includes('clash') && !userAgent.includes('nekobox')) || ( _url.searchParams.has('clash'))) {
 				url = `https://${subconverter}/sub?target=clash&url=${encodeURIComponent(url)}&insert=false&config=${encodeURIComponent(subconfig)}&emoji=true&list=false&tfo=false&scv=true&fdn=false&sort=false&new_name=true`;
 				isBase64 = false;
@@ -576,32 +610,7 @@ https://github.com/cmliu/epeius
 		
 		try {
 			let content;
-			if ((!sub || sub == "") && (userAgent.includes('subconverter') || isBase64 == true)) {
-				if(hostName.includes('workers.dev') || hostName.includes('pages.dev')) {
-					if (proxyhostsURL && (!proxyhosts || proxyhosts.length == 0)) {
-						try {
-							const response = await fetch(proxyhostsURL); 
-						
-							if (!response.ok) {
-								console.error('获取地址时出错:', response.status, response.statusText);
-								return; // 如果有错误，直接返回
-							}
-						
-							const text = await response.text();
-							const lines = text.split('\n');
-							// 过滤掉空行或只包含空白字符的行
-							const nonEmptyLines = lines.filter(line => line.trim() !== '');
-						
-							proxyhosts = proxyhosts.concat(nonEmptyLines);
-						} catch (error) {
-							console.error('获取地址时出错:', error);
-						}
-					}
-					// 使用Set对象去重
-					proxyhosts = [...new Set(proxyhosts)];
-				}
-				const newAddressesapi = await getAddressesapi(addressesapi);
-				const newAddressescsv = await getAddressescsv('TRUE');
+			if ((!sub || sub == "") && isBase64 == true) {
 				content = await subAddresses(fakeHostName,fakeUserID,userAgent,newAddressesapi,newAddressescsv);
 			} else {
 				const response = await fetch(url ,{
