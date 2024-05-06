@@ -4,18 +4,27 @@ let password = 'auto';
 let sha224Password = '10f9b41e385c211fdcdd92491cf3068d036618b61602807abb06316d';
 let proxyIP = '';
 
-let sub = '';// 'trojan.fxxk.dedyn.io' Trojan优选订阅生成器，可自行搭建 https://github.com/cmliu/WorkerTrojan2sub
 let addresses = [
-	//当sub为空时启用本地优选域名/优选IP
-	'www.visa.com.sg#官方优选域名',
-	'www.wto.org:8443#官方优选域名',
-	'www.csgo.com:2087',
-	'icook.hk',
+	//当sub为空时启用本地优选域名/优选IP，若不带端口号 TLS默认端口为443，#号后为备注别名
+	'cf.090227.xyz:443#加入我的频道t.me/CMLiussss解锁更多优选节点',
+	'time.is#你可以只放域名 如下',
+	'www.visa.com.sg',
+	'skk.moe#也可以放域名带端口 如下',
+	'www.wto.org:8443',
+	'www.csgo.com:2087#节点名放在井号之后即可',
+	'icook.hk#若不带端口号默认端口为443',
+	'104.17.152.41#IP也可以',
+	'[2606:4700:e7:25:4b9:f8f8:9bfb:774a]#IPv6也OK',
 ];
 
+let sub = '';// 'trojan.fxxk.dedyn.io' Trojan优选订阅生成器，可自行搭建 https://github.com/cmliu/WorkerTrojan2sub
 let subconverter = 'apiurl.v1.mk';// clash订阅转换后端，目前使用肥羊的订阅转换功能。自带虚假uuid和host订阅。
 let subconfig = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Mini.ini"; //订阅配置文件
 let RproxyIP = 'false';
+
+let addressesapi = [];
+let addressescsv = [];
+let DLS = 8;
 
 let fakeUserID = generateUUID();
 let fakeHostName = generateRandomString();
@@ -42,6 +51,8 @@ export default {
 			const url = new URL(request.url);
 			const upgradeHeader = request.headers.get("Upgrade");
 			if (env.ADD) addresses = await ADD(env.ADD);
+			if (env.ADDAPI) addressesapi = await ADD(env.ADDAPI);
+			if (env.ADDCSV) addressescsv = await ADD(env.ADDCSV);
 			sub = env.SUB || sub;
 			subconverter = env.SUBAPI || subconverter;
 			subconfig = env.SUBCONFIG || subconfig;
@@ -479,35 +490,13 @@ function 配置信息(密码, 域名地址) {
 	const clash = `- {"name":"${别名}","type":"${协议类型}","server":"${地址}","port":${端口},"udp":false,"password":"${密码}","skip-cert-verify":true,"network":"${传输层协议}","ws-opts":{"path":"${路径}","headers":{"host":"${伪装域名}"}}}`;
 	return [v2ray,clash];
 }
+
 let subParams = ['sub','base64','b64','clash','singbox','sb','surge'];
 async function getTrojanConfig(password, hostName, sub, UA, RproxyIP, _url) {
 	const userAgent = UA.toLowerCase();
 	const Config = 配置信息(password , hostName);
 	const v2ray = Config[0];
 	const clash = Config[1];
-	if(hostName.includes('workers.dev') || hostName.includes('pages.dev')) {
-		if (proxyhostsURL && (!proxyhosts || proxyhosts.length == 0)) {
-			try {
-				const response = await fetch(proxyhostsURL); 
-			
-				if (!response.ok) {
-					console.error('获取地址时出错:', response.status, response.statusText);
-					return; // 如果有错误，直接返回
-				}
-			
-				const text = await response.text();
-				const lines = text.split('\n');
-				// 过滤掉空行或只包含空白字符的行
-				const nonEmptyLines = lines.filter(line => line.trim() !== '');
-			
-				proxyhosts = proxyhosts.concat(nonEmptyLines);
-			} catch (error) {
-				console.error('获取地址时出错:', error);
-			}
-		}
-		// 使用Set对象去重
-		proxyhosts = [...new Set(proxyhosts)];
-	}
 
 	if ( userAgent.includes('mozilla') && !subParams.some(_searchParams => _url.searchParams.has(_searchParams))) {
 		
@@ -529,9 +518,6 @@ https://${hostName}/${password}?clash
 singbox订阅地址:
 https://${hostName}/${password}?sb
 https://${hostName}/${password}?singbox
-
-surge订阅地址:
-https://${hostName}/${password}?surge
 ---------------------------------------------------------------
 ################################################################
 v2ray
@@ -583,7 +569,32 @@ https://github.com/cmliu/epeius
 		try {
 			let content;
 			if ((!sub || sub == "") && (userAgent.includes('subconverter') || isBase64 == true)) {
-				content = await subAddresses(fakeHostName,fakeUserID,userAgent);
+				if(hostName.includes('workers.dev') || hostName.includes('pages.dev')) {
+					if (proxyhostsURL && (!proxyhosts || proxyhosts.length == 0)) {
+						try {
+							const response = await fetch(proxyhostsURL); 
+						
+							if (!response.ok) {
+								console.error('获取地址时出错:', response.status, response.statusText);
+								return; // 如果有错误，直接返回
+							}
+						
+							const text = await response.text();
+							const lines = text.split('\n');
+							// 过滤掉空行或只包含空白字符的行
+							const nonEmptyLines = lines.filter(line => line.trim() !== '');
+						
+							proxyhosts = proxyhosts.concat(nonEmptyLines);
+						} catch (error) {
+							console.error('获取地址时出错:', error);
+						}
+					}
+					// 使用Set对象去重
+					proxyhosts = [...new Set(proxyhosts)];
+				}
+				const newAddressesapi = await getAddressesapi(addressesapi);
+				const newAddressescsv = await getAddressescsv('TRUE');
+				content = await subAddresses(fakeHostName,fakeUserID,userAgent,newAddressesapi,newAddressescsv);
 			} else {
 				const response = await fetch(url ,{
 					headers: {
@@ -600,7 +611,9 @@ https://github.com/cmliu/epeius
 	}
 }
 
-function subAddresses(host,pw,userAgent) {
+function subAddresses(host,pw,userAgent,newAddressesapi,newAddressescsv) {
+	addresses = addresses.concat(newAddressesapi);
+	addresses = addresses.concat(newAddressescsv);
 	// 使用Set对象去重
 	const uniqueAddresses = [...new Set(addresses)];
 				
@@ -638,7 +651,7 @@ function subAddresses(host,pw,userAgent) {
 		let 伪装域名 = host ;
 		let 最终路径 = '/?ed=2560' ;
 		let 节点备注 = '';
-		if(proxyhosts && (伪装域名.includes('.workers.dev') || 伪装域名.includes('pages.dev'))) {
+		if(proxyhosts.length > 0 && (伪装域名.includes('.workers.dev') || 伪装域名.includes('pages.dev'))) {
 			最终路径 = `/${伪装域名}${最终路径}`;
 			伪装域名 = proxyhosts[Math.floor(Math.random() * proxyhosts.length)];
 			节点备注 = ` 已启用临时域名中转服务，请尽快绑定自定义域！`;
@@ -657,4 +670,113 @@ function subAddresses(host,pw,userAgent) {
 	const base64Response = btoa(responseBody); // 重新进行 Base64 编码
 
 	return base64Response;
+}
+
+async function getAddressesapi(api) {
+	if (!api || api.length === 0) {
+		return [];
+	}
+
+	let newapi = "";
+
+	// 创建一个AbortController对象，用于控制fetch请求的取消
+	const controller = new AbortController();
+
+	const timeout = setTimeout(() => {
+		controller.abort(); // 取消所有请求
+	}, 2000); // 2秒后触发
+
+	try {
+		// 使用Promise.allSettled等待所有API请求完成，无论成功或失败
+		// 对api数组进行遍历，对每个API地址发起fetch请求
+		const responses = await Promise.allSettled(api.map(apiUrl => fetch(apiUrl, {
+			method: 'get', 
+			headers: {
+				'Accept': 'text/html,application/xhtml+xml,application/xml;',
+				'User-Agent': 'cmliu/WorkerTrojan2sub'
+			},
+			signal: controller.signal // 将AbortController的信号量添加到fetch请求中，以便于需要时可以取消请求
+		}).then(response => response.ok ? response.text() : Promise.reject())));
+
+		// 遍历所有响应
+		for (const response of responses) {
+			// 检查响应状态是否为'fulfilled'，即请求成功完成
+			if (response.status === 'fulfilled') {
+				// 获取响应的内容
+				const content = await response.value;
+				newapi += content + '\n';
+			}
+		}
+	} catch (error) {
+		console.error(error);
+	} finally {
+		// 无论成功或失败，最后都清除设置的超时定时器
+		clearTimeout(timeout);
+	}
+
+	const newAddressesapi = await ADD(newapi);
+
+	// 返回处理后的结果
+	return newAddressesapi;
+}
+
+async function getAddressescsv(tls) {
+	if (!addressescsv || addressescsv.length === 0) {
+		return [];
+	}
+	
+	let newAddressescsv = [];
+	
+	for (const csvUrl of addressescsv) {
+		try {
+			const response = await fetch(csvUrl);
+		
+			if (!response.ok) {
+				console.error('获取CSV地址时出错:', response.status, response.statusText);
+				continue;
+			}
+		
+			const text = await response.text();// 使用正确的字符编码解析文本内容
+			let lines;
+			if (text.includes('\r\n')){
+				lines = text.split('\r\n');
+			} else {
+				lines = text.split('\n');
+			}
+		
+			// 检查CSV头部是否包含必需字段
+			const header = lines[0].split(',');
+			const tlsIndex = header.indexOf('TLS');
+			const speedIndex = header.length - 1; // 最后一个字段
+		
+			const ipAddressIndex = 0;// IP地址在 CSV 头部的位置
+			const portIndex = 1;// 端口在 CSV 头部的位置
+			const dataCenterIndex = tlsIndex + 1; // 数据中心是 TLS 的后一个字段
+		
+			if (tlsIndex === -1) {
+				console.error('CSV文件缺少必需的字段');
+				continue;
+			}
+		
+			// 从第二行开始遍历CSV行
+			for (let i = 1; i < lines.length; i++) {
+				const columns = lines[i].split(',');
+		
+				// 检查TLS是否为"TRUE"且速度大于DLS
+				if (columns[tlsIndex].toUpperCase() === tls && parseFloat(columns[speedIndex]) > DLS) {
+					const ipAddress = columns[ipAddressIndex];
+					const port = columns[portIndex];
+					const dataCenter = columns[dataCenterIndex];
+			
+					const formattedAddress = `${ipAddress}:${port}#${dataCenter}`;
+					newAddressescsv.push(formattedAddress);
+				}
+			}
+		} catch (error) {
+			console.error('获取CSV地址时出错:', error);
+			continue;
+		}
+	}
+	
+	return newAddressescsv;
 }
