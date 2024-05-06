@@ -65,14 +65,14 @@ Telegram交流群：[@CMLiussss](https://t.me/CMLiussss)
 1. 部署 Cloudflare Pages：
    - 在 Github 上先 Fork 本项目，并点上 Star !!!
    - 在 Cloudflare Pages 控制台中选择 `连接到 Git`后，选中 `epeius`项目后点击 `开始设置`。
-   - 在 `设置构建和部署`页面下方，选择 `环境变量（高级）`后并 `添加变量`
+   - 在 `设置构建和部署`页面下方，选择 `环境变量（高级）`后并 `添加变量`，
      变量名称填写**PASSWORD**，值则为你的密码
-   - 打开 [SHA224 Hash Generator](https://www.atatus.com/tools/sha224-to-hash), 左侧输入`password`的值后点击`Convert`, 即可得到**密码的SHA224哈希值**
+   - 打开 [SHA224 Hash Generator](https://www.atatus.com/tools/sha224-to-hash), 左侧输入`password`的值后点击`Convert`, 即可得到**密码的SHA224哈希值**，
      变量名称填写**SHA224**，值则为你的**密码的SHA224哈希值**，后点击 `保存并部署`即可。
 
 2. 添加优选线路:
  - 添加变量 `ADD` 本地静态的优选线路，若不带端口号 TLS默认端口为443，#号后为备注别名，例如：
-   ```js
+   ```
    cf.090227.xyz:443#加入我的频道t.me/CMLiussss解锁更多优选节点
    time.is#你可以只放域名 如下
    www.visa.com.sg
@@ -86,16 +86,16 @@ Telegram交流群：[@CMLiussss](https://t.me/CMLiussss)
 
 3. 访问订阅内容：
    - 访问 `https://[YOUR-PAGES-URL]/[password]` 即可获取订阅内容。
-   - 例如 `https://edgetunnel.pages.dev/auto` 就是你的通用自适应订阅地址。
-   - 例如 `https://edgetunnel.pages.dev/auto?sub` Base64订阅格式，适用PassWall,SSR+等。
-   - 例如 `https://edgetunnel.pages.dev/auto?clash` Clash订阅格式，适用OpenClash等。
-   - 例如 `https://edgetunnel.pages.dev/auto?sb` singbox订阅格式，适用singbox等。
+   - 例如 `https://epeius.pages.dev/auto` 就是你的通用自适应订阅地址。
+   - 例如 `https://epeius.pages.dev/auto?sub` Base64订阅格式，适用PassWall,SSR+等。
+   - 例如 `https://epeius.pages.dev/auto?clash` Clash订阅格式，适用OpenClash等。
+   - 例如 `https://epeius.pages.dev/auto?sb` singbox订阅格式，适用singbox等。
 
 4. 给 Pages绑定 CNAME自定义域：
    - 在 Pages控制台的 `自定义域`选项卡，下方点击 `设置自定义域`。
    - 填入你的自定义次级域名，注意不要使用你的根域名，例如：
      您分配到的域名是 `fuck.cloudns.biz`，则添加自定义域填入 `lizi.fuck.cloudns.biz`即可；
-   - 按照 Cloudflare 的要求将返回你的域名DNS服务商，添加 该自定义域 `lizi`的 CNAME记录 `edgetunnel.pages.dev` 后，点击 `激活域`即可。
+   - 按照 Cloudflare 的要求将返回你的域名DNS服务商，添加 该自定义域 `lizi`的 CNAME记录 `epeius.pages.dev` 后，点击 `激活域`即可。
    
 ### 变量说明
 | 变量名 | 示例 | 备注 |
@@ -116,6 +116,9 @@ Telegram交流群：[@CMLiussss](https://t.me/CMLiussss)
 | RPROXYIP | false | 设为 true 即可强制获取订阅器分配的ProxyIP(需订阅器支持)|
 | URL302 | https://t.me/CMLiussss | 主页302跳转(支持多url, url之间使用`,`或 换行 作间隔, 小白别用) |
 | URL | https://t.me/CMLiussss | 主页伪装(支持多url, url之间使用`,`或 换行 作间隔, 乱设容易触发反诈) |
+
+## Star 星星走起
+[![Stargazers over time](https://starchart.cc/cmliu/epeius.svg?variant=adaptive)](https://starchart.cc/cmliu/epeius)
 
 # 感谢
 [ca110us](https://github.com/ca110us/epeius)、[zizifn](https://github.com/zizifn/edgetunnel)、[ACL4SSR](https://github.com/ACL4SSR/ACL4SSR/tree/master/Clash/config)、[SHIJS1999](https://github.com/SHIJS1999/cloudflare-worker-vless-ip)
