@@ -507,7 +507,8 @@ async function getTrojanConfig(password, hostName, sub, UA, RproxyIP, _url) {
 	const clash = Config[1];
 
 	if ( userAgent.includes('mozilla') && !subParams.some(_searchParams => _url.searchParams.has(_searchParams))) {
-		
+		let surge = `Surge订阅地址:\nhttps://${hostName}/${password}?surge`;
+		if (hostName.includes(".workers.dev") || hostName.includes(".pages.dev")) surge = "Surge订阅必须绑定自定义域";
 		return `
 ################################################################
 Subscribe / sub 订阅地址, 支持 Base64、clash-meta、sing-box 订阅格式, 您的订阅内容由 ${sub} 提供维护支持, 自动获取ProxyIP: ${RproxyIP}.
@@ -526,6 +527,8 @@ https://${hostName}/${password}?clash
 singbox订阅地址:
 https://${hostName}/${password}?sb
 https://${hostName}/${password}?singbox
+
+${surge}
 ---------------------------------------------------------------
 ################################################################
 v2ray
@@ -619,8 +622,10 @@ https://github.com/cmliu/epeius
 					}});
 				content = await response.text();
 			}
-
-			return revertFakeInfo(content, password, hostName, isBase64);
+			let 输出内容 = revertFakeInfo(content, password, hostName, isBase64);
+			if (userAgent.includes('surge') || _url.searchParams.has('surge')) 输出内容 = surge(输出内容, hostName);
+			//console.log(输出内容);
+			return 输出内容;
 		} catch (error) {
 			console.error('Error fetching content:', error);
 			return `Error fetching content: ${error.message}`;
@@ -819,4 +824,12 @@ async function getAddressescsv(tls) {
 	}
 	
 	return newAddressescsv;
+}
+
+function surge(content, host) {
+	const 备改内容 = `skip-cert-verify=true`;
+	const 正确内容 = `skip-cert-verify=true, ws=true, ws-path=/?ed=2560, ws-headers=Host:"${host}"`;
+	content = content.replace(new RegExp(备改内容, 'g'), 正确内容)
+
+	return content;
 }
