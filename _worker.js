@@ -18,7 +18,7 @@ let addresses = [
 ];
 
 let sub = '';// 'trojan.fxxk.dedyn.io' Trojan优选订阅生成器，可自行搭建 https://github.com/cmliu/WorkerTrojan2sub
-let subconverter = 'apiurl.v1.mk';// clash订阅转换后端，目前使用肥羊的订阅转换功能。自带虚假uuid和host订阅。
+let subconverter = 'apiurl.v1.mk';// clash订阅转换后端，目前使用肥羊的订阅转换功能。自带虚假节点信息防泄露
 let subconfig = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Mini.ini"; //订阅配置文件
 let RproxyIP = 'false';
 
@@ -26,12 +26,15 @@ let addressesapi = [];
 let addressescsv = [];
 let DLS = 8;
 
+let FileName = 'epeius';
+let BotToken ='';
+let ChatID =''; 
+let proxyhosts = [];//本地代理域名池
+let proxyhostsURL = 'https://raw.githubusercontent.com/cmliu/CFcdnVmess2sub/main/proxyhosts';//在线代理域名池URL
+
 let fakeUserID = generateUUID();
 let fakeHostName = generateRandomString();
 const regex = /^(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}|\[.*\]):?(\d+)?#?(.*)?$/;
-
-let proxyhosts = [];//本地代理域名池
-let proxyhostsURL = 'https://raw.githubusercontent.com/cmliu/CFcdnVmess2sub/main/proxyhosts';//在线代理域名池URL
 
 if (!isValidSHA224(sha224Password)) {
     throw new Error('sha224Password is not valid');
@@ -53,6 +56,8 @@ export default {
 			if (env.ADD) addresses = await ADD(env.ADD);
 			if (env.ADDAPI) addressesapi = await ADD(env.ADDAPI);
 			if (env.ADDCSV) addressescsv = await ADD(env.ADDCSV);
+			BotToken = env.TGTOKEN || BotToken;
+			ChatID = env.TGID || ChatID; 
 			sub = env.SUB || sub;
 			subconverter = env.SUBAPI || subconverter;
 			subconfig = env.SUBCONFIG || subconfig;
@@ -70,6 +75,7 @@ export default {
 					}
 					return new Response(JSON.stringify(request.cf, null, 4), { status: 200 });
 				case `/${password}`:
+					await sendMessage(`#获取订阅 ${FileName}`, request.headers.get('CF-Connecting-IP'), `UA: ${UA}</tg-spoiler>\n域名: ${url.hostname}\n<tg-spoiler>入口: ${url.pathname + url.search}</tg-spoiler>`);
 					const trojanConfig = await getTrojanConfig(password, request.headers.get('Host'), sub, UA, RproxyIP, url);
 					const now = Date.now();
 					//const timestamp = Math.floor(now / 1000);
@@ -90,7 +96,7 @@ export default {
 						return new Response(`${trojanConfig}`, {
 							status: 200,
 							headers: {
-								"Content-Disposition": "attachment; filename=edgetunnel; filename*=utf-8''epeius",
+								"Content-Disposition": `attachment; filename=${FileName}; filename*=utf-8''${FileName}`,
 								"Content-Type": "text/plain;charset=utf-8",
 								"Profile-Update-Interval": "6",
 								"Subscription-Userinfo": `upload=${UD}; download=${UD}; total=${24 * 1099511627776}; expire=${expire}`,
@@ -608,6 +614,29 @@ https://github.com/cmliu/epeius
 			console.error('Error fetching content:', error);
 			return `Error fetching content: ${error.message}`;
 		}
+	}
+}
+
+async function sendMessage(type, ip, add_data = "") {
+	if ( BotToken !== '' && ChatID !== ''){
+		let msg = "";
+		const response = await fetch(`http://ip-api.com/json/${ip}?lang=zh-CN`);
+		if (response.status == 200) {
+			const ipInfo = await response.json();
+			msg = `${type}\nIP: ${ip}\n国家: ${ipInfo.country}\n<tg-spoiler>城市: ${ipInfo.city}\n组织: ${ipInfo.org}\nASN: ${ipInfo.as}\n${add_data}`;
+		} else {
+			msg = `${type}\nIP: ${ip}\n<tg-spoiler>${add_data}`;
+		}
+	
+		let url = "https://api.telegram.org/bot"+ BotToken +"/sendMessage?chat_id=" + ChatID + "&parse_mode=HTML&text=" + encodeURIComponent(msg);
+		return fetch(url, {
+			method: 'get',
+			headers: {
+				'Accept': 'text/html,application/xhtml+xml,application/xml;',
+				'Accept-Encoding': 'gzip, deflate, br',
+				'User-Agent': 'Mozilla/5.0 Chrome/90.0.4430.72'
+			}
+		});
 	}
 }
 
