@@ -60,17 +60,59 @@ Telegram交流群：[@CMLiussss](https://t.me/CMLiussss)
 4. 给 workers绑定 自定义域： 
    - 在 workers控制台的 `触发器`选项卡，下方点击 `添加自定义域`。
    - 填入你已转入 CloudFlare 域名解析服务的次级域名，例如:`vless.google.com`后 点击`添加自定义域`，等待证书生效即可。
-  
+
+## Pages GitHub 部署方法
+1. 部署 Cloudflare Pages：
+   - 在 Github 上先 Fork 本项目，并点上 Star !!!
+   - 在 Cloudflare Pages 控制台中选择 `连接到 Git`后，选中 `epeius`项目后点击 `开始设置`。
+   - 在 `设置构建和部署`页面下方，选择 `环境变量（高级）`后并 `添加变量`
+     变量名称填写**PASSWORD**，值则为你的密码
+   - 打开 [SHA224 Hash Generator](https://www.atatus.com/tools/sha224-to-hash), 左侧输入`password`的值后点击`Convert`, 即可得到**密码的SHA224哈希值**
+     变量名称填写**SHA224**，值则为你的**密码的SHA224哈希值**，后点击 `保存并部署`即可。
+
+2. 添加优选线路:
+ - 添加变量 `ADD` 本地静态的优选线路，若不带端口号 TLS默认端口为443，#号后为备注别名，例如：
+   ```js
+   cf.090227.xyz:443#加入我的频道t.me/CMLiussss解锁更多优选节点
+   time.is#你可以只放域名 如下
+   www.visa.com.sg
+   skk.moe#也可以放域名带端口 如下
+   www.wto.org:8443
+   www.csgo.com:2087#节点名放在井号之后即可
+   icook.hk#若不带端口号默认端口为443
+   104.17.152.41#IP也可以
+   [2606:4700:e7:25:4b9:f8f8:9bfb:774a]#IPv6也OK
+   ```
+
+3. 访问订阅内容：
+   - 访问 `https://[YOUR-PAGES-URL]/[password]` 即可获取订阅内容。
+   - 例如 `https://edgetunnel.pages.dev/auto` 就是你的通用自适应订阅地址。
+   - 例如 `https://edgetunnel.pages.dev/auto?sub` Base64订阅格式，适用PassWall,SSR+等。
+   - 例如 `https://edgetunnel.pages.dev/auto?clash` Clash订阅格式，适用OpenClash等。
+   - 例如 `https://edgetunnel.pages.dev/auto?sb` singbox订阅格式，适用singbox等。
+
+4. 给 Pages绑定 CNAME自定义域：
+   - 在 Pages控制台的 `自定义域`选项卡，下方点击 `设置自定义域`。
+   - 填入你的自定义次级域名，注意不要使用你的根域名，例如：
+     您分配到的域名是 `fuck.cloudns.biz`，则添加自定义域填入 `lizi.fuck.cloudns.biz`即可；
+   - 按照 Cloudflare 的要求将返回你的域名DNS服务商，添加 该自定义域 `lizi`的 CNAME记录 `edgetunnel.pages.dev` 后，点击 `激活域`即可。
+   
 ### 变量说明
 | 变量名 | 示例 | 备注 |
 |--------|---------|-----|
 | PASSWORD | auto | 可以取任意值 |
-| SHA224PASS | 10f9b41e385c211fdcdd92491cf3068d036618b61602807abb06316d | PASSWORD对应的SHA224哈希值 |
+| SHA224 | 10f9b41e385c211fdcdd92491cf3068d036618b61602807abb06316d | PASSWORD对应的SHA224哈希值 |
 | PROXYIP | proxyip.fxxk.dedyn.io | 作为访问CloudFlareCDN站点的代理节点(支持多ProxyIP, ProxyIP之间使用`,`或 换行 作间隔) |
 | ADD | www.csgo.com:2087,icook.hk | 本地优选域名/优选IP(支持多元素之间`,`或 换行 作间隔) |
+| ADDAPI |  | 不解释, 懂得都懂 |
+| ADDCSV |  | 不解释, 懂得都懂 |
+| DLS | 8 | 不解释, 懂得都懂 | 
+| TGTOKEN | 6894123456:XXXXXXXXXX0qExVsBPUhHDAbXXXXXqWXgBA | 发送TG通知的机器人token | 
+| TGID | 6946912345 | 接收TG通知的账户数字ID | 
 | SUB | trojan.fxxk.dedyn.io | 内建域名、IP节点信息的优选订阅生成器地址 |
 | SUBAPI | apiurl.v1.mk | clash、singbox等 订阅转换后端 |
 | SUBCONFIG | [https://raw.github.../ACL4SSR_Online_Mini.ini](https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Mini.ini) | clash、singbox等 订阅转换配置文件 |
+| SUBNAME | epeius | 订阅名称 | 
 | RPROXYIP | false | 设为 true 即可强制获取订阅器分配的ProxyIP(需订阅器支持)|
 | URL302 | https://t.me/CMLiussss | 主页302跳转(支持多url, url之间使用`,`或 换行 作间隔, 小白别用) |
 | URL | https://t.me/CMLiussss | 主页伪装(支持多url, url之间使用`,`或 换行 作间隔, 乱设容易触发反诈) |
