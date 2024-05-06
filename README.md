@@ -109,7 +109,7 @@ Telegram交流群：[@CMLiussss](https://t.me/CMLiussss)
 | DLS | 8 | 不解释, 懂得都懂 | 
 | TGTOKEN | 6894123456:XXXXXXXXXX0qExVsBPUhHDAbXXXXXqWXgBA | 发送TG通知的机器人token | 
 | TGID | 6946912345 | 接收TG通知的账户数字ID | 
-| SUB | trojan.fxxk.dedyn.io | 内建域名、IP节点信息的优选订阅生成器地址 |
+| SUB | trojan.fxxk.dedyn.io | 优选订阅生成器地址(使用订阅器将放弃`ADD`内的本地优选订阅内容) |
 | SUBAPI | apiurl.v1.mk | clash、singbox等 订阅转换后端 |
 | SUBCONFIG | [https://raw.github.../ACL4SSR_Online_Mini.ini](https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Mini.ini) | clash、singbox等 订阅转换配置文件 |
 | SUBNAME | epeius | 订阅名称 | 
