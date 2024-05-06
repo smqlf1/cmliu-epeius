@@ -31,8 +31,6 @@ Telegram交流群：[@CMLiussss](https://t.me/CMLiussss)
    - 在 Cloudflare Worker 控制台中创建一个新的 Worker。
    - 将 [worker.js](https://github.com/cmliu/epeius/blob/main/_worker.js) 的内容粘贴到 Worker 编辑器中。
    - 将第 3 行 `password` 修改成你自己的 **密码**
-   - 打开 [SHA224 Hash Generator](https://www.atatus.com/tools/sha224-to-hash), 左侧输入`password`的值后点击`Convert`, 即可得到**密码的SHA224哈希值**
-   - 将第 4 行 `sha224Password` 修改成你自己的 **密码的SHA224哈希值**
 
 2. 添加优选线路:
    - 给 `addresses` 按格式添加优选域名/优选IP，若不带端口号 TLS默认端口为443，#号后为备注别名，例如：
@@ -66,9 +64,7 @@ Telegram交流群：[@CMLiussss](https://t.me/CMLiussss)
    - 在 Github 上先 Fork 本项目，并点上 Star !!!
    - 在 Cloudflare Pages 控制台中选择 `连接到 Git`后，选中 `epeius`项目后点击 `开始设置`。
    - 在 `设置构建和部署`页面下方，选择 `环境变量（高级）`后并 `添加变量`，
-     变量名称填写**PASSWORD**，值则为你的密码
-   - 打开 [SHA224 Hash Generator](https://www.atatus.com/tools/sha224-to-hash), 左侧输入`password`的值后点击`Convert`, 即可得到**密码的SHA224哈希值**，
-     变量名称填写**SHA224**，值则为你的**密码的SHA224哈希值**，后点击 `保存并部署`即可。
+     变量名称填写**PASSWORD**，值则为你的密码，后点击 `保存并部署`即可。
 
 2. 添加优选线路:
  - 添加变量 `ADD` 本地静态的优选线路，若不带端口号 TLS默认端口为443，#号后为备注别名，例如：
@@ -101,7 +97,6 @@ Telegram交流群：[@CMLiussss](https://t.me/CMLiussss)
 | 变量名 | 示例 | 备注 |
 |--------|---------|-----|
 | PASSWORD | auto | 可以取任意值 |
-| SHA224 | 10f9b41e385c211fdcdd92491cf3068d036618b61602807abb06316d | PASSWORD对应的SHA224哈希值 |
 | PROXYIP | proxyip.fxxk.dedyn.io | 作为访问CloudFlareCDN站点的代理节点(支持多ProxyIP, ProxyIP之间使用`,`或 换行 作间隔) |
 | ADD | www.csgo.com:2087,icook.hk | 本地优选域名/优选IP(支持多元素之间`,`或 换行 作间隔) |
 | ADDAPI |  | 不解释, 懂得都懂 |
@@ -121,4 +116,4 @@ Telegram交流群：[@CMLiussss](https://t.me/CMLiussss)
 [![Stargazers over time](https://starchart.cc/cmliu/epeius.svg?variant=adaptive)](https://starchart.cc/cmliu/epeius)
 
 # 感谢
-[ca110us](https://github.com/ca110us/epeius)、[zizifn](https://github.com/zizifn/edgetunnel)、[ACL4SSR](https://github.com/ACL4SSR/ACL4SSR/tree/master/Clash/config)、[SHIJS1999](https://github.com/SHIJS1999/cloudflare-worker-vless-ip)
+[ca110us](https://github.com/ca110us/epeius)、[3Kmfi6HP](https://github.com/3Kmfi6HP/EDtunnel/tree/trojan)、[zizifn](https://github.com/zizifn/edgetunnel)、[emn178](https://github.com/emn178/js-sha256)、[ACL4SSR](https://github.com/ACL4SSR/ACL4SSR/tree/master/Clash/config)、[SHIJS1999](https://github.com/SHIJS1999/cloudflare-worker-vless-ip)、
