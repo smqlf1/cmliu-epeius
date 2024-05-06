@@ -584,7 +584,7 @@ https://github.com/cmliu/epeius
 		const newAddressesapi = await getAddressesapi(addressesapi);
 		const newAddressescsv = await getAddressescsv('TRUE');
 
-		let url = `https://${sub}/sub?host=${fakeHostName}&pw=${fakeUserID}&epeius=cmliu&proxyip=${RproxyIP}`;
+		let url = `https://${sub}/sub?host=${fakeHostName}&pw=${fakeUserID}&password=${fakeUserID}&epeius=cmliu&proxyip=${RproxyIP}`;
 		let isBase64 = true;
 
 		if (!sub || sub == ""){
