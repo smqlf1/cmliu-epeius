@@ -56,11 +56,13 @@ export default {
 			if (env.ADD) addresses = await ADD(env.ADD);
 			if (env.ADDAPI) addressesapi = await ADD(env.ADDAPI);
 			if (env.ADDCSV) addressescsv = await ADD(env.ADDCSV);
+			DLS = env.DLS || DLS;
 			BotToken = env.TGTOKEN || BotToken;
 			ChatID = env.TGID || ChatID; 
 			sub = env.SUB || sub;
 			subconverter = env.SUBAPI || subconverter;
 			subconfig = env.SUBCONFIG || subconfig;
+			FileName = env.SUBNAME || FileName;
 			RproxyIP = env.RPROXYIP || !proxyIP ? 'true' : 'false';
 
 			if (!upgradeHeader || upgradeHeader !== "websocket") {
