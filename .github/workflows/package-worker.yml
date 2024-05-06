@@ -1,0 +1,26 @@
+name: Package Worker # 工作流程的名称
+
+on: # 触发事件
+  workflow_dispatch:  # 手动触发
+  push: # 当代码被推送到仓库时触发
+    paths: # 指定触发条件的文件路径
+      - '_worker.js' # 当_worker.js文件发生变动时触发
+
+jobs: # 工作流程中的任务
+  package-and-commit: # 任务名称
+    runs-on: ubuntu-latest # 运行环境，这里使用最新版本的Ubuntu
+    steps: # 任务步骤
+    - name: Checkout Repository # 步骤名称，检出代码
+      uses: actions/checkout@v2 # 使用actions/checkout动作
+
+    - name: Zip the worker file # 将_worker.js文件打包成worker.zip
+      run: zip worker.zip _worker.js # 使用zip命令直接打包
+
+    - name: Commit and push the packaged file # 提交并推送打包后的文件
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add worker.zip
+        git commit -m "Automatically package and commit worker.zip"
+        git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{github.repository}}.git
+        git push
