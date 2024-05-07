@@ -631,7 +631,7 @@ https://github.com/cmliu/epeius
 			} else {
 				const response = await fetch(url ,{
 					headers: {
-						'User-Agent': `${UA} CF-Workers-epeius/cmliu`
+						'User-Agent': `CF-Workers-epeius/cmliu`
 					}});
 				content = await response.text();
 			}
@@ -840,8 +840,8 @@ async function getAddressescsv(tls) {
 }
 
 function surge(content, host) {
-	const 备改内容 = `skip-cert-verify=true`;
-	const 正确内容 = `skip-cert-verify=true, ws=true, ws-path=/?ed=2560, ws-headers=Host:"${host}"`;
+	const 备改内容 = `skip-cert-verify=true, tfo=false, udp-relay=false`;
+	const 正确内容 = `skip-cert-verify=true, ws=true, ws-path=/?ed=2560, ws-headers=Host:"${host}", tfo=false, udp-relay=false`;
 	content = content.replace(new RegExp(备改内容, 'g'), 正确内容)
 
 	return content;
