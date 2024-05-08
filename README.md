@@ -26,7 +26,7 @@ Telegram交流群：[@CMLiussss](https://t.me/CMLiussss)
 - 通过提交虚假的节点配置给订阅服务，避免节点配置信息泄露。
 - 另外，您也可以选择自行部署 [WorkerTrojan2sub 订阅生成服务](https://github.com/cmliu/WorkerTrojan2sub)，这样既可以利用订阅生成器的便利。
 
-## Workers 部署方法
+## Workers 部署方法 [视频教程](https://youtu.be/MBlAqYajVSY)
 1. 部署 Cloudflare Worker：
    - 在 Cloudflare Worker 控制台中创建一个新的 Worker。
    - 将 [worker.js](https://github.com/cmliu/epeius/blob/main/_worker.js) 的内容粘贴到 Worker 编辑器中。
@@ -40,7 +40,7 @@ Telegram交流群：[@CMLiussss](https://t.me/CMLiussss)
      	'www.visa.com.sg#官方优选域名',
      	'www.wto.org:8443#官方优选域名',
      	'www.csgo.com:2087',
-			'icook.hk',
+     	'icook.hk',
      ];
      ```
    - 或 给 `sub` 添加 **Trojan优选订阅生成器** 地址，例如：
@@ -58,6 +58,42 @@ Telegram交流群：[@CMLiussss](https://t.me/CMLiussss)
 4. 给 workers绑定 自定义域： 
    - 在 workers控制台的 `触发器`选项卡，下方点击 `添加自定义域`。
    - 填入你已转入 CloudFlare 域名解析服务的次级域名，例如:`vless.google.com`后 点击`添加自定义域`，等待证书生效即可。
+
+## Pages 上传 部署方法
+1. 部署 Cloudflare Pages：
+   - 下载 [worker.zip](https://raw.githubusercontent.com/cmliu/epeius/main/worker.zip) 文件，并点上 Star !!!
+   - 在 Cloudflare Pages 控制台中选择 `上传资产`后，为你的项目取名后点击 `创建项目`，然后上传你下载好的 [worker.zip](https://raw.githubusercontent.com/cmliu/epeius/main/worker.zip) 文件后点击 `部署站点`。
+   - 部署完成后点击 `继续处理站点` 后，选择 `设置` > `环境变量` > **制作**为生产环境定义变量 > `添加变量`。
+     变量名称填写**PASSWORD**，值则为你的密码，后点击 `保存`即可。
+   - 返回 `部署` 选项卡，在右下角点击 `创建新部署` 后，重新上传 [worker.zip](https://raw.githubusercontent.com/cmliu/epeius/main/worker.zip) 文件后点击 `保存并部署` 即可。
+
+2. 添加优选线路:
+ - 添加变量 `ADD` 本地静态的优选线路，若不带端口号 TLS默认端口为443，#号后为备注别名，例如：
+   ```
+   cf.090227.xyz:443#加入我的频道t.me/CMLiussss解锁更多优选节点
+   time.is#你可以只放域名 如下
+   www.visa.com.sg
+   skk.moe#也可以放域名带端口 如下
+   www.wto.org:8443
+   www.csgo.com:2087#节点名放在井号之后即可
+   icook.hk#若不带端口号默认端口为443
+   104.17.152.41#IP也可以
+   [2606:4700:e7:25:4b9:f8f8:9bfb:774a]#IPv6也OK
+   ```
+
+3. 访问订阅内容：
+   - 访问 `https://[YOUR-PAGES-URL]/[password]` 即可获取订阅内容。
+   - 例如 `https://epeius.pages.dev/auto` 就是你的通用自适应订阅地址。
+   - 例如 `https://epeius.pages.dev/auto?sub` Base64订阅格式，适用PassWall,SSR+等。
+   - 例如 `https://epeius.pages.dev/auto?clash` Clash订阅格式，适用OpenClash等。
+   - 例如 `https://epeius.pages.dev/auto?sb` singbox订阅格式，适用singbox等。
+   - 例如 `https://epeius.pages.dev/auto?surge` surge订阅格式，适用surge 4/5。
+
+4. 给 Pages绑定 CNAME自定义域：
+   - 在 Pages控制台的 `自定义域`选项卡，下方点击 `设置自定义域`。
+   - 填入你的自定义次级域名，注意不要使用你的根域名，例如：
+     您分配到的域名是 `fuck.cloudns.biz`，则添加自定义域填入 `lizi.fuck.cloudns.biz`即可；
+   - 按照 Cloudflare 的要求将返回你的域名DNS服务商，添加 该自定义域 `lizi`的 CNAME记录 `epeius.pages.dev` 后，点击 `激活域`即可。
 
 ## Pages GitHub 部署方法
 1. 部署 Cloudflare Pages：
@@ -86,6 +122,7 @@ Telegram交流群：[@CMLiussss](https://t.me/CMLiussss)
    - 例如 `https://epeius.pages.dev/auto?sub` Base64订阅格式，适用PassWall,SSR+等。
    - 例如 `https://epeius.pages.dev/auto?clash` Clash订阅格式，适用OpenClash等。
    - 例如 `https://epeius.pages.dev/auto?sb` singbox订阅格式，适用singbox等。
+   - 例如 `https://epeius.pages.dev/auto?surge` surge订阅格式，适用surge 4/5。
 
 4. 给 Pages绑定 CNAME自定义域：
    - 在 Pages控制台的 `自定义域`选项卡，下方点击 `设置自定义域`。
