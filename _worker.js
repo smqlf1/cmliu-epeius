@@ -30,7 +30,828 @@ let BotToken ='';
 let ChatID =''; 
 let proxyhosts = [];//本地代理域名池
 let proxyhostsURL = 'https://raw.githubusercontent.com/cmliu/CFcdnVmess2sub/main/proxyhosts';//在线代理域名池URL
-const _0xd6cb97=_0x4498;(function(_0x95d7df,_0x5d07c7){const _0x35c7aa=_0x4498,_0x5e1b23=_0x95d7df();while(!![]){try{const _0x2715cc=parseInt(_0x35c7aa(0x1e6))/0x1*(parseInt(_0x35c7aa(0x1b3))/0x2)+parseInt(_0x35c7aa(0x223))/0x3*(parseInt(_0x35c7aa(0x1fc))/0x4)+parseInt(_0x35c7aa(0x195))/0x5*(parseInt(_0x35c7aa(0x246))/0x6)+-parseInt(_0x35c7aa(0x186))/0x7*(parseInt(_0x35c7aa(0x1ed))/0x8)+-parseInt(_0x35c7aa(0x188))/0x9*(parseInt(_0x35c7aa(0x1ce))/0xa)+-parseInt(_0x35c7aa(0x1d5))/0xb*(-parseInt(_0x35c7aa(0x213))/0xc)+-parseInt(_0x35c7aa(0x179))/0xd*(parseInt(_0x35c7aa(0x1ff))/0xe);if(_0x2715cc===_0x5d07c7)break;else _0x5e1b23['push'](_0x5e1b23['shift']());}catch(_0x2257dd){_0x5e1b23['push'](_0x5e1b23['shift']());}}}(_0x1892,0x82729));let fakeUserID=generateUUID(),fakeHostName=generateRandomString(),proxyIPs,sha224Password;const regex=/^(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}|\[.*\]):?(\d+)?#?(.*)?$/;export default{async 'fetch'(_0xad9c49,_0x4b2ec4,_0x42edca){const _0xcd78dd=_0x4498;try{const _0x3d7056=_0xad9c49[_0xcd78dd(0x191)]['get'](_0xcd78dd(0x26d))||'null',_0x4ca23f=_0x3d7056[_0xcd78dd(0x1a9)]();proxyIP=_0x4b2ec4[_0xcd78dd(0x194)]||proxyIP,proxyIPs=await ADD(proxyIP),proxyIP=proxyIPs[Math[_0xcd78dd(0x251)](Math[_0xcd78dd(0x1c6)]()*proxyIPs[_0xcd78dd(0x235)])],password=_0x4b2ec4[_0xcd78dd(0x1d7)]||password,sha224Password=_0x4b2ec4[_0xcd78dd(0x21c)]||_0x4b2ec4['SHA224PASS']||sha256[_0xcd78dd(0x1c1)](password);const _0x38fae1=new URL(_0xad9c49[_0xcd78dd(0x19c)]),_0x58f176=_0xad9c49['headers'][_0xcd78dd(0x16f)](_0xcd78dd(0x193));if(_0x4b2ec4['ADD'])addresses=await ADD(_0x4b2ec4['ADD']);if(_0x4b2ec4['ADDAPI'])addressesapi=await ADD(_0x4b2ec4[_0xcd78dd(0x1f5)]);if(_0x4b2ec4[_0xcd78dd(0x19a)])addressescsv=await ADD(_0x4b2ec4[_0xcd78dd(0x19a)]);DLS=_0x4b2ec4[_0xcd78dd(0x26c)]||DLS,BotToken=_0x4b2ec4['TGTOKEN']||BotToken,ChatID=_0x4b2ec4[_0xcd78dd(0x258)]||ChatID,sub=_0x4b2ec4['SUB']||sub,subconverter=_0x4b2ec4[_0xcd78dd(0x1e7)]||subconverter,subconfig=_0x4b2ec4[_0xcd78dd(0x212)]||subconfig,FileName=_0x4b2ec4[_0xcd78dd(0x1d0)]||FileName,RproxyIP=_0x4b2ec4[_0xcd78dd(0x170)]||!proxyIP?_0xcd78dd(0x25e):_0xcd78dd(0x250);if(!_0x58f176||_0x58f176!==_0xcd78dd(0x1bc))switch(_0x38fae1[_0xcd78dd(0x254)]){case'/':const _0x20098d=_0x4b2ec4['URL302']?_0xcd78dd(0x26e):_0x4b2ec4[_0xcd78dd(0x22a)]?_0xcd78dd(0x22a):null;if(_0x20098d){const _0x1337a8=await ADD(_0x4b2ec4[_0x20098d]),_0x22ea38=_0x1337a8[Math[_0xcd78dd(0x251)](Math[_0xcd78dd(0x1c6)]()*_0x1337a8[_0xcd78dd(0x235)])];return _0x20098d===_0xcd78dd(0x26e)?Response[_0xcd78dd(0x24c)](_0x22ea38,0x12e):fetch(new Request(_0x22ea38,_0xad9c49));}return new Response(JSON['stringify'](_0xad9c49['cf'],null,0x4),{'status':0xc8});case'/'+password:await sendMessage('#获取订阅\x20'+FileName,_0xad9c49[_0xcd78dd(0x191)][_0xcd78dd(0x16f)](_0xcd78dd(0x19b)),_0xcd78dd(0x21b)+_0x3d7056+_0xcd78dd(0x204)+_0x38fae1[_0xcd78dd(0x222)]+_0xcd78dd(0x1ef)+(_0x38fae1['pathname']+_0x38fae1[_0xcd78dd(0x21e)])+_0xcd78dd(0x22e));const _0x38ef1d=await getTrojanConfig(password,_0xad9c49['headers']['get'](_0xcd78dd(0x183)),sub,_0x3d7056,RproxyIP,_0x38fae1),_0x5c46e0=Date[_0xcd78dd(0x226)](),_0x308de3=0xf4849500,_0x25ced0=new Date(_0x5c46e0);_0x25ced0['setHours'](0x0,0x0,0x0,0x0);const _0x3f081f=Math[_0xcd78dd(0x251)]((_0x5c46e0-_0x25ced0[_0xcd78dd(0x224)]())/0x5265c00*0x18*0x10000000000/0x2);return _0x4ca23f&&(_0x4ca23f[_0xcd78dd(0x1bb)](_0xcd78dd(0x1f2))||_0x4ca23f[_0xcd78dd(0x1bb)](_0xcd78dd(0x1fd)))?new Response(''+_0x38ef1d,{'status':0xc8,'headers':{'Content-Type':_0xcd78dd(0x218),'Profile-Update-Interval':'6','Subscription-Userinfo':_0xcd78dd(0x1ca)+_0x3f081f+_0xcd78dd(0x23c)+_0x3f081f+_0xcd78dd(0x262)+0x18*0x10000000000+';\x20expire='+_0x308de3}}):new Response(''+_0x38ef1d,{'status':0xc8,'headers':{'Content-Disposition':_0xcd78dd(0x20c)+FileName+';\x20filename*=utf-8\x27\x27'+FileName,'Content-Type':_0xcd78dd(0x218),'Profile-Update-Interval':'6','Subscription-Userinfo':'upload='+_0x3f081f+';\x20download='+_0x3f081f+_0xcd78dd(0x262)+0x18*0x10000000000+_0xcd78dd(0x175)+_0x308de3}});default:return new Response(_0xcd78dd(0x1d9),{'status':0x194});}else{proxyIP=_0x38fae1['searchParams']['get'](_0xcd78dd(0x20b))||proxyIP;if(new RegExp(_0xcd78dd(0x17d),'i')[_0xcd78dd(0x1d4)](_0x38fae1[_0xcd78dd(0x254)]))proxyIP=_0x38fae1[_0xcd78dd(0x254)][_0xcd78dd(0x1a9)]()['split'](_0xcd78dd(0x17d))[0x1];else{if(new RegExp('/proxyip.','i')['test'](_0x38fae1['pathname']))proxyIP=_0xcd78dd(0x26b)+_0x38fae1[_0xcd78dd(0x254)]['toLowerCase']()['split'](_0xcd78dd(0x219))[0x1];else{if(!proxyIP||proxyIP=='')proxyIP='proxyip.fxxk.dedyn.io';}}return await trojanOverWSHandler(_0xad9c49);}}catch(_0x470cd9){let _0x141603=_0x470cd9;return new Response(_0x141603[_0xcd78dd(0x231)]());}}};async function trojanOverWSHandler(_0x31c29c){const _0x34052a=_0x4498,_0xc9141b=new WebSocketPair(),[_0x339c46,_0x26a924]=Object['values'](_0xc9141b);_0x26a924[_0x34052a(0x257)]();let _0x5a528e='',_0x4f3573='';const _0x33e8f8=(_0x1f6c7d,_0x44df21)=>{console['log']('['+_0x5a528e+':'+_0x4f3573+']\x20'+_0x1f6c7d,_0x44df21||'');},_0x53292f=_0x31c29c[_0x34052a(0x191)][_0x34052a(0x16f)](_0x34052a(0x18d))||'',_0x132b4a=makeReadableWebSocketStream(_0x26a924,_0x53292f,_0x33e8f8);let _0x32d5d9={'value':null},_0x4ea853=null;return _0x132b4a[_0x34052a(0x1c2)](new WritableStream({async 'write'(_0x314fe2,_0x333d08){const _0x12b8ea=_0x34052a;if(_0x4ea853)return _0x4ea853(_0x314fe2);if(_0x32d5d9['value']){const _0x34590a=_0x32d5d9['value']['writable'][_0x12b8ea(0x17c)]();await _0x34590a[_0x12b8ea(0x23a)](_0x314fe2),_0x34590a[_0x12b8ea(0x1d8)]();return;}const {hasError:_0x54855c,message:_0x10b6d4,portRemote:portRemote=0x1bb,addressRemote:addressRemote='',rawClientData:_0x2e882c}=await parseTrojanHeader(_0x314fe2);_0x5a528e=addressRemote,_0x4f3573=portRemote+'--'+Math['random']()+'\x20tcp';if(_0x54855c){throw new Error(_0x10b6d4);return;}handleTCPOutBound(_0x32d5d9,addressRemote,portRemote,_0x2e882c,_0x26a924,_0x33e8f8);},'close'(){const _0x4994c4=_0x34052a;_0x33e8f8(_0x4994c4(0x1af));},'abort'(_0x6cfcce){const _0x5cba76=_0x34052a;_0x33e8f8('readableWebSocketStream\x20is\x20aborted',JSON[_0x5cba76(0x241)](_0x6cfcce));}}))[_0x34052a(0x189)](_0x276e3a=>{_0x33e8f8('readableWebSocketStream\x20pipeTo\x20error',_0x276e3a);}),new Response(null,{'status':0x65,'webSocket':_0x339c46});}async function parseTrojanHeader(_0x311c64){const _0x4d94f1=_0x4498;if(_0x311c64[_0x4d94f1(0x205)]<0x38)return{'hasError':!![],'message':_0x4d94f1(0x267)};let _0x2d1586=0x38;if(new Uint8Array(_0x311c64[_0x4d94f1(0x232)](0x38,0x39))[0x0]!==0xd||new Uint8Array(_0x311c64[_0x4d94f1(0x232)](0x39,0x3a))[0x0]!==0xa)return{'hasError':!![],'message':'invalid\x20header\x20format\x20(missing\x20CR\x20LF)'};const _0x5b16f8=new TextDecoder()[_0x4d94f1(0x243)](_0x311c64[_0x4d94f1(0x232)](0x0,_0x2d1586));if(_0x5b16f8!==sha224Password)return{'hasError':!![],'message':_0x4d94f1(0x1c4)};const _0xf5bdce=_0x311c64['slice'](_0x2d1586+0x2);if(_0xf5bdce['byteLength']<0x6)return{'hasError':!![],'message':_0x4d94f1(0x1de)};const _0x1252bc=new DataView(_0xf5bdce),_0x24685e=_0x1252bc[_0x4d94f1(0x1df)](0x0);if(_0x24685e!==0x1)return{'hasError':!![],'message':_0x4d94f1(0x1f4)};const _0x4c7330=_0x1252bc[_0x4d94f1(0x1df)](0x1);let _0xd8a322=0x0,_0x4ed08d=0x2,_0x31dfb4='';switch(_0x4c7330){case 0x1:_0xd8a322=0x4,_0x31dfb4=new Uint8Array(_0xf5bdce[_0x4d94f1(0x232)](_0x4ed08d,_0x4ed08d+_0xd8a322))[_0x4d94f1(0x17a)]('.');break;case 0x3:_0xd8a322=new Uint8Array(_0xf5bdce[_0x4d94f1(0x232)](_0x4ed08d,_0x4ed08d+0x1))[0x0],_0x4ed08d+=0x1,_0x31dfb4=new TextDecoder()[_0x4d94f1(0x243)](_0xf5bdce[_0x4d94f1(0x232)](_0x4ed08d,_0x4ed08d+_0xd8a322));break;case 0x4:_0xd8a322=0x10;const _0x27cda3=new DataView(_0xf5bdce[_0x4d94f1(0x232)](_0x4ed08d,_0x4ed08d+_0xd8a322)),_0x41a67f=[];for(let _0x15d487=0x0;_0x15d487<0x8;_0x15d487++){_0x41a67f[_0x4d94f1(0x26a)](_0x27cda3[_0x4d94f1(0x260)](_0x15d487*0x2)['toString'](0x10));}_0x31dfb4=_0x41a67f['join'](':');break;default:return{'hasError':!![],'message':_0x4d94f1(0x259)+_0x4c7330};}if(!_0x31dfb4)return{'hasError':!![],'message':'address\x20is\x20empty,\x20addressType\x20is\x20'+_0x4c7330};const _0x312df9=_0x4ed08d+_0xd8a322,_0x224af5=_0xf5bdce[_0x4d94f1(0x232)](_0x312df9,_0x312df9+0x2),_0x581d09=new DataView(_0x224af5)['getUint16'](0x0);return{'hasError':![],'addressRemote':_0x31dfb4,'portRemote':_0x581d09,'rawClientData':_0xf5bdce[_0x4d94f1(0x232)](_0x312df9+0x4)};}async function handleTCPOutBound(_0x58d733,_0x4558fc,_0x39dc52,_0x1461b3,_0x261a92,_0x124526){async function _0x49a0eb(_0x365444,_0x3bd03b){const _0x12050d=_0x4498,_0x10c662=connect({'hostname':_0x365444,'port':_0x3bd03b});_0x58d733[_0x12050d(0x238)]=_0x10c662,_0x124526(_0x12050d(0x242)+_0x365444+':'+_0x3bd03b);const _0x2d9011=_0x10c662[_0x12050d(0x1fa)][_0x12050d(0x17c)]();return await _0x2d9011[_0x12050d(0x23a)](_0x1461b3),_0x2d9011[_0x12050d(0x1d8)](),_0x10c662;}async function _0x28a1aa(){const _0x34e8f8=_0x4498,_0x32ccf6=await _0x49a0eb(proxyIP||_0x4558fc,_0x39dc52);_0x32ccf6[_0x34e8f8(0x24a)][_0x34e8f8(0x189)](_0x52aefe=>{const _0x1b0e71=_0x34e8f8;console['log'](_0x1b0e71(0x25c),_0x52aefe);})[_0x34e8f8(0x174)](()=>{safeCloseWebSocket(_0x261a92);}),remoteSocketToWS(_0x32ccf6,_0x261a92,null,_0x124526);}const _0x4cd369=await _0x49a0eb(_0x4558fc,_0x39dc52);remoteSocketToWS(_0x4cd369,_0x261a92,_0x28a1aa,_0x124526);}function makeReadableWebSocketStream(_0x448c60,_0x3f52fb,_0xe57f82){let _0x366843=![];const _0x2d853c=new ReadableStream({'start'(_0x224c91){const _0x332d31=_0x4498;_0x448c60[_0x332d31(0x1f7)](_0x332d31(0x1b5),_0x486475=>{const _0x3f1913=_0x332d31;if(_0x366843)return;const _0x42193c=_0x486475[_0x3f1913(0x173)];_0x224c91[_0x3f1913(0x1a2)](_0x42193c);}),_0x448c60[_0x332d31(0x1f7)](_0x332d31(0x190),()=>{const _0x441248=_0x332d31;safeCloseWebSocket(_0x448c60);if(_0x366843)return;_0x224c91[_0x441248(0x190)]();}),_0x448c60['addEventListener'](_0x332d31(0x1bf),_0x5a612c=>{const _0xb624ad=_0x332d31;_0xe57f82(_0xb624ad(0x216)),_0x224c91['error'](_0x5a612c);});const {earlyData:_0x479cc5,error:_0x19e886}=base64ToArrayBuffer(_0x3f52fb);if(_0x19e886)_0x224c91[_0x332d31(0x1bf)](_0x19e886);else _0x479cc5&&_0x224c91[_0x332d31(0x1a2)](_0x479cc5);},'pull'(_0x1fd986){},'cancel'(_0x1efdee){if(_0x366843)return;_0xe57f82('readableStream\x20was\x20canceled,\x20due\x20to\x20'+_0x1efdee),_0x366843=!![],safeCloseWebSocket(_0x448c60);}});return _0x2d853c;}async function remoteSocketToWS(_0x4e798f,_0x5edec4,_0x131374,_0x5168bd){const _0x3b1111=_0x4498;let _0x1efeaf=![];await _0x4e798f[_0x3b1111(0x203)]['pipeTo'](new WritableStream({'start'(){},async 'write'(_0x435492,_0x51b441){const _0x59dbf2=_0x3b1111;_0x1efeaf=!![],_0x5edec4[_0x59dbf2(0x22f)]!==WS_READY_STATE_OPEN&&_0x51b441[_0x59dbf2(0x1bf)](_0x59dbf2(0x1ab)),_0x5edec4[_0x59dbf2(0x180)](_0x435492);},'close'(){const _0x2493b2=_0x3b1111;_0x5168bd(_0x2493b2(0x19d)+_0x1efeaf);},'abort'(_0x559669){const _0x3ebeb8=_0x3b1111;console[_0x3ebeb8(0x1bf)]('remoteSocket.readable\x20abort',_0x559669);}}))[_0x3b1111(0x189)](_0x47ba27=>{const _0x364550=_0x3b1111;console[_0x364550(0x1bf)]('remoteSocketToWS\x20error:',_0x47ba27[_0x364550(0x23d)]||_0x47ba27),safeCloseWebSocket(_0x5edec4);}),_0x1efeaf===![]&&_0x131374&&(_0x5168bd(_0x3b1111(0x199)),_0x131374());}function base64ToArrayBuffer(_0x525a6e){const _0x5be3d6=_0x4498;if(!_0x525a6e)return{'error':null};try{_0x525a6e=_0x525a6e[_0x5be3d6(0x265)](/-/g,'+')['replace'](/_/g,'/');const _0x5dc52b=atob(_0x525a6e),_0x214c27=Uint8Array[_0x5be3d6(0x1a7)](_0x5dc52b,_0x40c2f9=>_0x40c2f9['charCodeAt'](0x0));return{'earlyData':_0x214c27['buffer'],'error':null};}catch(_0x11ae64){return{'error':_0x11ae64};}}let WS_READY_STATE_OPEN=0x1,WS_READY_STATE_CLOSING=0x2;function safeCloseWebSocket(_0x56e4df){const _0xf0d034=_0x4498;try{(_0x56e4df[_0xf0d034(0x22f)]===WS_READY_STATE_OPEN||_0x56e4df[_0xf0d034(0x22f)]===WS_READY_STATE_CLOSING)&&_0x56e4df[_0xf0d034(0x190)]();}catch(_0x4e003e){console['error'](_0xf0d034(0x1be),_0x4e003e);}}function revertFakeInfo(_0x3b8829,_0x1b8be1,_0x35393f,_0x2a4efd){const _0x1e783b=_0x4498;if(_0x2a4efd)_0x3b8829=atob(_0x3b8829);_0x3b8829=_0x3b8829['replace'](new RegExp(fakeUserID,'g'),_0x1b8be1)[_0x1e783b(0x265)](new RegExp(fakeHostName,'g'),_0x35393f);if(_0x2a4efd)_0x3b8829=btoa(_0x3b8829);return _0x3b8829;}function generateRandomNumber(){const _0x4e0a5d=_0x4498;let _0x1c37cd=0x186a0,_0x13752e=0xf423f;return Math[_0x4e0a5d(0x251)](Math[_0x4e0a5d(0x1c6)]()*(_0x13752e-_0x1c37cd+0x1))+_0x1c37cd;}function generateRandomString(){const _0x1a0671=_0x4498;let _0x5f1f73=0x2,_0x1ee876=0x3,_0x1b3f67=Math[_0x1a0671(0x251)](Math['random']()*(_0x1ee876-_0x5f1f73+0x1))+_0x5f1f73,_0x53b5f9=_0x1a0671(0x18c),_0x3a6616='';for(let _0x18f4e0=0x0;_0x18f4e0<_0x1b3f67;_0x18f4e0++){_0x3a6616+=_0x53b5f9[Math[_0x1a0671(0x251)](Math[_0x1a0671(0x1c6)]()*_0x53b5f9[_0x1a0671(0x235)])];}return _0x3a6616;}function generateUUID(){const _0x470745=_0x4498;let _0x2cf037='';for(let _0x2f8bac=0x0;_0x2f8bac<0x20;_0x2f8bac++){let _0x578342=Math['floor'](Math[_0x470745(0x1c6)]()*0x10);_0x578342<0xa?_0x2cf037+=_0x578342:_0x2cf037+=String[_0x470745(0x1cb)](_0x578342+0x37);}return _0x2cf037[_0x470745(0x265)](/(.{8})(.{4})(.{4})(.{4})(.{12})/,'$1-$2-$3-$4-$5')[_0x470745(0x1a9)]();}async function ADD(_0x2cba00){const _0x107982=_0x4498;var _0x256689=_0x2cba00[_0x107982(0x265)](/[	|"'\r\n]+/g,',')['replace'](/,+/g,',');if(_0x256689[_0x107982(0x1cd)](0x0)==',')_0x256689=_0x256689['slice'](0x1);if(_0x256689[_0x107982(0x1cd)](_0x256689[_0x107982(0x235)]-0x1)==',')_0x256689=_0x256689['slice'](0x0,_0x256689[_0x107982(0x235)]-0x1);const _0x552675=_0x256689[_0x107982(0x268)](',');return _0x552675;}function _0x4498(_0x1779d6,_0x2cb087){const _0x1892d2=_0x1892();return _0x4498=function(_0x44988b,_0x3a3444){_0x44988b=_0x44988b-0x16e;let _0x12bbf8=_0x1892d2[_0x44988b];return _0x12bbf8;},_0x4498(_0x1779d6,_0x2cb087);}function 配置信息(_0x5d6126,_0x228165){const _0x186ee6=_0x4498,_0x3281bc=_0x186ee6(0x24d),_0x2bd557=atob(_0x3281bc),_0x418162=_0x228165;let _0xb7dc10=_0x228165,_0x279dae=0x1bb;const _0x47ea57='ws',_0x5cf3c7=_0x228165,_0x269630=_0x186ee6(0x1ae);let _0x3110ef=[_0x186ee6(0x214),!![]];const _0x93bc39=_0x228165,_0x2383f6=_0x186ee6(0x1ec),_0x402419=_0x2bd557+_0x186ee6(0x20f)+encodeURIComponent(_0x5d6126)+'@'+_0xb7dc10+':'+_0x279dae+_0x186ee6(0x1bd)+_0x3110ef[0x0]+'&sni='+_0x93bc39+_0x186ee6(0x197)+_0x2383f6+'&type='+_0x47ea57+'&host='+_0x5cf3c7+_0x186ee6(0x229)+encodeURIComponent(_0x269630)+'#'+encodeURIComponent(_0x418162),_0x20aa73=_0x186ee6(0x23f)+_0x418162+_0x186ee6(0x1a1)+_0xb7dc10+_0x186ee6(0x182)+_0x279dae+_0x186ee6(0x244)+_0x2383f6+_0x186ee6(0x18f)+_0x2bd557+_0x186ee6(0x249)+_0x5d6126+_0x186ee6(0x220)+_0x93bc39+_0x186ee6(0x1a0)+_0x47ea57+_0x186ee6(0x19f)+_0x269630+_0x186ee6(0x1c3)+_0x5cf3c7+'}}}';return[_0x402419,_0x20aa73];}let subParams=['sub','base64',_0xd6cb97(0x261),_0xd6cb97(0x1aa),'singbox','sb','surge'];async function getTrojanConfig(_0xe4b6c7,_0x4d79a3,_0x25ea88,_0x5e20af,_0x469caf,_0x3eb3f4){const _0x2d54f3=_0xd6cb97,_0x4d1a10=_0x5e20af['toLowerCase'](),_0xe17bb7=配置信息(_0xe4b6c7,_0x4d79a3),_0x52d092=_0xe17bb7[0x0],_0x316081=_0xe17bb7[0x1];if(_0x4d1a10[_0x2d54f3(0x1bb)]('mozilla')&&!subParams['some'](_0x479ad2=>_0x3eb3f4[_0x2d54f3(0x1b2)][_0x2d54f3(0x23e)](_0x479ad2))){let _0x1bdd28=_0x2d54f3(0x16e)+_0x4d79a3+'/'+_0xe4b6c7+_0x2d54f3(0x252);if(_0x4d79a3[_0x2d54f3(0x1bb)](_0x2d54f3(0x266))||_0x4d79a3[_0x2d54f3(0x1bb)]('.pages.dev'))_0x1bdd28=_0x2d54f3(0x1b8);let _0x21b963='您的订阅内容由\x20'+_0x25ea88+'\x20提供维护支持,\x20自动获取ProxyIP:\x20'+_0x469caf;if(!_0x25ea88||_0x25ea88=='')!proxyIP||proxyIP==''?_0x21b963='您的订阅内容由\x20内置\x20addresses/ADD\x20参数提供,\x20当前使用的ProxyIP为空,\x20推荐您设置\x20proxyIP/PROXYIP\x20！！！':_0x21b963=_0x2d54f3(0x264)+proxyIPs[_0x2d54f3(0x17a)](',');else _0x469caf!='true'&&(_0x21b963+=_0x2d54f3(0x17f)+proxyIPs[_0x2d54f3(0x17a)](','));return'\x0a################################################################\x0aSubscribe\x20/\x20sub\x20订阅地址,\x20支持\x20Base64、clash-meta、sing-box\x20订阅格式,\x20'+_0x21b963+'\x0a---------------------------------------------------------------\x0a快速自适应订阅地址:\x0ahttps://'+_0x4d79a3+'/'+_0xe4b6c7+_0x2d54f3(0x178)+_0x4d79a3+'/'+_0xe4b6c7+_0x2d54f3(0x20a)+_0x4d79a3+'/'+_0xe4b6c7+_0x2d54f3(0x1b4)+_0x4d79a3+'/'+_0xe4b6c7+_0x2d54f3(0x24b)+_0x4d79a3+'/'+_0xe4b6c7+_0x2d54f3(0x1fe)+_0x4d79a3+'/'+_0xe4b6c7+_0x2d54f3(0x225)+_0x4d79a3+'/'+_0xe4b6c7+_0x2d54f3(0x217)+_0x1bdd28+_0x2d54f3(0x256)+_0x52d092+_0x2d54f3(0x1e0)+_0x316081+_0x2d54f3(0x1ea);}else{if(typeof fetch!=_0x2d54f3(0x1fb))return _0x2d54f3(0x196);_0x4d79a3[_0x2d54f3(0x1bb)](_0x2d54f3(0x266))||_0x4d79a3[_0x2d54f3(0x1bb)](_0x2d54f3(0x1f1))?fakeHostName=fakeHostName+'.'+generateRandomString()+generateRandomNumber()+_0x2d54f3(0x266):fakeHostName=fakeHostName+'.'+generateRandomNumber()+_0x2d54f3(0x1b0);if(_0x4d79a3['includes'](_0x2d54f3(0x20e))||_0x4d79a3['includes'](_0x2d54f3(0x198))){if(proxyhostsURL&&(!proxyhosts||proxyhosts[_0x2d54f3(0x235)]==0x0))try{const _0x76f656=await fetch(proxyhostsURL);if(!_0x76f656['ok']){console[_0x2d54f3(0x1bf)](_0x2d54f3(0x221),_0x76f656['status'],_0x76f656[_0x2d54f3(0x248)]);return;}const _0x5049e5=await _0x76f656[_0x2d54f3(0x22b)](),_0x59ba6b=_0x5049e5['split']('\x0a'),_0x1f3a4a=_0x59ba6b[_0x2d54f3(0x236)](_0x5d83e6=>_0x5d83e6['trim']()!=='');proxyhosts=proxyhosts[_0x2d54f3(0x1da)](_0x1f3a4a);}catch(_0x5dc39f){console['error'](_0x2d54f3(0x221),_0x5dc39f);}proxyhosts=[...new Set(proxyhosts)];}const _0x26ed93=await getAddressesapi(addressesapi),_0x3366d8=await getAddressescsv(_0x2d54f3(0x1ad));let _0x3be850=_0x2d54f3(0x240)+_0x25ea88+'/sub?host='+fakeHostName+_0x2d54f3(0x207)+fakeUserID+_0x2d54f3(0x181)+fakeUserID+_0x2d54f3(0x1db)+_0x469caf,_0x5cba79=!![];if(!_0x25ea88||_0x25ea88==''){const _0x4446f6=await subAddresses(fakeHostName,fakeUserID,_0x2d54f3(0x1fd),_0x26ed93,_0x3366d8),_0x358cc5=atob(_0x4446f6),_0x2276ba=_0x358cc5['split']('\x0a');_0x3be850=_0x2276ba[_0x2d54f3(0x17a)]('|');}if(!_0x4d1a10[_0x2d54f3(0x1bb)](_0x2d54f3(0x1d2)[_0x2d54f3(0x1a9)]())){if(_0x4d1a10[_0x2d54f3(0x1bb)](_0x2d54f3(0x1aa))&&!_0x4d1a10[_0x2d54f3(0x1bb)]('nekobox')||_0x3eb3f4['searchParams'][_0x2d54f3(0x23e)](_0x2d54f3(0x1aa)))_0x3be850=_0x2d54f3(0x240)+subconverter+_0x2d54f3(0x245)+encodeURIComponent(_0x3be850)+_0x2d54f3(0x18e)+encodeURIComponent(subconfig)+_0x2d54f3(0x1f8),_0x5cba79=![];else{if(_0x4d1a10[_0x2d54f3(0x1bb)](_0x2d54f3(0x1e2))||_0x4d1a10[_0x2d54f3(0x1bb)]('singbox')||_0x3eb3f4[_0x2d54f3(0x1b2)][_0x2d54f3(0x23e)]('singbox')||_0x3eb3f4[_0x2d54f3(0x1b2)][_0x2d54f3(0x23e)]('sb'))_0x3be850='https://'+subconverter+_0x2d54f3(0x237)+encodeURIComponent(_0x3be850)+_0x2d54f3(0x18e)+encodeURIComponent(subconfig)+_0x2d54f3(0x1f8),_0x5cba79=![];else(_0x4d1a10[_0x2d54f3(0x1bb)]('surge')||_0x3eb3f4['searchParams'][_0x2d54f3(0x23e)]('surge'))&&(_0x3be850=_0x2d54f3(0x240)+subconverter+_0x2d54f3(0x1e4)+encodeURIComponent(_0x3be850)+'&insert=false&config='+encodeURIComponent(subconfig)+'&emoji=true&list=false&xudp=false&udp=false&tfo=false&expand=true&scv=true&fdn=false',_0x5cba79=![]);}}try{let _0x34fb28;if((!_0x25ea88||_0x25ea88=='')&&_0x5cba79==!![])_0x34fb28=await subAddresses(fakeHostName,fakeUserID,_0x4d1a10,_0x26ed93,_0x3366d8);else{const _0x3258f0=await fetch(_0x3be850,{'headers':{'User-Agent':_0x2d54f3(0x1c7)}});_0x34fb28=await _0x3258f0[_0x2d54f3(0x22b)]();}let _0x4f9ace=revertFakeInfo(_0x34fb28,_0xe4b6c7,_0x4d79a3,_0x5cba79);if(_0x4d1a10[_0x2d54f3(0x1bb)]('surge')||_0x3eb3f4[_0x2d54f3(0x1b2)][_0x2d54f3(0x23e)]('surge'))_0x4f9ace=surge(_0x4f9ace,_0x4d79a3);return _0x4f9ace;}catch(_0x2ce9b9){return console[_0x2d54f3(0x1bf)](_0x2d54f3(0x1c5),_0x2ce9b9),'Error\x20fetching\x20content:\x20'+_0x2ce9b9[_0x2d54f3(0x1b5)];}}}async function sendMessage(_0x1fa750,_0xc0c90d,_0x384b74=''){const _0x1c88f2=_0xd6cb97;if(BotToken!==''&&ChatID!==''){let _0x2a0bac='';const _0x25ec0b=await fetch(_0x1c88f2(0x1c0)+_0xc0c90d+_0x1c88f2(0x19e));if(_0x25ec0b['status']==0xc8){const _0x2ad3e8=await _0x25ec0b['json']();_0x2a0bac=_0x1fa750+_0x1c88f2(0x263)+_0xc0c90d+_0x1c88f2(0x1dd)+_0x2ad3e8[_0x1c88f2(0x227)]+_0x1c88f2(0x1ee)+_0x2ad3e8[_0x1c88f2(0x1e1)]+_0x1c88f2(0x1eb)+_0x2ad3e8['org']+_0x1c88f2(0x234)+_0x2ad3e8['as']+'\x0a'+_0x384b74;}else _0x2a0bac=_0x1fa750+_0x1c88f2(0x263)+_0xc0c90d+_0x1c88f2(0x255)+_0x384b74;let _0x4c1165=_0x1c88f2(0x1f6)+BotToken+_0x1c88f2(0x1dc)+ChatID+_0x1c88f2(0x206)+encodeURIComponent(_0x2a0bac);return fetch(_0x4c1165,{'method':_0x1c88f2(0x16f),'headers':{'Accept':_0x1c88f2(0x177),'Accept-Encoding':_0x1c88f2(0x21f),'User-Agent':_0x1c88f2(0x247)}});}}function subAddresses(_0x20ae18,_0x3e33d2,_0x48ad3a,_0x147d74,_0x136521){const _0x3300b5=_0xd6cb97;addresses=addresses[_0x3300b5(0x1da)](_0x147d74),addresses=addresses[_0x3300b5(0x1da)](_0x136521);const _0x13db5f=[...new Set(addresses)],_0x42ec53=_0x13db5f[_0x3300b5(0x21d)](_0x43b212=>{const _0x1fae99=_0x3300b5;let _0x588000=_0x1fae99(0x21a),_0x1c1d79=_0x43b212;const _0x2f16be=_0x1c1d79[_0x1fae99(0x270)](regex);if(!_0x2f16be){if(_0x43b212['includes'](':')&&_0x43b212['includes']('#')){const _0x363986=_0x43b212[_0x1fae99(0x268)](':');_0x43b212=_0x363986[0x0];const _0x36b31d=_0x363986[0x1][_0x1fae99(0x268)]('#');_0x588000=_0x36b31d[0x0],_0x1c1d79=_0x36b31d[0x1];}else{if(_0x43b212[_0x1fae99(0x1bb)](':')){const _0x260139=_0x43b212[_0x1fae99(0x268)](':');_0x43b212=_0x260139[0x0],_0x588000=_0x260139[0x1];}else{if(_0x43b212[_0x1fae99(0x1bb)]('#')){const _0xf0da76=_0x43b212['split']('#');_0x43b212=_0xf0da76[0x0],_0x1c1d79=_0xf0da76[0x1];}}}_0x1c1d79[_0x1fae99(0x1bb)](':')&&(_0x1c1d79=_0x1c1d79['split'](':')[0x0]);}else _0x43b212=_0x2f16be[0x1],_0x588000=_0x2f16be[0x2]||_0x588000,_0x1c1d79=_0x2f16be[0x3]||_0x43b212;let _0x22259a=_0x20ae18,_0x24b5c3=_0x1fae99(0x1ae),_0x169de9='';proxyhosts[_0x1fae99(0x235)]>0x0&&(_0x22259a[_0x1fae99(0x1bb)](_0x1fae99(0x266))||_0x22259a[_0x1fae99(0x1bb)]('pages.dev'))&&(_0x24b5c3='/'+_0x22259a+_0x24b5c3,_0x22259a=proxyhosts[Math[_0x1fae99(0x251)](Math[_0x1fae99(0x1c6)]()*proxyhosts[_0x1fae99(0x235)])],_0x169de9='\x20已启用临时域名中转服务，请尽快绑定自定义域！');let _0x391dff=_0x3e33d2;if(!_0x48ad3a['includes'](_0x1fae99(0x1fd)))_0x391dff=encodeURIComponent(_0x3e33d2);const _0x31a57d=_0x1fae99(0x24d),_0x310ab4=atob(_0x31a57d),_0x5684c2=_0x310ab4+_0x1fae99(0x20f)+_0x391dff+'@'+_0x43b212+':'+_0x588000+_0x1fae99(0x25f)+_0x22259a+_0x1fae99(0x1ba)+_0x22259a+_0x1fae99(0x229)+encodeURIComponent(_0x24b5c3)+'#'+encodeURIComponent(_0x1c1d79+_0x169de9);return _0x5684c2;})[_0x3300b5(0x17a)]('\x0a'),_0x3c1c85=btoa(_0x42ec53);return _0x3c1c85;}async function getAddressesapi(_0x59bd2f){const _0x414169=_0xd6cb97;if(!_0x59bd2f||_0x59bd2f[_0x414169(0x235)]===0x0)return[];let _0x44f3f6='';const _0x37a59d=new AbortController(),_0x3a9dbf=setTimeout(()=>{const _0x35e63c=_0x414169;_0x37a59d[_0x35e63c(0x1f3)]();},0x7d0);try{const _0x24a090=await Promise[_0x414169(0x210)](_0x59bd2f[_0x414169(0x21d)](_0x32c140=>fetch(_0x32c140,{'method':_0x414169(0x16f),'headers':{'Accept':_0x414169(0x177),'User-Agent':'CF-Workers-epeius/cmliu'},'signal':_0x37a59d['signal']})[_0x414169(0x20d)](_0x6e874=>_0x6e874['ok']?_0x6e874['text']():Promise[_0x414169(0x25d)]())));for(const _0x2a8e93 of _0x24a090){if(_0x2a8e93[_0x414169(0x18b)]==='fulfilled'){const _0x4b2bdb=await _0x2a8e93[_0x414169(0x238)];_0x44f3f6+=_0x4b2bdb+'\x0a';}}}catch(_0x39ec24){console[_0x414169(0x1bf)](_0x39ec24);}finally{clearTimeout(_0x3a9dbf);}const _0x20188a=await ADD(_0x44f3f6);return _0x20188a;}async function getAddressescsv(_0x23ce17){const _0x1ed34d=_0xd6cb97;if(!addressescsv||addressescsv['length']===0x0)return[];let _0x31e4be=[];for(const _0x4cd656 of addressescsv){try{const _0x2a08f1=await fetch(_0x4cd656);if(!_0x2a08f1['ok']){console[_0x1ed34d(0x1bf)]('获取CSV地址时出错:',_0x2a08f1[_0x1ed34d(0x18b)],_0x2a08f1[_0x1ed34d(0x248)]);continue;}const _0x16ad0b=await _0x2a08f1[_0x1ed34d(0x22b)]();let _0x396564;_0x16ad0b[_0x1ed34d(0x1bb)]('\x0d\x0a')?_0x396564=_0x16ad0b[_0x1ed34d(0x268)]('\x0d\x0a'):_0x396564=_0x16ad0b[_0x1ed34d(0x268)]('\x0a');const _0x223679=_0x396564[0x0]['split'](','),_0x71fcbc=_0x223679[_0x1ed34d(0x1e9)](_0x1ed34d(0x228)),_0x4ef24c=_0x223679[_0x1ed34d(0x235)]-0x1,_0x2cae4f=0x0,_0x18cd18=0x1,_0x49e74a=_0x71fcbc+0x1;if(_0x71fcbc===-0x1){console['error'](_0x1ed34d(0x25b));continue;}for(let _0x1ab5cd=0x1;_0x1ab5cd<_0x396564[_0x1ed34d(0x235)];_0x1ab5cd++){const _0x3d2bae=_0x396564[_0x1ab5cd][_0x1ed34d(0x268)](',');if(_0x3d2bae[_0x71fcbc][_0x1ed34d(0x209)]()===_0x23ce17&&parseFloat(_0x3d2bae[_0x4ef24c])>DLS){const _0x4d1c2c=_0x3d2bae[_0x2cae4f],_0x2ca9bb=_0x3d2bae[_0x18cd18],_0x49c67c=_0x3d2bae[_0x49e74a],_0xec270a=_0x4d1c2c+':'+_0x2ca9bb+'#'+_0x49c67c;_0x31e4be[_0x1ed34d(0x26a)](_0xec270a);}}}catch(_0x383033){console[_0x1ed34d(0x1bf)](_0x1ed34d(0x24e),_0x383033);continue;}}return _0x31e4be;}function _0x1892(){const _0x48af74=['isView','\x0aASN:\x20','length','filter','/sub?target=singbox&url=','value','JS_SHA256_NO_WINDOW','write','sha256',';\x20download=','stack','has','-\x20{name:\x20','https://','stringify','connected\x20to\x20','decode',',\x20udp:\x20false,\x20client-fingerprint:\x20','/sub?target=clash&url=','2148dMvHNU','Mozilla/5.0\x20Chrome/90.0.4430.72','statusText',',\x20password:\x20','closed','?base64\x0a\x0aclash订阅地址:\x0ahttps://','redirect','dHJvamFu','获取CSV地址时出错:','blocks','false','floor','?surge','input\x20is\x20invalid\x20type','pathname','\x0a<tg-spoiler>','\x0a---------------------------------------------------------------\x0a################################################################\x0av2ray\x0a---------------------------------------------------------------\x0a','accept','TGID','invalid\x20addressType\x20is\x20','hex','CSV文件缺少必需的字段','retry\x20tcpSocket\x20closed\x20error','reject','true','?security=tls&sni=','getUint16','b64',';\x20total=','\x0aIP:\x20','您的订阅内容由\x20内置\x20addresses/ADD\x20参数提供,\x20当前使用的ProxyIP：\x20','replace','.workers.dev','invalid\x20data','split','block','push','proxyip.','DLS','User-Agent','URL302','createHash','match','sharedMemory','Surge订阅地址:\x0ahttps://','get','RPROXYIP','charCodeAt','hmac','data','finally',';\x20expire=','string','text/html,application/xhtml+xml,application/xml;','\x0a\x0aBase64订阅地址:\x0ahttps://','221xemaTl','join','setUint32','getWriter','/proxyip=','hBytes',',\x20当前使用的ProxyIP：\x20','send','&password=',',\x20port:\x20','Host','first','arrayBuffer','3180205VjtWTL','skip-cert-verify=true,\x20tfo=false,\x20udp-relay=false','46755Xesfso','catch','isArray','status','abcdefghijklmnopqrstuvwxyz','sec-websocket-protocol','&insert=false&config=',',\x20type:\x20','close','headers','JS_SHA256_NO_ARRAY_BUFFER_IS_VIEW','Upgrade','PROXYIP','4135zXWGxB','Error:\x20fetch\x20is\x20not\x20available\x20in\x20this\x20environment.','&fp=','pages.dev','retry','ADDCSV','CF-Connecting-IP','url','remoteSocket.readable\x20is\x20closed,\x20hasIncomingData:\x20','?lang=zh-CN',',\x20ws-opts:\x20{path:\x20',',\x20skip-cert-verify:\x20true,\x20network:\x20',',\x20server:\x20','enqueue','hash','finalized','JS_SHA256_NO_ARRAY_BUFFER','buffer','from','object','toLowerCase','clash','webSocket\x20connection\x20is\x20not\x20open','bytes','TRUE','/?ed=2560','readableWebSocketStream\x20is\x20closed','.xyz','Buffer','searchParams','2OGcNFp','?b64\x0ahttps://','message','hashed','exports','Surge订阅必须绑定自定义域','chromeBugWorkAround','&fp=randomized&type=ws&host=','includes','websocket','?security=','safeCloseWebSocket\x20error','error','http://ip-api.com/json/','sha224','pipeTo',',\x20headers:\x20{Host:\x20','invalid\x20password','Error\x20fetching\x20content:','random','CF-Workers-epeius/cmliu','array','constructor','upload=','fromCharCode','utf8','charAt','1350yEficn','call','SUBNAME','undefined','CF-Workers-SUB','crypto','test','187wGNqYO','node','PASSWORD','releaseLock','Incorrect\x20password!!!','concat','&epeius=cmliu&proxyip=','/sendMessage?chat_id=','\x0a国家:\x20','invalid\x20SOCKS5\x20request\x20data','getUint8','\x0a---------------------------------------------------------------\x0a################################################################\x0aclash-meta\x0a---------------------------------------------------------------\x0a','city','sing-box','inner','/sub?target=surge&ver=4&url=','versions','823580uLtRFU','SUBAPI','is224','indexOf','\x0a---------------------------------------------------------------\x0a################################################################\x0atelegram\x20交流群\x20技术大佬~在线发牌!\x0ahttps://t.me/CMLiussss\x0a---------------------------------------------------------------\x0agithub\x20项目地址\x20Star!Star!Star!!!\x0ahttps://github.com/cmliu/epeius\x0a---------------------------------------------------------------\x0a################################################################\x0a','\x0a组织:\x20','randomized','8YcgkfX','\x0a<tg-spoiler>城市:\x20','\x0a<tg-spoiler>入口:\x20','amd','.pages.dev','mozilla','abort','unsupported\x20command,\x20only\x20TCP\x20(CONNECT)\x20is\x20allowed','ADDAPI','https://api.telegram.org/bot','addEventListener','&emoji=true&list=false&tfo=false&scv=true&fdn=false&sort=false&new_name=true','digest','writable','function','10072vDfDin','subconverter','?clash\x0a\x0asingbox订阅地址:\x0ahttps://','679966oJvMZK','prototype','JS_SHA256_NO_BUFFER_FROM','lastByteIndex','readable','</tg-spoiler>\x0a域名:\x20','byteLength','&parse_mode=HTML&text=','&pw=','finalize','toUpperCase','?sub\x0ahttps://','proxyip','attachment;\x20filename=','then','workers.dev','://','allSettled','create','SUBCONFIG','615696gzTlxq','tls','JS_SHA256_NO_NODE_JS','webSocketServer\x20error','?singbox\x0a\x0a','text/plain;charset=utf-8','/proxyip.','443','UA:\x20','SHA224','map','search','gzip,\x20deflate,\x20br',',\x20sni:\x20','获取地址时出错:','hostname','624gtQthm','getTime','?sb\x0ahttps://','now','country','TLS','&path=','URL','text','oKeyPad','start','</tg-spoiler>','readyState','update','toString','slice'];_0x1892=function(){return _0x48af74;};return _0x1892();}function surge(_0x21d674,_0x1624d8){const _0x7c461b=_0xd6cb97,_0x62eb14=_0x7c461b(0x187),_0x30809c='skip-cert-verify=true,\x20ws=true,\x20ws-path=/?ed=2560,\x20ws-headers=Host:\x22'+_0x1624d8+'\x22,\x20tfo=false,\x20udp-relay=false';return _0x21d674=_0x21d674[_0x7c461b(0x265)](new RegExp(_0x62eb14,'g'),_0x30809c),_0x21d674;}/**
+
+let fakeUserID = generateUUID();
+let fakeHostName = generateRandomString();
+let proxyIPs ;
+let sha224Password ;
+const regex = /^(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}|\[.*\]):?(\d+)?#?(.*)?$/;
+/*
+if (!isValidSHA224(sha224Password)) {
+    throw new Error('sha224Password is not valid');
+}
+*/
+export default {
+	async fetch(request, env, ctx) {
+		try {
+			const UA = request.headers.get('User-Agent') || 'null';
+			const userAgent = UA.toLowerCase();
+			proxyIP = env.PROXYIP || proxyIP;
+			proxyIPs = await ADD(proxyIP);
+			proxyIP = proxyIPs[Math.floor(Math.random() * proxyIPs.length)];
+			password = env.PASSWORD || password;
+			sha224Password = env.SHA224 || env.SHA224PASS || sha256.sha224(password);
+			//console.log(sha224Password);
+
+			const url = new URL(request.url);
+			const upgradeHeader = request.headers.get("Upgrade");
+			if (env.ADD) addresses = await ADD(env.ADD);
+			if (env.ADDAPI) addressesapi = await ADD(env.ADDAPI);
+			if (env.ADDCSV) addressescsv = await ADD(env.ADDCSV);
+			DLS = env.DLS || DLS;
+			BotToken = env.TGTOKEN || BotToken;
+			ChatID = env.TGID || ChatID; 
+			sub = env.SUB || sub;
+			subconverter = env.SUBAPI || subconverter;
+			subconfig = env.SUBCONFIG || subconfig;
+			FileName = env.SUBNAME || FileName;
+			RproxyIP = env.RPROXYIP || !proxyIP ? 'true' : 'false';
+
+			if (!upgradeHeader || upgradeHeader !== "websocket") {
+				//const url = new URL(request.url);
+				switch (url.pathname) {
+				case '/':
+					const envKey = env.URL302 ? 'URL302' : (env.URL ? 'URL' : null);
+					if (envKey) {
+						const URLs = await ADD(env[envKey]);
+						const URL = URLs[Math.floor(Math.random() * URLs.length)];
+						return envKey === 'URL302' ? Response.redirect(URL, 302) : fetch(new Request(URL, request));
+					}
+					return new Response(JSON.stringify(request.cf, null, 4), { status: 200 });
+				case `/${password}`:
+					await sendMessage(`#获取订阅 ${FileName}`, request.headers.get('CF-Connecting-IP'), `UA: ${UA}</tg-spoiler>\n域名: ${url.hostname}\n<tg-spoiler>入口: ${url.pathname + url.search}</tg-spoiler>`);
+					const trojanConfig = await getTrojanConfig(password, request.headers.get('Host'), sub, UA, RproxyIP, url);
+					const now = Date.now();
+					//const timestamp = Math.floor(now / 1000);
+					const expire = 4102329600;//2099-12-31
+					const today = new Date(now);
+					today.setHours(0, 0, 0, 0);
+					const UD = Math.floor(((now - today.getTime())/86400000) * 24 * 1099511627776 / 2);
+					if (userAgent && (userAgent.includes('mozilla') || userAgent.includes('subconverter'))){
+						return new Response(`${trojanConfig}`, {
+							status: 200,
+							headers: {
+								"Content-Type": "text/plain;charset=utf-8",
+								"Profile-Update-Interval": "6",
+								"Subscription-Userinfo": `upload=${UD}; download=${UD}; total=${24 * 1099511627776}; expire=${expire}`,
+							}
+						});
+					} else {
+						return new Response(`${trojanConfig}`, {
+							status: 200,
+							headers: {
+								"Content-Disposition": `attachment; filename=${FileName}; filename*=utf-8''${FileName}`,
+								"Content-Type": "text/plain;charset=utf-8",
+								"Profile-Update-Interval": "6",
+								"Subscription-Userinfo": `upload=${UD}; download=${UD}; total=${24 * 1099511627776}; expire=${expire}`,
+							}
+						});
+					}
+					/*
+					const host = request.headers.get('Host');
+					return new Response(`trojan://${encodeURIComponent(password)}@${host}:443/?type=ws&host=${host}&security=tls`, {
+						status: 200,
+						headers: {
+							"Content-Type": "text/plain;charset=utf-8",
+						}
+					});
+					*/
+				default:
+					return new Response("Incorrect password!!!", { status: 404 });
+				}
+			} else {
+				proxyIP = url.searchParams.get('proxyip') || proxyIP;
+				if (new RegExp('/proxyip=', 'i').test(url.pathname)) proxyIP = url.pathname.toLowerCase().split('/proxyip=')[1];
+				else if (new RegExp('/proxyip.', 'i').test(url.pathname)) proxyIP = `proxyip.${url.pathname.toLowerCase().split("/proxyip.")[1]}`;
+				else if (!proxyIP || proxyIP == '') proxyIP = 'proxyip.fxxk.dedyn.io';
+				return await trojanOverWSHandler(request);
+			}
+		} catch (err) {
+			let e = err;
+			return new Response(e.toString());
+		}
+	}
+};
+
+async function trojanOverWSHandler(request) {
+	const webSocketPair = new WebSocketPair();
+	const [client, webSocket] = Object.values(webSocketPair);
+	webSocket.accept();
+	let address = "";
+	let portWithRandomLog = "";
+	const log = (info, event) => {
+		console.log(`[${address}:${portWithRandomLog}] ${info}`, event || "");
+	};
+	const earlyDataHeader = request.headers.get("sec-websocket-protocol") || "";
+	const readableWebSocketStream = makeReadableWebSocketStream(webSocket, earlyDataHeader, log);
+	let remoteSocketWapper = {
+		value: null
+	};
+	let udpStreamWrite = null;
+	readableWebSocketStream.pipeTo(new WritableStream({
+		async write(chunk, controller) {
+			if (udpStreamWrite) {
+				return udpStreamWrite(chunk);
+			}
+			if (remoteSocketWapper.value) {
+				const writer = remoteSocketWapper.value.writable.getWriter();
+				await writer.write(chunk);
+				writer.releaseLock();
+				return;
+			}
+			const {
+				hasError,
+				message,
+				portRemote = 443,
+				addressRemote = "",
+				rawClientData
+			} = await parseTrojanHeader(chunk);
+			address = addressRemote;
+			portWithRandomLog = `${portRemote}--${Math.random()} tcp`;
+			if (hasError) {
+				throw new Error(message);
+				return;
+			}
+			handleTCPOutBound(remoteSocketWapper, addressRemote, portRemote, rawClientData, webSocket, log);
+		},
+		close() {
+			log(`readableWebSocketStream is closed`);
+		},
+		abort(reason) {
+			log(`readableWebSocketStream is aborted`, JSON.stringify(reason));
+		}
+	})).catch((err) => {
+		log("readableWebSocketStream pipeTo error", err);
+	});
+	return new Response(null, {
+		status: 101,
+		// @ts-ignore
+		webSocket: client
+	});
+}
+
+async function parseTrojanHeader(buffer) {
+	if (buffer.byteLength < 56) {
+		return {
+			hasError: true,
+			message: "invalid data"
+		};
+	}
+	let crLfIndex = 56;
+	if (new Uint8Array(buffer.slice(56, 57))[0] !== 0x0d || new Uint8Array(buffer.slice(57, 58))[0] !== 0x0a) {
+		return {
+			hasError: true,
+			message: "invalid header format (missing CR LF)"
+		};
+	}
+	const password = new TextDecoder().decode(buffer.slice(0, crLfIndex));
+	if (password !== sha224Password) {
+		return {
+			hasError: true,
+			message: "invalid password"
+		};
+	}
+
+	const socks5DataBuffer = buffer.slice(crLfIndex + 2);
+	if (socks5DataBuffer.byteLength < 6) {
+		return {
+			hasError: true,
+			message: "invalid SOCKS5 request data"
+		};
+	}
+
+	const view = new DataView(socks5DataBuffer);
+	const cmd = view.getUint8(0);
+	if (cmd !== 1) {
+		return {
+			hasError: true,
+			message: "unsupported command, only TCP (CONNECT) is allowed"
+		};
+	}
+
+	const atype = view.getUint8(1);
+	// 0x01: IPv4 address
+	// 0x03: Domain name
+	// 0x04: IPv6 address
+	let addressLength = 0;
+	let addressIndex = 2;
+	let address = "";
+	switch (atype) {
+	case 1:
+		addressLength = 4;
+		address = new Uint8Array(
+			socks5DataBuffer.slice(addressIndex, addressIndex + addressLength)
+		).join(".");
+		break;
+	case 3:
+		addressLength = new Uint8Array(
+			socks5DataBuffer.slice(addressIndex, addressIndex + 1)
+		)[0];
+		addressIndex += 1;
+		address = new TextDecoder().decode(
+			socks5DataBuffer.slice(addressIndex, addressIndex + addressLength)
+		);
+		break;
+	case 4:
+		addressLength = 16;
+		const dataView = new DataView(socks5DataBuffer.slice(addressIndex, addressIndex + addressLength));
+		const ipv6 = [];
+		for (let i = 0; i < 8; i++) {
+			ipv6.push(dataView.getUint16(i * 2).toString(16));
+		}
+		address = ipv6.join(":");
+		break;
+	default:
+		return {
+			hasError: true,
+			message: `invalid addressType is ${atype}`
+		};
+	}
+
+	if (!address) {
+		return {
+			hasError: true,
+			message: `address is empty, addressType is ${atype}`
+		};
+	}
+
+	const portIndex = addressIndex + addressLength;
+	const portBuffer = socks5DataBuffer.slice(portIndex, portIndex + 2);
+	const portRemote = new DataView(portBuffer).getUint16(0);
+	return {
+		hasError: false,
+		addressRemote: address,
+		portRemote,
+		rawClientData: socks5DataBuffer.slice(portIndex + 4)
+	};
+}
+
+async function handleTCPOutBound(remoteSocket, addressRemote, portRemote, rawClientData, webSocket, log) {
+	async function connectAndWrite(address, port) {
+		const tcpSocket2 = connect({
+			hostname: address,
+			port
+		});
+		remoteSocket.value = tcpSocket2;
+		log(`connected to ${address}:${port}`);
+		const writer = tcpSocket2.writable.getWriter();
+		await writer.write(rawClientData);
+		writer.releaseLock();
+		return tcpSocket2;
+	}
+	async function retry() {
+		const tcpSocket2 = await connectAndWrite(proxyIP || addressRemote, portRemote);
+		tcpSocket2.closed.catch((error) => {
+			console.log("retry tcpSocket closed error", error);
+		}).finally(() => {
+			safeCloseWebSocket(webSocket);
+		});
+		remoteSocketToWS(tcpSocket2, webSocket, null, log);
+	}
+	const tcpSocket = await connectAndWrite(addressRemote, portRemote);
+	remoteSocketToWS(tcpSocket, webSocket, retry, log);
+}
+
+function makeReadableWebSocketStream(webSocketServer, earlyDataHeader, log) {
+	let readableStreamCancel = false;
+	const stream = new ReadableStream({
+		start(controller) {
+			webSocketServer.addEventListener("message", (event) => {
+				if (readableStreamCancel) {
+					return;
+				}
+				const message = event.data;
+				controller.enqueue(message);
+			});
+			webSocketServer.addEventListener("close", () => {
+				safeCloseWebSocket(webSocketServer);
+				if (readableStreamCancel) {
+					return;
+				}
+				controller.close();
+			});
+			webSocketServer.addEventListener("error", (err) => {
+				log("webSocketServer error");
+				controller.error(err);
+			});
+			const { earlyData, error } = base64ToArrayBuffer(earlyDataHeader);
+			if (error) {
+				controller.error(error);
+			} else if (earlyData) {
+				controller.enqueue(earlyData);
+			}
+		},
+		pull(controller) {},
+		cancel(reason) {
+			if (readableStreamCancel) {
+				return;
+			}
+			log(`readableStream was canceled, due to ${reason}`);
+			readableStreamCancel = true;
+			safeCloseWebSocket(webSocketServer);
+		}
+	});
+	return stream;
+}
+
+async function remoteSocketToWS(remoteSocket, webSocket, retry, log) {
+	let hasIncomingData = false;
+	await remoteSocket.readable.pipeTo(
+		new WritableStream({
+			start() {},
+			/**
+			 *
+			 * @param {Uint8Array} chunk
+			 * @param {*} controller
+			 */
+			async write(chunk, controller) {
+				hasIncomingData = true;
+				if (webSocket.readyState !== WS_READY_STATE_OPEN) {
+					controller.error(
+						"webSocket connection is not open"
+					);
+				}
+				webSocket.send(chunk);
+			},
+			close() {
+				log(`remoteSocket.readable is closed, hasIncomingData: ${hasIncomingData}`);
+			},
+			abort(reason) {
+				console.error("remoteSocket.readable abort", reason);
+			}
+		})
+	).catch((error) => {
+		console.error(
+			`remoteSocketToWS error:`,
+			error.stack || error
+		);
+		safeCloseWebSocket(webSocket);
+	});
+	if (hasIncomingData === false && retry) {
+		log(`retry`);
+		retry();
+	}
+}
+/*
+function isValidSHA224(hash) {
+	const sha224Regex = /^[0-9a-f]{56}$/i;
+	return sha224Regex.test(hash);
+}
+*/
+function base64ToArrayBuffer(base64Str) {
+	if (!base64Str) {
+		return { error: null };
+	}
+	try {
+		base64Str = base64Str.replace(/-/g, "+").replace(/_/g, "/");
+		const decode = atob(base64Str);
+		const arryBuffer = Uint8Array.from(decode, (c) => c.charCodeAt(0));
+		return { earlyData: arryBuffer.buffer, error: null };
+	} catch (error) {
+		return { error };
+	}
+}
+
+let WS_READY_STATE_OPEN = 1;
+let WS_READY_STATE_CLOSING = 2;
+
+function safeCloseWebSocket(socket) {
+	try {
+		if (socket.readyState === WS_READY_STATE_OPEN || socket.readyState === WS_READY_STATE_CLOSING) {
+			socket.close();
+		}
+	} catch (error) {
+		console.error("safeCloseWebSocket error", error);
+	}
+}
+
+/*
+export {
+	worker_default as
+	default
+};
+//# sourceMappingURL=worker.js.map
+*/
+
+function revertFakeInfo(content, userID, hostName, isBase64) {
+	if (isBase64) content = atob(content);//Base64解码
+	content = content.replace(new RegExp(fakeUserID, 'g'), userID).replace(new RegExp(fakeHostName, 'g'), hostName);
+	if (isBase64) content = btoa(content);//Base64编码
+
+	return content;
+}
+
+function generateRandomNumber() {
+	let minNum = 100000;
+	let maxNum = 999999;
+	return Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
+}
+
+function generateRandomString() {
+	let minLength = 2;
+	let maxLength = 3;
+	let length = Math.floor(Math.random() * (maxLength - minLength + 1)) + minLength;
+	let characters = 'abcdefghijklmnopqrstuvwxyz';
+	let result = '';
+	for (let i = 0; i < length; i++) {
+		result += characters[Math.floor(Math.random() * characters.length)];
+	}
+	return result;
+}
+
+function generateUUID() {
+	let uuid = '';
+	for (let i = 0; i < 32; i++) {
+		let num = Math.floor(Math.random() * 16);
+		if (num < 10) {
+			uuid += num;
+		} else {
+			uuid += String.fromCharCode(num + 55);
+		}
+	}
+	return uuid.replace(/(.{8})(.{4})(.{4})(.{4})(.{12})/, '$1-$2-$3-$4-$5').toLowerCase();
+}
+
+async function ADD(envadd) {
+	var addtext = envadd.replace(/[	|"'\r\n]+/g, ',').replace(/,+/g, ',');  // 双引号、单引号和换行符替换为逗号
+	//console.log(addtext);
+	if (addtext.charAt(0) == ',') addtext = addtext.slice(1);
+	if (addtext.charAt(addtext.length -1) == ',') addtext = addtext.slice(0, addtext.length - 1);
+	const add = addtext.split(',');
+	//console.log(add);
+	return add ;
+}
+
+function 配置信息(密码, 域名地址) {
+	const 啥啥啥_写的这是啥啊 = 'dHJvamFu';
+	const 协议类型 = atob(啥啥啥_写的这是啥啊);
+	
+	const 别名 = 域名地址;
+	let 地址 = 域名地址;
+	let 端口 = 443;
+	
+	const 传输层协议 = 'ws';
+	const 伪装域名 = 域名地址;
+	const 路径 = '/?ed=2560';
+	
+	let 传输层安全 = ['tls',true];
+	const SNI = 域名地址;
+	const 指纹 = 'randomized';
+	
+	const v2ray = `${协议类型}://${encodeURIComponent(密码)}@${地址}:${端口}?security=${传输层安全[0]}&sni=${SNI}&fp=${指纹}&type=${传输层协议}&host=${伪装域名}&path=${encodeURIComponent(路径)}#${encodeURIComponent(别名)}`
+	const clash = `- {name: ${别名}, server: ${地址}, port: ${端口}, udp: false, client-fingerprint: ${指纹}, type: ${协议类型}, password: ${密码}, sni: ${SNI}, skip-cert-verify: true, network: ${传输层协议}, ws-opts: {path: ${路径}, headers: {Host: ${伪装域名}}}}`;
+	
+	return [v2ray,clash];
+}
+
+let subParams = ['sub','base64','b64','clash','singbox','sb','surge'];
+async function getTrojanConfig(password, hostName, sub, UA, RproxyIP, _url) {
+	const userAgent = UA.toLowerCase();
+	const Config = 配置信息(password , hostName);
+	const v2ray = Config[0];
+	const clash = Config[1];
+
+	if ( userAgent.includes('mozilla') && !subParams.some(_searchParams => _url.searchParams.has(_searchParams))) {
+		let surge = `Surge订阅地址:\nhttps://${hostName}/${password}?surge`;
+		if (hostName.includes(".workers.dev") || hostName.includes(".pages.dev")) surge = "Surge订阅必须绑定自定义域";
+		
+		let 订阅器 = `您的订阅内容由 ${sub} 提供维护支持, 自动获取ProxyIP: ${RproxyIP}`;
+		if (!sub || sub == '') {
+			if (!proxyIP || proxyIP =='') {
+				订阅器 = '您的订阅内容由 内置 addresses/ADD 参数提供, 当前使用的ProxyIP为空, 推荐您设置 proxyIP/PROXYIP ！！！';
+			} else {
+				订阅器 = `您的订阅内容由 内置 addresses/ADD 参数提供, 当前使用的ProxyIP： ${proxyIPs.join(',')}`;
+			}
+		} else if (RproxyIP != 'true'){
+			订阅器 += `, 当前使用的ProxyIP： ${proxyIPs.join(',')}`;
+		}
+		return `
+################################################################
+Subscribe / sub 订阅地址, 支持 Base64、clash-meta、sing-box 订阅格式, ${订阅器}
+---------------------------------------------------------------
+快速自适应订阅地址:
+https://${hostName}/${password}
+
+Base64订阅地址:
+https://${hostName}/${password}?sub
+https://${hostName}/${password}?b64
+https://${hostName}/${password}?base64
+
+clash订阅地址:
+https://${hostName}/${password}?clash
+
+singbox订阅地址:
+https://${hostName}/${password}?sb
+https://${hostName}/${password}?singbox
+
+${surge}
+---------------------------------------------------------------
+################################################################
+v2ray
+---------------------------------------------------------------
+${v2ray}
+---------------------------------------------------------------
+################################################################
+clash-meta
+---------------------------------------------------------------
+${clash}
+---------------------------------------------------------------
+################################################################
+telegram 交流群 技术大佬~在线发牌!
+https://t.me/CMLiussss
+---------------------------------------------------------------
+github 项目地址 Star!Star!Star!!!
+https://github.com/cmliu/epeius
+---------------------------------------------------------------
+################################################################
+`;
+	} else {
+		if (typeof fetch != 'function') {
+			return 'Error: fetch is not available in this environment.';
+		}
+		// 如果是使用默认域名，则改成一个workers的域名，订阅器会加上代理
+		if (hostName.includes(".workers.dev") || hostName.includes(".pages.dev")){
+			fakeHostName = `${fakeHostName}.${generateRandomString()}${generateRandomNumber()}.workers.dev`;
+		} else {
+			fakeHostName = `${fakeHostName}.${generateRandomNumber()}.xyz`
+		}
+
+		if(hostName.includes('workers.dev') || hostName.includes('pages.dev')) {
+			if (proxyhostsURL && (!proxyhosts || proxyhosts.length == 0)) {
+				try {
+					const response = await fetch(proxyhostsURL); 
+				
+					if (!response.ok) {
+						console.error('获取地址时出错:', response.status, response.statusText);
+						return; // 如果有错误，直接返回
+					}
+				
+					const text = await response.text();
+					const lines = text.split('\n');
+					// 过滤掉空行或只包含空白字符的行
+					const nonEmptyLines = lines.filter(line => line.trim() !== '');
+				
+					proxyhosts = proxyhosts.concat(nonEmptyLines);
+				} catch (error) {
+					console.error('获取地址时出错:', error);
+				}
+			}
+			// 使用Set对象去重
+			proxyhosts = [...new Set(proxyhosts)];
+		}
+
+		const newAddressesapi = await getAddressesapi(addressesapi);
+		const newAddressescsv = await getAddressescsv('TRUE');
+
+		let url = `https://${sub}/sub?host=${fakeHostName}&pw=${fakeUserID}&password=${fakeUserID}&epeius=cmliu&proxyip=${RproxyIP}`;
+		let isBase64 = true;
+
+		if (!sub || sub == ""){
+			const 生成本地节点 = await subAddresses(fakeHostName,fakeUserID,'subconverter',newAddressesapi,newAddressescsv);
+			const 解码本地节点 = atob(生成本地节点)
+			const 本地节点数组 = 解码本地节点.split('\n');
+			url = 本地节点数组.join('|');
+			//console.log(url);
+		} 
+
+		if (!userAgent.includes(('CF-Workers-SUB').toLowerCase())){
+			if ((userAgent.includes('clash') && !userAgent.includes('nekobox')) || ( _url.searchParams.has('clash'))) {
+				url = `https://${subconverter}/sub?target=clash&url=${encodeURIComponent(url)}&insert=false&config=${encodeURIComponent(subconfig)}&emoji=true&list=false&tfo=false&scv=true&fdn=false&sort=false&new_name=true`;
+				isBase64 = false;
+			} else if (userAgent.includes('sing-box') || userAgent.includes('singbox') || _url.searchParams.has('singbox') || _url.searchParams.has('sb')) {
+				url = `https://${subconverter}/sub?target=singbox&url=${encodeURIComponent(url)}&insert=false&config=${encodeURIComponent(subconfig)}&emoji=true&list=false&tfo=false&scv=true&fdn=false&sort=false&new_name=true`;
+				isBase64 = false;
+			} else if (userAgent.includes('surge') || _url.searchParams.has('surge')) {
+				url = `https://${subconverter}/sub?target=surge&ver=4&url=${encodeURIComponent(url)}&insert=false&config=${encodeURIComponent(subconfig)}&emoji=true&list=false&xudp=false&udp=false&tfo=false&expand=true&scv=true&fdn=false`;
+				isBase64 = false;
+			}
+		}
+		
+		try {
+			let content;
+			if ((!sub || sub == "") && isBase64 == true) {
+				content = await subAddresses(fakeHostName,fakeUserID,userAgent,newAddressesapi,newAddressescsv);
+			} else {
+				const response = await fetch(url ,{
+					headers: {
+						'User-Agent': `CF-Workers-epeius/cmliu`
+					}});
+				content = await response.text();
+			}
+			let 输出内容 = revertFakeInfo(content, password, hostName, isBase64);
+			if (userAgent.includes('surge') || _url.searchParams.has('surge')) 输出内容 = surge(输出内容, hostName);
+			//console.log(输出内容);
+			return 输出内容;
+		} catch (error) {
+			console.error('Error fetching content:', error);
+			return `Error fetching content: ${error.message}`;
+		}
+	}
+}
+
+async function sendMessage(type, ip, add_data = "") {
+	if ( BotToken !== '' && ChatID !== ''){
+		let msg = "";
+		const response = await fetch(`http://ip-api.com/json/${ip}?lang=zh-CN`);
+		if (response.status == 200) {
+			const ipInfo = await response.json();
+			msg = `${type}\nIP: ${ip}\n国家: ${ipInfo.country}\n<tg-spoiler>城市: ${ipInfo.city}\n组织: ${ipInfo.org}\nASN: ${ipInfo.as}\n${add_data}`;
+		} else {
+			msg = `${type}\nIP: ${ip}\n<tg-spoiler>${add_data}`;
+		}
+	
+		let url = "https://api.telegram.org/bot"+ BotToken +"/sendMessage?chat_id=" + ChatID + "&parse_mode=HTML&text=" + encodeURIComponent(msg);
+		return fetch(url, {
+			method: 'get',
+			headers: {
+				'Accept': 'text/html,application/xhtml+xml,application/xml;',
+				'Accept-Encoding': 'gzip, deflate, br',
+				'User-Agent': 'Mozilla/5.0 Chrome/90.0.4430.72'
+			}
+		});
+	}
+}
+
+function subAddresses(host,pw,userAgent,newAddressesapi,newAddressescsv) {
+	addresses = addresses.concat(newAddressesapi);
+	addresses = addresses.concat(newAddressescsv);
+	// 使用Set对象去重
+	const uniqueAddresses = [...new Set(addresses)];
+				
+	const responseBody = uniqueAddresses.map(address => {
+		let port = "443";
+		let addressid = address;
+
+		const match = addressid.match(regex);
+		if (!match) {
+			if (address.includes(':') && address.includes('#')) {
+				const parts = address.split(':');
+				address = parts[0];
+				const subParts = parts[1].split('#');
+				port = subParts[0];
+				addressid = subParts[1];
+			} else if (address.includes(':')) {
+				const parts = address.split(':');
+				address = parts[0];
+				port = parts[1];
+			} else if (address.includes('#')) {
+				const parts = address.split('#');
+				address = parts[0];
+				addressid = parts[1];
+			}
+		
+			if (addressid.includes(':')) {
+				addressid = addressid.split(':')[0];
+			}
+		} else {
+			address = match[1];
+			port = match[2] || port;
+			addressid = match[3] || address;
+		}
+		
+		let 伪装域名 = host ;
+		let 最终路径 = '/?ed=2560' ;
+		let 节点备注 = '';
+		
+		if(proxyhosts.length > 0 && (伪装域名.includes('.workers.dev') || 伪装域名.includes('pages.dev'))) {
+			最终路径 = `/${伪装域名}${最终路径}`;
+			伪装域名 = proxyhosts[Math.floor(Math.random() * proxyhosts.length)];
+			节点备注 = ` 已启用临时域名中转服务，请尽快绑定自定义域！`;
+		}
+		
+		let 密码 = pw;
+		if (!userAgent.includes('subconverter')) 密码 = encodeURIComponent(pw);
+
+		const 啥啥啥_写的这是啥啊 = 'dHJvamFu';
+		const 协议类型 = atob(啥啥啥_写的这是啥啊);
+		const trojanLink = `${协议类型}://${密码}@${address}:${port}?security=tls&sni=${伪装域名}&fp=randomized&type=ws&host=${伪装域名}&path=${encodeURIComponent(最终路径)}#${encodeURIComponent(addressid + 节点备注)}`;
+
+		return trojanLink;
+	}).join('\n');
+
+	const base64Response = btoa(responseBody); // 重新进行 Base64 编码
+
+	return base64Response;
+}
+
+async function getAddressesapi(api) {
+	if (!api || api.length === 0) {
+		return [];
+	}
+
+	let newapi = "";
+
+	// 创建一个AbortController对象，用于控制fetch请求的取消
+	const controller = new AbortController();
+
+	const timeout = setTimeout(() => {
+		controller.abort(); // 取消所有请求
+	}, 2000); // 2秒后触发
+
+	try {
+		// 使用Promise.allSettled等待所有API请求完成，无论成功或失败
+		// 对api数组进行遍历，对每个API地址发起fetch请求
+		const responses = await Promise.allSettled(api.map(apiUrl => fetch(apiUrl, {
+			method: 'get', 
+			headers: {
+				'Accept': 'text/html,application/xhtml+xml,application/xml;',
+				'User-Agent': 'CF-Workers-epeius/cmliu'
+			},
+			signal: controller.signal // 将AbortController的信号量添加到fetch请求中，以便于需要时可以取消请求
+		}).then(response => response.ok ? response.text() : Promise.reject())));
+
+		// 遍历所有响应
+		for (const response of responses) {
+			// 检查响应状态是否为'fulfilled'，即请求成功完成
+			if (response.status === 'fulfilled') {
+				// 获取响应的内容
+				const content = await response.value;
+				newapi += content + '\n';
+			}
+		}
+	} catch (error) {
+		console.error(error);
+	} finally {
+		// 无论成功或失败，最后都清除设置的超时定时器
+		clearTimeout(timeout);
+	}
+
+	const newAddressesapi = await ADD(newapi);
+
+	// 返回处理后的结果
+	return newAddressesapi;
+}
+
+async function getAddressescsv(tls) {
+	if (!addressescsv || addressescsv.length === 0) {
+		return [];
+	}
+	
+	let newAddressescsv = [];
+	
+	for (const csvUrl of addressescsv) {
+		try {
+			const response = await fetch(csvUrl);
+		
+			if (!response.ok) {
+				console.error('获取CSV地址时出错:', response.status, response.statusText);
+				continue;
+			}
+		
+			const text = await response.text();// 使用正确的字符编码解析文本内容
+			let lines;
+			if (text.includes('\r\n')){
+				lines = text.split('\r\n');
+			} else {
+				lines = text.split('\n');
+			}
+		
+			// 检查CSV头部是否包含必需字段
+			const header = lines[0].split(',');
+			const tlsIndex = header.indexOf('TLS');
+			const speedIndex = header.length - 1; // 最后一个字段
+		
+			const ipAddressIndex = 0;// IP地址在 CSV 头部的位置
+			const portIndex = 1;// 端口在 CSV 头部的位置
+			const dataCenterIndex = tlsIndex + 1; // 数据中心是 TLS 的后一个字段
+		
+			if (tlsIndex === -1) {
+				console.error('CSV文件缺少必需的字段');
+				continue;
+			}
+		
+			// 从第二行开始遍历CSV行
+			for (let i = 1; i < lines.length; i++) {
+				const columns = lines[i].split(',');
+		
+				// 检查TLS是否为"TRUE"且速度大于DLS
+				if (columns[tlsIndex].toUpperCase() === tls && parseFloat(columns[speedIndex]) > DLS) {
+					const ipAddress = columns[ipAddressIndex];
+					const port = columns[portIndex];
+					const dataCenter = columns[dataCenterIndex];
+			
+					const formattedAddress = `${ipAddress}:${port}#${dataCenter}`;
+					newAddressescsv.push(formattedAddress);
+				}
+			}
+		} catch (error) {
+			console.error('获取CSV地址时出错:', error);
+			continue;
+		}
+	}
+	
+	return newAddressescsv;
+}
+
+function surge(content, host) {
+	const 备改内容 = `skip-cert-verify=true, tfo=false, udp-relay=false`;
+	const 正确内容 = `skip-cert-verify=true, ws=true, ws-path=/?ed=2560, ws-headers=Host:"${host}", tfo=false, udp-relay=false`;
+	content = content.replace(new RegExp(备改内容, 'g'), 正确内容)
+
+	return content;
+}
+
+/**
  * [js-sha256]{@link https://github.com/emn178/js-sha256}
  *
  * @version 0.11.0
@@ -38,4 +859,521 @@ const _0xd6cb97=_0x4498;(function(_0x95d7df,_0x5d07c7){const _0x35c7aa=_0x4498,_
  * @copyright Chen, Yi-Cyuan 2014-2024
  * @license MIT
  */
-(function(){'use strict';const _0x60e7f3=_0xd6cb97;var _0x7e3ba2=_0x60e7f3(0x253),_0x44bc26=typeof window==='object',_0x2e9b57=_0x44bc26?window:{};_0x2e9b57[_0x60e7f3(0x239)]&&(_0x44bc26=![]);var _0x2893e6=!_0x44bc26&&typeof self==='object',_0x1f864a=!_0x2e9b57['JS_SHA256_NO_NODE_JS']&&typeof process===_0x60e7f3(0x1a8)&&process['versions']&&process[_0x60e7f3(0x1e5)][_0x60e7f3(0x1d6)];if(_0x1f864a)_0x2e9b57=global;else _0x2893e6&&(_0x2e9b57=self);var _0x4045a7=!_0x2e9b57['JS_SHA256_NO_COMMON_JS']&&typeof module===_0x60e7f3(0x1a8)&&module['exports'],_0x3cc17a=typeof define===_0x60e7f3(0x1fb)&&define[_0x60e7f3(0x1f0)],_0xb591c1=!_0x2e9b57[_0x60e7f3(0x1a5)]&&typeof ArrayBuffer!==_0x60e7f3(0x1d1),_0xb6f789='0123456789abcdef'[_0x60e7f3(0x268)](''),_0x5829ad=[-0x80000000,0x800000,0x8000,0x80],_0x569098=[0x18,0x10,0x8,0x0],_0x42433e=[0x428a2f98,0x71374491,0xb5c0fbcf,0xe9b5dba5,0x3956c25b,0x59f111f1,0x923f82a4,0xab1c5ed5,0xd807aa98,0x12835b01,0x243185be,0x550c7dc3,0x72be5d74,0x80deb1fe,0x9bdc06a7,0xc19bf174,0xe49b69c1,0xefbe4786,0xfc19dc6,0x240ca1cc,0x2de92c6f,0x4a7484aa,0x5cb0a9dc,0x76f988da,0x983e5152,0xa831c66d,0xb00327c8,0xbf597fc7,0xc6e00bf3,0xd5a79147,0x6ca6351,0x14292967,0x27b70a85,0x2e1b2138,0x4d2c6dfc,0x53380d13,0x650a7354,0x766a0abb,0x81c2c92e,0x92722c85,0xa2bfe8a1,0xa81a664b,0xc24b8b70,0xc76c51a3,0xd192e819,0xd6990624,0xf40e3585,0x106aa070,0x19a4c116,0x1e376c08,0x2748774c,0x34b0bcb5,0x391c0cb3,0x4ed8aa4a,0x5b9cca4f,0x682e6ff3,0x748f82ee,0x78a5636f,0x84c87814,0x8cc70208,0x90befffa,0xa4506ceb,0xbef9a3f7,0xc67178f2],_0x21ab4e=['hex',_0x60e7f3(0x1c8),_0x60e7f3(0x1f9),_0x60e7f3(0x185)],_0x4530c0=[];(_0x2e9b57[_0x60e7f3(0x215)]||!Array[_0x60e7f3(0x18a)])&&(Array[_0x60e7f3(0x18a)]=function(_0x2f1f0f){const _0x324408=_0x60e7f3;return Object[_0x324408(0x200)]['toString'][_0x324408(0x1cf)](_0x2f1f0f)==='[object\x20Array]';});_0xb591c1&&(_0x2e9b57[_0x60e7f3(0x192)]||!ArrayBuffer['isView'])&&(ArrayBuffer[_0x60e7f3(0x233)]=function(_0x3fc22f){const _0x35f432=_0x60e7f3;return typeof _0x3fc22f===_0x35f432(0x1a8)&&_0x3fc22f[_0x35f432(0x1a6)]&&_0x3fc22f['buffer'][_0x35f432(0x1c9)]===ArrayBuffer;});var _0x4c7f6d=function(_0x2b9cf4,_0x3b7411){return function(_0x4c3103){const _0x154e0c=_0x4498;return new _0x3f4525(_0x3b7411,!![])[_0x154e0c(0x230)](_0x4c3103)[_0x2b9cf4]();};},_0x396364=function(_0x482832){const _0x249a2e=_0x60e7f3;var _0x1351f2=_0x4c7f6d(_0x249a2e(0x25a),_0x482832);_0x1f864a&&(_0x1351f2=_0x4ef3b8(_0x1351f2,_0x482832));_0x1351f2[_0x249a2e(0x211)]=function(){return new _0x3f4525(_0x482832);},_0x1351f2[_0x249a2e(0x230)]=function(_0x301f29){const _0x381e3f=_0x249a2e;return _0x1351f2[_0x381e3f(0x211)]()[_0x381e3f(0x230)](_0x301f29);};for(var _0x1835b9=0x0;_0x1835b9<_0x21ab4e[_0x249a2e(0x235)];++_0x1835b9){var _0x1aa7d3=_0x21ab4e[_0x1835b9];_0x1351f2[_0x1aa7d3]=_0x4c7f6d(_0x1aa7d3,_0x482832);}return _0x1351f2;},_0x4ef3b8=function(_0x2a053a,_0x1a8c3e){const _0x7b062=_0x60e7f3;var _0x56d23d=require(_0x7b062(0x1d3)),_0x55154d=require('buffer')[_0x7b062(0x1b1)],_0x318242=_0x1a8c3e?_0x7b062(0x1c1):_0x7b062(0x23b),_0x20f7bc;_0x55154d[_0x7b062(0x1a7)]&&!_0x2e9b57[_0x7b062(0x201)]?_0x20f7bc=_0x55154d['from']:_0x20f7bc=function(_0x511f75){return new _0x55154d(_0x511f75);};var _0x56295d=function(_0x391dcd){const _0x4fd637=_0x7b062;if(typeof _0x391dcd===_0x4fd637(0x176))return _0x56d23d[_0x4fd637(0x26f)](_0x318242)['update'](_0x391dcd,_0x4fd637(0x1cc))[_0x4fd637(0x1f9)](_0x4fd637(0x25a));else{if(_0x391dcd===null||_0x391dcd===undefined)throw new Error(_0x7e3ba2);else _0x391dcd['constructor']===ArrayBuffer&&(_0x391dcd=new Uint8Array(_0x391dcd));}return Array['isArray'](_0x391dcd)||ArrayBuffer['isView'](_0x391dcd)||_0x391dcd[_0x4fd637(0x1c9)]===_0x55154d?_0x56d23d[_0x4fd637(0x26f)](_0x318242)['update'](_0x20f7bc(_0x391dcd))['digest'](_0x4fd637(0x25a)):_0x2a053a(_0x391dcd);};return _0x56295d;},_0x3974b4=function(_0xce9933,_0x291cfb){return function(_0x1632b5,_0x9a83d7){const _0x3e3e22=_0x4498;return new _0x4e62ba(_0x1632b5,_0x291cfb,!![])[_0x3e3e22(0x230)](_0x9a83d7)[_0xce9933]();};},_0x1dfd20=function(_0x4669d6){const _0x490a8d=_0x60e7f3;var _0x1f76f5=_0x3974b4(_0x490a8d(0x25a),_0x4669d6);_0x1f76f5[_0x490a8d(0x211)]=function(_0x3f5b12){return new _0x4e62ba(_0x3f5b12,_0x4669d6);},_0x1f76f5[_0x490a8d(0x230)]=function(_0x5203e7,_0x571112){const _0x5f3bdd=_0x490a8d;return _0x1f76f5[_0x5f3bdd(0x211)](_0x5203e7)['update'](_0x571112);};for(var _0x97c1fd=0x0;_0x97c1fd<_0x21ab4e[_0x490a8d(0x235)];++_0x97c1fd){var _0x48ab00=_0x21ab4e[_0x97c1fd];_0x1f76f5[_0x48ab00]=_0x3974b4(_0x48ab00,_0x4669d6);}return _0x1f76f5;};function _0x3f4525(_0x179712,_0x5c5ef7){const _0x2d39b4=_0x60e7f3;_0x5c5ef7?(_0x4530c0[0x0]=_0x4530c0[0x10]=_0x4530c0[0x1]=_0x4530c0[0x2]=_0x4530c0[0x3]=_0x4530c0[0x4]=_0x4530c0[0x5]=_0x4530c0[0x6]=_0x4530c0[0x7]=_0x4530c0[0x8]=_0x4530c0[0x9]=_0x4530c0[0xa]=_0x4530c0[0xb]=_0x4530c0[0xc]=_0x4530c0[0xd]=_0x4530c0[0xe]=_0x4530c0[0xf]=0x0,this[_0x2d39b4(0x24f)]=_0x4530c0):this[_0x2d39b4(0x24f)]=[0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0],_0x179712?(this['h0']=0xc1059ed8,this['h1']=0x367cd507,this['h2']=0x3070dd17,this['h3']=0xf70e5939,this['h4']=0xffc00b31,this['h5']=0x68581511,this['h6']=0x64f98fa7,this['h7']=0xbefa4fa4):(this['h0']=0x6a09e667,this['h1']=0xbb67ae85,this['h2']=0x3c6ef372,this['h3']=0xa54ff53a,this['h4']=0x510e527f,this['h5']=0x9b05688c,this['h6']=0x1f83d9ab,this['h7']=0x5be0cd19),this[_0x2d39b4(0x269)]=this[_0x2d39b4(0x22d)]=this[_0x2d39b4(0x1ac)]=this[_0x2d39b4(0x17e)]=0x0,this['finalized']=this[_0x2d39b4(0x1b6)]=![],this[_0x2d39b4(0x184)]=!![],this[_0x2d39b4(0x1e8)]=_0x179712;}_0x3f4525['prototype'][_0x60e7f3(0x230)]=function(_0xa59fc1){const _0x394021=_0x60e7f3;if(this[_0x394021(0x1a4)])return;var _0x2a1f38,_0x3d8825=typeof _0xa59fc1;if(_0x3d8825!=='string'){if(_0x3d8825==='object'){if(_0xa59fc1===null)throw new Error(_0x7e3ba2);else{if(_0xb591c1&&_0xa59fc1[_0x394021(0x1c9)]===ArrayBuffer)_0xa59fc1=new Uint8Array(_0xa59fc1);else{if(!Array['isArray'](_0xa59fc1)){if(!_0xb591c1||!ArrayBuffer['isView'](_0xa59fc1))throw new Error(_0x7e3ba2);}}}}else throw new Error(_0x7e3ba2);_0x2a1f38=!![];}var _0x17590a,_0x48e750=0x0,_0x28f623,_0x3dd493=_0xa59fc1[_0x394021(0x235)],_0x3116cb=this[_0x394021(0x24f)];while(_0x48e750<_0x3dd493){this[_0x394021(0x1b6)]&&(this[_0x394021(0x1b6)]=![],_0x3116cb[0x0]=this[_0x394021(0x269)],this[_0x394021(0x269)]=_0x3116cb[0x10]=_0x3116cb[0x1]=_0x3116cb[0x2]=_0x3116cb[0x3]=_0x3116cb[0x4]=_0x3116cb[0x5]=_0x3116cb[0x6]=_0x3116cb[0x7]=_0x3116cb[0x8]=_0x3116cb[0x9]=_0x3116cb[0xa]=_0x3116cb[0xb]=_0x3116cb[0xc]=_0x3116cb[0xd]=_0x3116cb[0xe]=_0x3116cb[0xf]=0x0);if(_0x2a1f38)for(_0x28f623=this[_0x394021(0x22d)];_0x48e750<_0x3dd493&&_0x28f623<0x40;++_0x48e750){_0x3116cb[_0x28f623>>>0x2]|=_0xa59fc1[_0x48e750]<<_0x569098[_0x28f623++&0x3];}else for(_0x28f623=this[_0x394021(0x22d)];_0x48e750<_0x3dd493&&_0x28f623<0x40;++_0x48e750){_0x17590a=_0xa59fc1[_0x394021(0x171)](_0x48e750);if(_0x17590a<0x80)_0x3116cb[_0x28f623>>>0x2]|=_0x17590a<<_0x569098[_0x28f623++&0x3];else{if(_0x17590a<0x800)_0x3116cb[_0x28f623>>>0x2]|=(0xc0|_0x17590a>>>0x6)<<_0x569098[_0x28f623++&0x3],_0x3116cb[_0x28f623>>>0x2]|=(0x80|_0x17590a&0x3f)<<_0x569098[_0x28f623++&0x3];else _0x17590a<0xd800||_0x17590a>=0xe000?(_0x3116cb[_0x28f623>>>0x2]|=(0xe0|_0x17590a>>>0xc)<<_0x569098[_0x28f623++&0x3],_0x3116cb[_0x28f623>>>0x2]|=(0x80|_0x17590a>>>0x6&0x3f)<<_0x569098[_0x28f623++&0x3],_0x3116cb[_0x28f623>>>0x2]|=(0x80|_0x17590a&0x3f)<<_0x569098[_0x28f623++&0x3]):(_0x17590a=0x10000+((_0x17590a&0x3ff)<<0xa|_0xa59fc1[_0x394021(0x171)](++_0x48e750)&0x3ff),_0x3116cb[_0x28f623>>>0x2]|=(0xf0|_0x17590a>>>0x12)<<_0x569098[_0x28f623++&0x3],_0x3116cb[_0x28f623>>>0x2]|=(0x80|_0x17590a>>>0xc&0x3f)<<_0x569098[_0x28f623++&0x3],_0x3116cb[_0x28f623>>>0x2]|=(0x80|_0x17590a>>>0x6&0x3f)<<_0x569098[_0x28f623++&0x3],_0x3116cb[_0x28f623>>>0x2]|=(0x80|_0x17590a&0x3f)<<_0x569098[_0x28f623++&0x3]);}}this[_0x394021(0x202)]=_0x28f623,this[_0x394021(0x1ac)]+=_0x28f623-this[_0x394021(0x22d)],_0x28f623>=0x40?(this[_0x394021(0x269)]=_0x3116cb[0x10],this['start']=_0x28f623-0x40,this['hash'](),this[_0x394021(0x1b6)]=!![]):this['start']=_0x28f623;}return this[_0x394021(0x1ac)]>0xffffffff&&(this[_0x394021(0x17e)]+=this[_0x394021(0x1ac)]/0x100000000<<0x0,this['bytes']=this[_0x394021(0x1ac)]%0x100000000),this;},_0x3f4525['prototype']['finalize']=function(){const _0x5544c6=_0x60e7f3;if(this['finalized'])return;this[_0x5544c6(0x1a4)]=!![];var _0x1052f1=this['blocks'],_0x14a7fd=this[_0x5544c6(0x202)];_0x1052f1[0x10]=this[_0x5544c6(0x269)],_0x1052f1[_0x14a7fd>>>0x2]|=_0x5829ad[_0x14a7fd&0x3],this[_0x5544c6(0x269)]=_0x1052f1[0x10],_0x14a7fd>=0x38&&(!this['hashed']&&this[_0x5544c6(0x1a3)](),_0x1052f1[0x0]=this[_0x5544c6(0x269)],_0x1052f1[0x10]=_0x1052f1[0x1]=_0x1052f1[0x2]=_0x1052f1[0x3]=_0x1052f1[0x4]=_0x1052f1[0x5]=_0x1052f1[0x6]=_0x1052f1[0x7]=_0x1052f1[0x8]=_0x1052f1[0x9]=_0x1052f1[0xa]=_0x1052f1[0xb]=_0x1052f1[0xc]=_0x1052f1[0xd]=_0x1052f1[0xe]=_0x1052f1[0xf]=0x0),_0x1052f1[0xe]=this['hBytes']<<0x3|this[_0x5544c6(0x1ac)]>>>0x1d,_0x1052f1[0xf]=this[_0x5544c6(0x1ac)]<<0x3,this[_0x5544c6(0x1a3)]();},_0x3f4525[_0x60e7f3(0x200)][_0x60e7f3(0x1a3)]=function(){const _0x1c5f25=_0x60e7f3;var _0x29b1cd=this['h0'],_0x41c523=this['h1'],_0x11d378=this['h2'],_0x16da9c=this['h3'],_0x1397ac=this['h4'],_0xdcf0b0=this['h5'],_0x453278=this['h6'],_0x54b148=this['h7'],_0x5a6f08=this[_0x1c5f25(0x24f)],_0x5e7672,_0x23d2bb,_0x5e97c1,_0x44d27a,_0x4fd181,_0x3934da,_0x526695,_0x257f3,_0x211716,_0x246af4,_0x21bf3c;for(_0x5e7672=0x10;_0x5e7672<0x40;++_0x5e7672){_0x4fd181=_0x5a6f08[_0x5e7672-0xf],_0x23d2bb=(_0x4fd181>>>0x7|_0x4fd181<<0x19)^(_0x4fd181>>>0x12|_0x4fd181<<0xe)^_0x4fd181>>>0x3,_0x4fd181=_0x5a6f08[_0x5e7672-0x2],_0x5e97c1=(_0x4fd181>>>0x11|_0x4fd181<<0xf)^(_0x4fd181>>>0x13|_0x4fd181<<0xd)^_0x4fd181>>>0xa,_0x5a6f08[_0x5e7672]=_0x5a6f08[_0x5e7672-0x10]+_0x23d2bb+_0x5a6f08[_0x5e7672-0x7]+_0x5e97c1<<0x0;}_0x21bf3c=_0x41c523&_0x11d378;for(_0x5e7672=0x0;_0x5e7672<0x40;_0x5e7672+=0x4){this[_0x1c5f25(0x184)]?(this[_0x1c5f25(0x1e8)]?(_0x257f3=0x49400,_0x4fd181=_0x5a6f08[0x0]-0x543c9a5b,_0x54b148=_0x4fd181-0x8f1a6c7<<0x0,_0x16da9c=_0x4fd181+0x170e9b5<<0x0):(_0x257f3=0x2a01a605,_0x4fd181=_0x5a6f08[0x0]-0xc881298,_0x54b148=_0x4fd181-0x5ab00ac6<<0x0,_0x16da9c=_0x4fd181+0x8909ae5<<0x0),this[_0x1c5f25(0x184)]=![]):(_0x23d2bb=(_0x29b1cd>>>0x2|_0x29b1cd<<0x1e)^(_0x29b1cd>>>0xd|_0x29b1cd<<0x13)^(_0x29b1cd>>>0x16|_0x29b1cd<<0xa),_0x5e97c1=(_0x1397ac>>>0x6|_0x1397ac<<0x1a)^(_0x1397ac>>>0xb|_0x1397ac<<0x15)^(_0x1397ac>>>0x19|_0x1397ac<<0x7),_0x257f3=_0x29b1cd&_0x41c523,_0x44d27a=_0x257f3^_0x29b1cd&_0x11d378^_0x21bf3c,_0x526695=_0x1397ac&_0xdcf0b0^~_0x1397ac&_0x453278,_0x4fd181=_0x54b148+_0x5e97c1+_0x526695+_0x42433e[_0x5e7672]+_0x5a6f08[_0x5e7672],_0x3934da=_0x23d2bb+_0x44d27a,_0x54b148=_0x16da9c+_0x4fd181<<0x0,_0x16da9c=_0x4fd181+_0x3934da<<0x0),_0x23d2bb=(_0x16da9c>>>0x2|_0x16da9c<<0x1e)^(_0x16da9c>>>0xd|_0x16da9c<<0x13)^(_0x16da9c>>>0x16|_0x16da9c<<0xa),_0x5e97c1=(_0x54b148>>>0x6|_0x54b148<<0x1a)^(_0x54b148>>>0xb|_0x54b148<<0x15)^(_0x54b148>>>0x19|_0x54b148<<0x7),_0x211716=_0x16da9c&_0x29b1cd,_0x44d27a=_0x211716^_0x16da9c&_0x41c523^_0x257f3,_0x526695=_0x54b148&_0x1397ac^~_0x54b148&_0xdcf0b0,_0x4fd181=_0x453278+_0x5e97c1+_0x526695+_0x42433e[_0x5e7672+0x1]+_0x5a6f08[_0x5e7672+0x1],_0x3934da=_0x23d2bb+_0x44d27a,_0x453278=_0x11d378+_0x4fd181<<0x0,_0x11d378=_0x4fd181+_0x3934da<<0x0,_0x23d2bb=(_0x11d378>>>0x2|_0x11d378<<0x1e)^(_0x11d378>>>0xd|_0x11d378<<0x13)^(_0x11d378>>>0x16|_0x11d378<<0xa),_0x5e97c1=(_0x453278>>>0x6|_0x453278<<0x1a)^(_0x453278>>>0xb|_0x453278<<0x15)^(_0x453278>>>0x19|_0x453278<<0x7),_0x246af4=_0x11d378&_0x16da9c,_0x44d27a=_0x246af4^_0x11d378&_0x29b1cd^_0x211716,_0x526695=_0x453278&_0x54b148^~_0x453278&_0x1397ac,_0x4fd181=_0xdcf0b0+_0x5e97c1+_0x526695+_0x42433e[_0x5e7672+0x2]+_0x5a6f08[_0x5e7672+0x2],_0x3934da=_0x23d2bb+_0x44d27a,_0xdcf0b0=_0x41c523+_0x4fd181<<0x0,_0x41c523=_0x4fd181+_0x3934da<<0x0,_0x23d2bb=(_0x41c523>>>0x2|_0x41c523<<0x1e)^(_0x41c523>>>0xd|_0x41c523<<0x13)^(_0x41c523>>>0x16|_0x41c523<<0xa),_0x5e97c1=(_0xdcf0b0>>>0x6|_0xdcf0b0<<0x1a)^(_0xdcf0b0>>>0xb|_0xdcf0b0<<0x15)^(_0xdcf0b0>>>0x19|_0xdcf0b0<<0x7),_0x21bf3c=_0x41c523&_0x11d378,_0x44d27a=_0x21bf3c^_0x41c523&_0x16da9c^_0x246af4,_0x526695=_0xdcf0b0&_0x453278^~_0xdcf0b0&_0x54b148,_0x4fd181=_0x1397ac+_0x5e97c1+_0x526695+_0x42433e[_0x5e7672+0x3]+_0x5a6f08[_0x5e7672+0x3],_0x3934da=_0x23d2bb+_0x44d27a,_0x1397ac=_0x29b1cd+_0x4fd181<<0x0,_0x29b1cd=_0x4fd181+_0x3934da<<0x0,this[_0x1c5f25(0x1b9)]=!![];}this['h0']=this['h0']+_0x29b1cd<<0x0,this['h1']=this['h1']+_0x41c523<<0x0,this['h2']=this['h2']+_0x11d378<<0x0,this['h3']=this['h3']+_0x16da9c<<0x0,this['h4']=this['h4']+_0x1397ac<<0x0,this['h5']=this['h5']+_0xdcf0b0<<0x0,this['h6']=this['h6']+_0x453278<<0x0,this['h7']=this['h7']+_0x54b148<<0x0;},_0x3f4525[_0x60e7f3(0x200)][_0x60e7f3(0x25a)]=function(){const _0x3c27ab=_0x60e7f3;this[_0x3c27ab(0x208)]();var _0x4d89d4=this['h0'],_0x4286ac=this['h1'],_0x1a18a5=this['h2'],_0x271a12=this['h3'],_0x5e30f5=this['h4'],_0x27d22c=this['h5'],_0x2395d3=this['h6'],_0x14f488=this['h7'],_0x2cdc20=_0xb6f789[_0x4d89d4>>>0x1c&0xf]+_0xb6f789[_0x4d89d4>>>0x18&0xf]+_0xb6f789[_0x4d89d4>>>0x14&0xf]+_0xb6f789[_0x4d89d4>>>0x10&0xf]+_0xb6f789[_0x4d89d4>>>0xc&0xf]+_0xb6f789[_0x4d89d4>>>0x8&0xf]+_0xb6f789[_0x4d89d4>>>0x4&0xf]+_0xb6f789[_0x4d89d4&0xf]+_0xb6f789[_0x4286ac>>>0x1c&0xf]+_0xb6f789[_0x4286ac>>>0x18&0xf]+_0xb6f789[_0x4286ac>>>0x14&0xf]+_0xb6f789[_0x4286ac>>>0x10&0xf]+_0xb6f789[_0x4286ac>>>0xc&0xf]+_0xb6f789[_0x4286ac>>>0x8&0xf]+_0xb6f789[_0x4286ac>>>0x4&0xf]+_0xb6f789[_0x4286ac&0xf]+_0xb6f789[_0x1a18a5>>>0x1c&0xf]+_0xb6f789[_0x1a18a5>>>0x18&0xf]+_0xb6f789[_0x1a18a5>>>0x14&0xf]+_0xb6f789[_0x1a18a5>>>0x10&0xf]+_0xb6f789[_0x1a18a5>>>0xc&0xf]+_0xb6f789[_0x1a18a5>>>0x8&0xf]+_0xb6f789[_0x1a18a5>>>0x4&0xf]+_0xb6f789[_0x1a18a5&0xf]+_0xb6f789[_0x271a12>>>0x1c&0xf]+_0xb6f789[_0x271a12>>>0x18&0xf]+_0xb6f789[_0x271a12>>>0x14&0xf]+_0xb6f789[_0x271a12>>>0x10&0xf]+_0xb6f789[_0x271a12>>>0xc&0xf]+_0xb6f789[_0x271a12>>>0x8&0xf]+_0xb6f789[_0x271a12>>>0x4&0xf]+_0xb6f789[_0x271a12&0xf]+_0xb6f789[_0x5e30f5>>>0x1c&0xf]+_0xb6f789[_0x5e30f5>>>0x18&0xf]+_0xb6f789[_0x5e30f5>>>0x14&0xf]+_0xb6f789[_0x5e30f5>>>0x10&0xf]+_0xb6f789[_0x5e30f5>>>0xc&0xf]+_0xb6f789[_0x5e30f5>>>0x8&0xf]+_0xb6f789[_0x5e30f5>>>0x4&0xf]+_0xb6f789[_0x5e30f5&0xf]+_0xb6f789[_0x27d22c>>>0x1c&0xf]+_0xb6f789[_0x27d22c>>>0x18&0xf]+_0xb6f789[_0x27d22c>>>0x14&0xf]+_0xb6f789[_0x27d22c>>>0x10&0xf]+_0xb6f789[_0x27d22c>>>0xc&0xf]+_0xb6f789[_0x27d22c>>>0x8&0xf]+_0xb6f789[_0x27d22c>>>0x4&0xf]+_0xb6f789[_0x27d22c&0xf]+_0xb6f789[_0x2395d3>>>0x1c&0xf]+_0xb6f789[_0x2395d3>>>0x18&0xf]+_0xb6f789[_0x2395d3>>>0x14&0xf]+_0xb6f789[_0x2395d3>>>0x10&0xf]+_0xb6f789[_0x2395d3>>>0xc&0xf]+_0xb6f789[_0x2395d3>>>0x8&0xf]+_0xb6f789[_0x2395d3>>>0x4&0xf]+_0xb6f789[_0x2395d3&0xf];return!this[_0x3c27ab(0x1e8)]&&(_0x2cdc20+=_0xb6f789[_0x14f488>>>0x1c&0xf]+_0xb6f789[_0x14f488>>>0x18&0xf]+_0xb6f789[_0x14f488>>>0x14&0xf]+_0xb6f789[_0x14f488>>>0x10&0xf]+_0xb6f789[_0x14f488>>>0xc&0xf]+_0xb6f789[_0x14f488>>>0x8&0xf]+_0xb6f789[_0x14f488>>>0x4&0xf]+_0xb6f789[_0x14f488&0xf]),_0x2cdc20;},_0x3f4525[_0x60e7f3(0x200)][_0x60e7f3(0x231)]=_0x3f4525['prototype']['hex'],_0x3f4525[_0x60e7f3(0x200)][_0x60e7f3(0x1f9)]=function(){const _0x50136f=_0x60e7f3;this[_0x50136f(0x208)]();var _0x424b41=this['h0'],_0x11d46c=this['h1'],_0xeb0102=this['h2'],_0x37691d=this['h3'],_0x350970=this['h4'],_0x73eb7f=this['h5'],_0x3d8419=this['h6'],_0x384f48=this['h7'],_0x1a8189=[_0x424b41>>>0x18&0xff,_0x424b41>>>0x10&0xff,_0x424b41>>>0x8&0xff,_0x424b41&0xff,_0x11d46c>>>0x18&0xff,_0x11d46c>>>0x10&0xff,_0x11d46c>>>0x8&0xff,_0x11d46c&0xff,_0xeb0102>>>0x18&0xff,_0xeb0102>>>0x10&0xff,_0xeb0102>>>0x8&0xff,_0xeb0102&0xff,_0x37691d>>>0x18&0xff,_0x37691d>>>0x10&0xff,_0x37691d>>>0x8&0xff,_0x37691d&0xff,_0x350970>>>0x18&0xff,_0x350970>>>0x10&0xff,_0x350970>>>0x8&0xff,_0x350970&0xff,_0x73eb7f>>>0x18&0xff,_0x73eb7f>>>0x10&0xff,_0x73eb7f>>>0x8&0xff,_0x73eb7f&0xff,_0x3d8419>>>0x18&0xff,_0x3d8419>>>0x10&0xff,_0x3d8419>>>0x8&0xff,_0x3d8419&0xff];return!this[_0x50136f(0x1e8)]&&_0x1a8189[_0x50136f(0x26a)](_0x384f48>>>0x18&0xff,_0x384f48>>>0x10&0xff,_0x384f48>>>0x8&0xff,_0x384f48&0xff),_0x1a8189;},_0x3f4525[_0x60e7f3(0x200)]['array']=_0x3f4525['prototype'][_0x60e7f3(0x1f9)],_0x3f4525[_0x60e7f3(0x200)][_0x60e7f3(0x185)]=function(){const _0x17be74=_0x60e7f3;this[_0x17be74(0x208)]();var _0x4eca7a=new ArrayBuffer(this[_0x17be74(0x1e8)]?0x1c:0x20),_0x3fc76a=new DataView(_0x4eca7a);return _0x3fc76a[_0x17be74(0x17b)](0x0,this['h0']),_0x3fc76a['setUint32'](0x4,this['h1']),_0x3fc76a[_0x17be74(0x17b)](0x8,this['h2']),_0x3fc76a['setUint32'](0xc,this['h3']),_0x3fc76a['setUint32'](0x10,this['h4']),_0x3fc76a[_0x17be74(0x17b)](0x14,this['h5']),_0x3fc76a['setUint32'](0x18,this['h6']),!this['is224']&&_0x3fc76a['setUint32'](0x1c,this['h7']),_0x4eca7a;};function _0x4e62ba(_0x18e151,_0x1487a9,_0x5ada14){const _0x364bed=_0x60e7f3;var _0x43f740,_0x4d4ecb=typeof _0x18e151;if(_0x4d4ecb===_0x364bed(0x176)){var _0x1126fd=[],_0x1a3b91=_0x18e151[_0x364bed(0x235)],_0x575602=0x0,_0x3a0368;for(_0x43f740=0x0;_0x43f740<_0x1a3b91;++_0x43f740){_0x3a0368=_0x18e151[_0x364bed(0x171)](_0x43f740);if(_0x3a0368<0x80)_0x1126fd[_0x575602++]=_0x3a0368;else{if(_0x3a0368<0x800)_0x1126fd[_0x575602++]=0xc0|_0x3a0368>>>0x6,_0x1126fd[_0x575602++]=0x80|_0x3a0368&0x3f;else _0x3a0368<0xd800||_0x3a0368>=0xe000?(_0x1126fd[_0x575602++]=0xe0|_0x3a0368>>>0xc,_0x1126fd[_0x575602++]=0x80|_0x3a0368>>>0x6&0x3f,_0x1126fd[_0x575602++]=0x80|_0x3a0368&0x3f):(_0x3a0368=0x10000+((_0x3a0368&0x3ff)<<0xa|_0x18e151[_0x364bed(0x171)](++_0x43f740)&0x3ff),_0x1126fd[_0x575602++]=0xf0|_0x3a0368>>>0x12,_0x1126fd[_0x575602++]=0x80|_0x3a0368>>>0xc&0x3f,_0x1126fd[_0x575602++]=0x80|_0x3a0368>>>0x6&0x3f,_0x1126fd[_0x575602++]=0x80|_0x3a0368&0x3f);}}_0x18e151=_0x1126fd;}else{if(_0x4d4ecb===_0x364bed(0x1a8)){if(_0x18e151===null)throw new Error(_0x7e3ba2);else{if(_0xb591c1&&_0x18e151[_0x364bed(0x1c9)]===ArrayBuffer)_0x18e151=new Uint8Array(_0x18e151);else{if(!Array[_0x364bed(0x18a)](_0x18e151)){if(!_0xb591c1||!ArrayBuffer[_0x364bed(0x233)](_0x18e151))throw new Error(_0x7e3ba2);}}}}else throw new Error(_0x7e3ba2);}_0x18e151[_0x364bed(0x235)]>0x40&&(_0x18e151=new _0x3f4525(_0x1487a9,!![])['update'](_0x18e151)[_0x364bed(0x1c8)]());var _0x2c806c=[],_0x1182b0=[];for(_0x43f740=0x0;_0x43f740<0x40;++_0x43f740){var _0x2c24f9=_0x18e151[_0x43f740]||0x0;_0x2c806c[_0x43f740]=0x5c^_0x2c24f9,_0x1182b0[_0x43f740]=0x36^_0x2c24f9;}_0x3f4525[_0x364bed(0x1cf)](this,_0x1487a9,_0x5ada14),this[_0x364bed(0x230)](_0x1182b0),this[_0x364bed(0x22c)]=_0x2c806c,this[_0x364bed(0x1e3)]=!![],this[_0x364bed(0x271)]=_0x5ada14;}_0x4e62ba[_0x60e7f3(0x200)]=new _0x3f4525(),_0x4e62ba[_0x60e7f3(0x200)]['finalize']=function(){const _0x1b336d=_0x60e7f3;_0x3f4525[_0x1b336d(0x200)][_0x1b336d(0x208)]['call'](this);if(this['inner']){this[_0x1b336d(0x1e3)]=![];var _0x3379c9=this['array']();_0x3f4525[_0x1b336d(0x1cf)](this,this['is224'],this['sharedMemory']),this[_0x1b336d(0x230)](this['oKeyPad']),this[_0x1b336d(0x230)](_0x3379c9),_0x3f4525[_0x1b336d(0x200)][_0x1b336d(0x208)]['call'](this);}};var _0x431c4a=_0x396364();_0x431c4a[_0x60e7f3(0x23b)]=_0x431c4a,_0x431c4a[_0x60e7f3(0x1c1)]=_0x396364(!![]),_0x431c4a['sha256'][_0x60e7f3(0x172)]=_0x1dfd20(),_0x431c4a[_0x60e7f3(0x1c1)][_0x60e7f3(0x172)]=_0x1dfd20(!![]),_0x4045a7?module[_0x60e7f3(0x1b7)]=_0x431c4a:(_0x2e9b57[_0x60e7f3(0x23b)]=_0x431c4a[_0x60e7f3(0x23b)],_0x2e9b57['sha224']=_0x431c4a[_0x60e7f3(0x1c1)],_0x3cc17a&&define(function(){return _0x431c4a;}));}());
+/*jslint bitwise: true */
+(function () {
+	'use strict';
+  
+	var ERROR = 'input is invalid type';
+	var WINDOW = typeof window === 'object';
+	var root = WINDOW ? window : {};
+	if (root.JS_SHA256_NO_WINDOW) {
+	  WINDOW = false;
+	}
+	var WEB_WORKER = !WINDOW && typeof self === 'object';
+	var NODE_JS = !root.JS_SHA256_NO_NODE_JS && typeof process === 'object' && process.versions && process.versions.node;
+	if (NODE_JS) {
+	  root = global;
+	} else if (WEB_WORKER) {
+	  root = self;
+	}
+	var COMMON_JS = !root.JS_SHA256_NO_COMMON_JS && typeof module === 'object' && module.exports;
+	var AMD = typeof define === 'function' && define.amd;
+	var ARRAY_BUFFER = !root.JS_SHA256_NO_ARRAY_BUFFER && typeof ArrayBuffer !== 'undefined';
+	var HEX_CHARS = '0123456789abcdef'.split('');
+	var EXTRA = [-2147483648, 8388608, 32768, 128];
+	var SHIFT = [24, 16, 8, 0];
+	var K = [
+	  0x428a2f98, 0x71374491, 0xb5c0fbcf, 0xe9b5dba5, 0x3956c25b, 0x59f111f1, 0x923f82a4, 0xab1c5ed5,
+	  0xd807aa98, 0x12835b01, 0x243185be, 0x550c7dc3, 0x72be5d74, 0x80deb1fe, 0x9bdc06a7, 0xc19bf174,
+	  0xe49b69c1, 0xefbe4786, 0x0fc19dc6, 0x240ca1cc, 0x2de92c6f, 0x4a7484aa, 0x5cb0a9dc, 0x76f988da,
+	  0x983e5152, 0xa831c66d, 0xb00327c8, 0xbf597fc7, 0xc6e00bf3, 0xd5a79147, 0x06ca6351, 0x14292967,
+	  0x27b70a85, 0x2e1b2138, 0x4d2c6dfc, 0x53380d13, 0x650a7354, 0x766a0abb, 0x81c2c92e, 0x92722c85,
+	  0xa2bfe8a1, 0xa81a664b, 0xc24b8b70, 0xc76c51a3, 0xd192e819, 0xd6990624, 0xf40e3585, 0x106aa070,
+	  0x19a4c116, 0x1e376c08, 0x2748774c, 0x34b0bcb5, 0x391c0cb3, 0x4ed8aa4a, 0x5b9cca4f, 0x682e6ff3,
+	  0x748f82ee, 0x78a5636f, 0x84c87814, 0x8cc70208, 0x90befffa, 0xa4506ceb, 0xbef9a3f7, 0xc67178f2
+	];
+	var OUTPUT_TYPES = ['hex', 'array', 'digest', 'arrayBuffer'];
+  
+	var blocks = [];
+  
+	if (root.JS_SHA256_NO_NODE_JS || !Array.isArray) {
+	  Array.isArray = function (obj) {
+		return Object.prototype.toString.call(obj) === '[object Array]';
+	  };
+	}
+  
+	if (ARRAY_BUFFER && (root.JS_SHA256_NO_ARRAY_BUFFER_IS_VIEW || !ArrayBuffer.isView)) {
+	  ArrayBuffer.isView = function (obj) {
+		return typeof obj === 'object' && obj.buffer && obj.buffer.constructor === ArrayBuffer;
+	  };
+	}
+  
+	var createOutputMethod = function (outputType, is224) {
+	  return function (message) {
+		return new Sha256(is224, true).update(message)[outputType]();
+	  };
+	};
+  
+	var createMethod = function (is224) {
+	  var method = createOutputMethod('hex', is224);
+	  if (NODE_JS) {
+		method = nodeWrap(method, is224);
+	  }
+	  method.create = function () {
+		return new Sha256(is224);
+	  };
+	  method.update = function (message) {
+		return method.create().update(message);
+	  };
+	  for (var i = 0; i < OUTPUT_TYPES.length; ++i) {
+		var type = OUTPUT_TYPES[i];
+		method[type] = createOutputMethod(type, is224);
+	  }
+	  return method;
+	};
+  
+	var nodeWrap = function (method, is224) {
+	  var crypto = require('crypto')
+	  var Buffer = require('buffer').Buffer;
+	  var algorithm = is224 ? 'sha224' : 'sha256';
+	  var bufferFrom;
+	  if (Buffer.from && !root.JS_SHA256_NO_BUFFER_FROM) {
+		bufferFrom = Buffer.from;
+	  } else {
+		bufferFrom = function (message) {
+		  return new Buffer(message);
+		};
+	  }
+	  var nodeMethod = function (message) {
+		if (typeof message === 'string') {
+		  return crypto.createHash(algorithm).update(message, 'utf8').digest('hex');
+		} else {
+		  if (message === null || message === undefined) {
+			throw new Error(ERROR);
+		  } else if (message.constructor === ArrayBuffer) {
+			message = new Uint8Array(message);
+		  }
+		}
+		if (Array.isArray(message) || ArrayBuffer.isView(message) ||
+		  message.constructor === Buffer) {
+		  return crypto.createHash(algorithm).update(bufferFrom(message)).digest('hex');
+		} else {
+		  return method(message);
+		}
+	  };
+	  return nodeMethod;
+	};
+  
+	var createHmacOutputMethod = function (outputType, is224) {
+	  return function (key, message) {
+		return new HmacSha256(key, is224, true).update(message)[outputType]();
+	  };
+	};
+  
+	var createHmacMethod = function (is224) {
+	  var method = createHmacOutputMethod('hex', is224);
+	  method.create = function (key) {
+		return new HmacSha256(key, is224);
+	  };
+	  method.update = function (key, message) {
+		return method.create(key).update(message);
+	  };
+	  for (var i = 0; i < OUTPUT_TYPES.length; ++i) {
+		var type = OUTPUT_TYPES[i];
+		method[type] = createHmacOutputMethod(type, is224);
+	  }
+	  return method;
+	};
+  
+	function Sha256(is224, sharedMemory) {
+	  if (sharedMemory) {
+		blocks[0] = blocks[16] = blocks[1] = blocks[2] = blocks[3] =
+		  blocks[4] = blocks[5] = blocks[6] = blocks[7] =
+		  blocks[8] = blocks[9] = blocks[10] = blocks[11] =
+		  blocks[12] = blocks[13] = blocks[14] = blocks[15] = 0;
+		this.blocks = blocks;
+	  } else {
+		this.blocks = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+	  }
+  
+	  if (is224) {
+		this.h0 = 0xc1059ed8;
+		this.h1 = 0x367cd507;
+		this.h2 = 0x3070dd17;
+		this.h3 = 0xf70e5939;
+		this.h4 = 0xffc00b31;
+		this.h5 = 0x68581511;
+		this.h6 = 0x64f98fa7;
+		this.h7 = 0xbefa4fa4;
+	  } else { // 256
+		this.h0 = 0x6a09e667;
+		this.h1 = 0xbb67ae85;
+		this.h2 = 0x3c6ef372;
+		this.h3 = 0xa54ff53a;
+		this.h4 = 0x510e527f;
+		this.h5 = 0x9b05688c;
+		this.h6 = 0x1f83d9ab;
+		this.h7 = 0x5be0cd19;
+	  }
+  
+	  this.block = this.start = this.bytes = this.hBytes = 0;
+	  this.finalized = this.hashed = false;
+	  this.first = true;
+	  this.is224 = is224;
+	}
+  
+	Sha256.prototype.update = function (message) {
+	  if (this.finalized) {
+		return;
+	  }
+	  var notString, type = typeof message;
+	  if (type !== 'string') {
+		if (type === 'object') {
+		  if (message === null) {
+			throw new Error(ERROR);
+		  } else if (ARRAY_BUFFER && message.constructor === ArrayBuffer) {
+			message = new Uint8Array(message);
+		  } else if (!Array.isArray(message)) {
+			if (!ARRAY_BUFFER || !ArrayBuffer.isView(message)) {
+			  throw new Error(ERROR);
+			}
+		  }
+		} else {
+		  throw new Error(ERROR);
+		}
+		notString = true;
+	  }
+	  var code, index = 0, i, length = message.length, blocks = this.blocks;
+	  while (index < length) {
+		if (this.hashed) {
+		  this.hashed = false;
+		  blocks[0] = this.block;
+		  this.block = blocks[16] = blocks[1] = blocks[2] = blocks[3] =
+			blocks[4] = blocks[5] = blocks[6] = blocks[7] =
+			blocks[8] = blocks[9] = blocks[10] = blocks[11] =
+			blocks[12] = blocks[13] = blocks[14] = blocks[15] = 0;
+		}
+  
+		if (notString) {
+		  for (i = this.start; index < length && i < 64; ++index) {
+			blocks[i >>> 2] |= message[index] << SHIFT[i++ & 3];
+		  }
+		} else {
+		  for (i = this.start; index < length && i < 64; ++index) {
+			code = message.charCodeAt(index);
+			if (code < 0x80) {
+			  blocks[i >>> 2] |= code << SHIFT[i++ & 3];
+			} else if (code < 0x800) {
+			  blocks[i >>> 2] |= (0xc0 | (code >>> 6)) << SHIFT[i++ & 3];
+			  blocks[i >>> 2] |= (0x80 | (code & 0x3f)) << SHIFT[i++ & 3];
+			} else if (code < 0xd800 || code >= 0xe000) {
+			  blocks[i >>> 2] |= (0xe0 | (code >>> 12)) << SHIFT[i++ & 3];
+			  blocks[i >>> 2] |= (0x80 | ((code >>> 6) & 0x3f)) << SHIFT[i++ & 3];
+			  blocks[i >>> 2] |= (0x80 | (code & 0x3f)) << SHIFT[i++ & 3];
+			} else {
+			  code = 0x10000 + (((code & 0x3ff) << 10) | (message.charCodeAt(++index) & 0x3ff));
+			  blocks[i >>> 2] |= (0xf0 | (code >>> 18)) << SHIFT[i++ & 3];
+			  blocks[i >>> 2] |= (0x80 | ((code >>> 12) & 0x3f)) << SHIFT[i++ & 3];
+			  blocks[i >>> 2] |= (0x80 | ((code >>> 6) & 0x3f)) << SHIFT[i++ & 3];
+			  blocks[i >>> 2] |= (0x80 | (code & 0x3f)) << SHIFT[i++ & 3];
+			}
+		  }
+		}
+  
+		this.lastByteIndex = i;
+		this.bytes += i - this.start;
+		if (i >= 64) {
+		  this.block = blocks[16];
+		  this.start = i - 64;
+		  this.hash();
+		  this.hashed = true;
+		} else {
+		  this.start = i;
+		}
+	  }
+	  if (this.bytes > 4294967295) {
+		this.hBytes += this.bytes / 4294967296 << 0;
+		this.bytes = this.bytes % 4294967296;
+	  }
+	  return this;
+	};
+  
+	Sha256.prototype.finalize = function () {
+	  if (this.finalized) {
+		return;
+	  }
+	  this.finalized = true;
+	  var blocks = this.blocks, i = this.lastByteIndex;
+	  blocks[16] = this.block;
+	  blocks[i >>> 2] |= EXTRA[i & 3];
+	  this.block = blocks[16];
+	  if (i >= 56) {
+		if (!this.hashed) {
+		  this.hash();
+		}
+		blocks[0] = this.block;
+		blocks[16] = blocks[1] = blocks[2] = blocks[3] =
+		  blocks[4] = blocks[5] = blocks[6] = blocks[7] =
+		  blocks[8] = blocks[9] = blocks[10] = blocks[11] =
+		  blocks[12] = blocks[13] = blocks[14] = blocks[15] = 0;
+	  }
+	  blocks[14] = this.hBytes << 3 | this.bytes >>> 29;
+	  blocks[15] = this.bytes << 3;
+	  this.hash();
+	};
+  
+	Sha256.prototype.hash = function () {
+	  var a = this.h0, b = this.h1, c = this.h2, d = this.h3, e = this.h4, f = this.h5, g = this.h6,
+		h = this.h7, blocks = this.blocks, j, s0, s1, maj, t1, t2, ch, ab, da, cd, bc;
+  
+	  for (j = 16; j < 64; ++j) {
+		// rightrotate
+		t1 = blocks[j - 15];
+		s0 = ((t1 >>> 7) | (t1 << 25)) ^ ((t1 >>> 18) | (t1 << 14)) ^ (t1 >>> 3);
+		t1 = blocks[j - 2];
+		s1 = ((t1 >>> 17) | (t1 << 15)) ^ ((t1 >>> 19) | (t1 << 13)) ^ (t1 >>> 10);
+		blocks[j] = blocks[j - 16] + s0 + blocks[j - 7] + s1 << 0;
+	  }
+  
+	  bc = b & c;
+	  for (j = 0; j < 64; j += 4) {
+		if (this.first) {
+		  if (this.is224) {
+			ab = 300032;
+			t1 = blocks[0] - 1413257819;
+			h = t1 - 150054599 << 0;
+			d = t1 + 24177077 << 0;
+		  } else {
+			ab = 704751109;
+			t1 = blocks[0] - 210244248;
+			h = t1 - 1521486534 << 0;
+			d = t1 + 143694565 << 0;
+		  }
+		  this.first = false;
+		} else {
+		  s0 = ((a >>> 2) | (a << 30)) ^ ((a >>> 13) | (a << 19)) ^ ((a >>> 22) | (a << 10));
+		  s1 = ((e >>> 6) | (e << 26)) ^ ((e >>> 11) | (e << 21)) ^ ((e >>> 25) | (e << 7));
+		  ab = a & b;
+		  maj = ab ^ (a & c) ^ bc;
+		  ch = (e & f) ^ (~e & g);
+		  t1 = h + s1 + ch + K[j] + blocks[j];
+		  t2 = s0 + maj;
+		  h = d + t1 << 0;
+		  d = t1 + t2 << 0;
+		}
+		s0 = ((d >>> 2) | (d << 30)) ^ ((d >>> 13) | (d << 19)) ^ ((d >>> 22) | (d << 10));
+		s1 = ((h >>> 6) | (h << 26)) ^ ((h >>> 11) | (h << 21)) ^ ((h >>> 25) | (h << 7));
+		da = d & a;
+		maj = da ^ (d & b) ^ ab;
+		ch = (h & e) ^ (~h & f);
+		t1 = g + s1 + ch + K[j + 1] + blocks[j + 1];
+		t2 = s0 + maj;
+		g = c + t1 << 0;
+		c = t1 + t2 << 0;
+		s0 = ((c >>> 2) | (c << 30)) ^ ((c >>> 13) | (c << 19)) ^ ((c >>> 22) | (c << 10));
+		s1 = ((g >>> 6) | (g << 26)) ^ ((g >>> 11) | (g << 21)) ^ ((g >>> 25) | (g << 7));
+		cd = c & d;
+		maj = cd ^ (c & a) ^ da;
+		ch = (g & h) ^ (~g & e);
+		t1 = f + s1 + ch + K[j + 2] + blocks[j + 2];
+		t2 = s0 + maj;
+		f = b + t1 << 0;
+		b = t1 + t2 << 0;
+		s0 = ((b >>> 2) | (b << 30)) ^ ((b >>> 13) | (b << 19)) ^ ((b >>> 22) | (b << 10));
+		s1 = ((f >>> 6) | (f << 26)) ^ ((f >>> 11) | (f << 21)) ^ ((f >>> 25) | (f << 7));
+		bc = b & c;
+		maj = bc ^ (b & d) ^ cd;
+		ch = (f & g) ^ (~f & h);
+		t1 = e + s1 + ch + K[j + 3] + blocks[j + 3];
+		t2 = s0 + maj;
+		e = a + t1 << 0;
+		a = t1 + t2 << 0;
+		this.chromeBugWorkAround = true;
+	  }
+  
+	  this.h0 = this.h0 + a << 0;
+	  this.h1 = this.h1 + b << 0;
+	  this.h2 = this.h2 + c << 0;
+	  this.h3 = this.h3 + d << 0;
+	  this.h4 = this.h4 + e << 0;
+	  this.h5 = this.h5 + f << 0;
+	  this.h6 = this.h6 + g << 0;
+	  this.h7 = this.h7 + h << 0;
+	};
+  
+	Sha256.prototype.hex = function () {
+	  this.finalize();
+  
+	  var h0 = this.h0, h1 = this.h1, h2 = this.h2, h3 = this.h3, h4 = this.h4, h5 = this.h5,
+		h6 = this.h6, h7 = this.h7;
+  
+	  var hex = HEX_CHARS[(h0 >>> 28) & 0x0F] + HEX_CHARS[(h0 >>> 24) & 0x0F] +
+		HEX_CHARS[(h0 >>> 20) & 0x0F] + HEX_CHARS[(h0 >>> 16) & 0x0F] +
+		HEX_CHARS[(h0 >>> 12) & 0x0F] + HEX_CHARS[(h0 >>> 8) & 0x0F] +
+		HEX_CHARS[(h0 >>> 4) & 0x0F] + HEX_CHARS[h0 & 0x0F] +
+		HEX_CHARS[(h1 >>> 28) & 0x0F] + HEX_CHARS[(h1 >>> 24) & 0x0F] +
+		HEX_CHARS[(h1 >>> 20) & 0x0F] + HEX_CHARS[(h1 >>> 16) & 0x0F] +
+		HEX_CHARS[(h1 >>> 12) & 0x0F] + HEX_CHARS[(h1 >>> 8) & 0x0F] +
+		HEX_CHARS[(h1 >>> 4) & 0x0F] + HEX_CHARS[h1 & 0x0F] +
+		HEX_CHARS[(h2 >>> 28) & 0x0F] + HEX_CHARS[(h2 >>> 24) & 0x0F] +
+		HEX_CHARS[(h2 >>> 20) & 0x0F] + HEX_CHARS[(h2 >>> 16) & 0x0F] +
+		HEX_CHARS[(h2 >>> 12) & 0x0F] + HEX_CHARS[(h2 >>> 8) & 0x0F] +
+		HEX_CHARS[(h2 >>> 4) & 0x0F] + HEX_CHARS[h2 & 0x0F] +
+		HEX_CHARS[(h3 >>> 28) & 0x0F] + HEX_CHARS[(h3 >>> 24) & 0x0F] +
+		HEX_CHARS[(h3 >>> 20) & 0x0F] + HEX_CHARS[(h3 >>> 16) & 0x0F] +
+		HEX_CHARS[(h3 >>> 12) & 0x0F] + HEX_CHARS[(h3 >>> 8) & 0x0F] +
+		HEX_CHARS[(h3 >>> 4) & 0x0F] + HEX_CHARS[h3 & 0x0F] +
+		HEX_CHARS[(h4 >>> 28) & 0x0F] + HEX_CHARS[(h4 >>> 24) & 0x0F] +
+		HEX_CHARS[(h4 >>> 20) & 0x0F] + HEX_CHARS[(h4 >>> 16) & 0x0F] +
+		HEX_CHARS[(h4 >>> 12) & 0x0F] + HEX_CHARS[(h4 >>> 8) & 0x0F] +
+		HEX_CHARS[(h4 >>> 4) & 0x0F] + HEX_CHARS[h4 & 0x0F] +
+		HEX_CHARS[(h5 >>> 28) & 0x0F] + HEX_CHARS[(h5 >>> 24) & 0x0F] +
+		HEX_CHARS[(h5 >>> 20) & 0x0F] + HEX_CHARS[(h5 >>> 16) & 0x0F] +
+		HEX_CHARS[(h5 >>> 12) & 0x0F] + HEX_CHARS[(h5 >>> 8) & 0x0F] +
+		HEX_CHARS[(h5 >>> 4) & 0x0F] + HEX_CHARS[h5 & 0x0F] +
+		HEX_CHARS[(h6 >>> 28) & 0x0F] + HEX_CHARS[(h6 >>> 24) & 0x0F] +
+		HEX_CHARS[(h6 >>> 20) & 0x0F] + HEX_CHARS[(h6 >>> 16) & 0x0F] +
+		HEX_CHARS[(h6 >>> 12) & 0x0F] + HEX_CHARS[(h6 >>> 8) & 0x0F] +
+		HEX_CHARS[(h6 >>> 4) & 0x0F] + HEX_CHARS[h6 & 0x0F];
+	  if (!this.is224) {
+		hex += HEX_CHARS[(h7 >>> 28) & 0x0F] + HEX_CHARS[(h7 >>> 24) & 0x0F] +
+		  HEX_CHARS[(h7 >>> 20) & 0x0F] + HEX_CHARS[(h7 >>> 16) & 0x0F] +
+		  HEX_CHARS[(h7 >>> 12) & 0x0F] + HEX_CHARS[(h7 >>> 8) & 0x0F] +
+		  HEX_CHARS[(h7 >>> 4) & 0x0F] + HEX_CHARS[h7 & 0x0F];
+	  }
+	  return hex;
+	};
+  
+	Sha256.prototype.toString = Sha256.prototype.hex;
+  
+	Sha256.prototype.digest = function () {
+	  this.finalize();
+  
+	  var h0 = this.h0, h1 = this.h1, h2 = this.h2, h3 = this.h3, h4 = this.h4, h5 = this.h5,
+		h6 = this.h6, h7 = this.h7;
+  
+	  var arr = [
+		(h0 >>> 24) & 0xFF, (h0 >>> 16) & 0xFF, (h0 >>> 8) & 0xFF, h0 & 0xFF,
+		(h1 >>> 24) & 0xFF, (h1 >>> 16) & 0xFF, (h1 >>> 8) & 0xFF, h1 & 0xFF,
+		(h2 >>> 24) & 0xFF, (h2 >>> 16) & 0xFF, (h2 >>> 8) & 0xFF, h2 & 0xFF,
+		(h3 >>> 24) & 0xFF, (h3 >>> 16) & 0xFF, (h3 >>> 8) & 0xFF, h3 & 0xFF,
+		(h4 >>> 24) & 0xFF, (h4 >>> 16) & 0xFF, (h4 >>> 8) & 0xFF, h4 & 0xFF,
+		(h5 >>> 24) & 0xFF, (h5 >>> 16) & 0xFF, (h5 >>> 8) & 0xFF, h5 & 0xFF,
+		(h6 >>> 24) & 0xFF, (h6 >>> 16) & 0xFF, (h6 >>> 8) & 0xFF, h6 & 0xFF
+	  ];
+	  if (!this.is224) {
+		arr.push((h7 >>> 24) & 0xFF, (h7 >>> 16) & 0xFF, (h7 >>> 8) & 0xFF, h7 & 0xFF);
+	  }
+	  return arr;
+	};
+  
+	Sha256.prototype.array = Sha256.prototype.digest;
+  
+	Sha256.prototype.arrayBuffer = function () {
+	  this.finalize();
+  
+	  var buffer = new ArrayBuffer(this.is224 ? 28 : 32);
+	  var dataView = new DataView(buffer);
+	  dataView.setUint32(0, this.h0);
+	  dataView.setUint32(4, this.h1);
+	  dataView.setUint32(8, this.h2);
+	  dataView.setUint32(12, this.h3);
+	  dataView.setUint32(16, this.h4);
+	  dataView.setUint32(20, this.h5);
+	  dataView.setUint32(24, this.h6);
+	  if (!this.is224) {
+		dataView.setUint32(28, this.h7);
+	  }
+	  return buffer;
+	};
+  
+	function HmacSha256(key, is224, sharedMemory) {
+	  var i, type = typeof key;
+	  if (type === 'string') {
+		var bytes = [], length = key.length, index = 0, code;
+		for (i = 0; i < length; ++i) {
+		  code = key.charCodeAt(i);
+		  if (code < 0x80) {
+			bytes[index++] = code;
+		  } else if (code < 0x800) {
+			bytes[index++] = (0xc0 | (code >>> 6));
+			bytes[index++] = (0x80 | (code & 0x3f));
+		  } else if (code < 0xd800 || code >= 0xe000) {
+			bytes[index++] = (0xe0 | (code >>> 12));
+			bytes[index++] = (0x80 | ((code >>> 6) & 0x3f));
+			bytes[index++] = (0x80 | (code & 0x3f));
+		  } else {
+			code = 0x10000 + (((code & 0x3ff) << 10) | (key.charCodeAt(++i) & 0x3ff));
+			bytes[index++] = (0xf0 | (code >>> 18));
+			bytes[index++] = (0x80 | ((code >>> 12) & 0x3f));
+			bytes[index++] = (0x80 | ((code >>> 6) & 0x3f));
+			bytes[index++] = (0x80 | (code & 0x3f));
+		  }
+		}
+		key = bytes;
+	  } else {
+		if (type === 'object') {
+		  if (key === null) {
+			throw new Error(ERROR);
+		  } else if (ARRAY_BUFFER && key.constructor === ArrayBuffer) {
+			key = new Uint8Array(key);
+		  } else if (!Array.isArray(key)) {
+			if (!ARRAY_BUFFER || !ArrayBuffer.isView(key)) {
+			  throw new Error(ERROR);
+			}
+		  }
+		} else {
+		  throw new Error(ERROR);
+		}
+	  }
+  
+	  if (key.length > 64) {
+		key = (new Sha256(is224, true)).update(key).array();
+	  }
+  
+	  var oKeyPad = [], iKeyPad = [];
+	  for (i = 0; i < 64; ++i) {
+		var b = key[i] || 0;
+		oKeyPad[i] = 0x5c ^ b;
+		iKeyPad[i] = 0x36 ^ b;
+	  }
+  
+	  Sha256.call(this, is224, sharedMemory);
+  
+	  this.update(iKeyPad);
+	  this.oKeyPad = oKeyPad;
+	  this.inner = true;
+	  this.sharedMemory = sharedMemory;
+	}
+	HmacSha256.prototype = new Sha256();
+  
+	HmacSha256.prototype.finalize = function () {
+	  Sha256.prototype.finalize.call(this);
+	  if (this.inner) {
+		this.inner = false;
+		var innerHash = this.array();
+		Sha256.call(this, this.is224, this.sharedMemory);
+		this.update(this.oKeyPad);
+		this.update(innerHash);
+		Sha256.prototype.finalize.call(this);
+	  }
+	};
+  
+	var exports = createMethod();
+	exports.sha256 = exports;
+	exports.sha224 = createMethod(true);
+	exports.sha256.hmac = createHmacMethod();
+	exports.sha224.hmac = createHmacMethod(true);
+  
+	if (COMMON_JS) {
+	  module.exports = exports;
+	} else {
+	  root.sha256 = exports.sha256;
+	  root.sha224 = exports.sha224;
+	  if (AMD) {
+		define(function () {
+		  return exports;
+		});
+	  }
+	}
+  })();
