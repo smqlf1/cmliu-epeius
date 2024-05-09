@@ -639,7 +639,7 @@ https://github.com/cmliu/epeius
 				content = await response.text();
 			}
 			let 输出内容 = revertFakeInfo(content, password, hostName, isBase64);
-			if (userAgent.includes('surge') || _url.searchParams.has('surge')) 输出内容 = surge(输出内容, hostName);
+			if (userAgent.includes('surge') || _url.searchParams.has('surge')) 输出内容 = surge(输出内容, hostName, password);
 			//console.log(输出内容);
 			return 输出内容;
 		} catch (error) {
@@ -843,11 +843,11 @@ async function getAddressescsv(tls) {
 	return newAddressescsv;
 }
 
-function surge(content, host) {
+function surge(content, host, password) {
 	const 备改内容 = `skip-cert-verify=true, tfo=false, udp-relay=false`;
 	const 正确内容 = `skip-cert-verify=true, ws=true, ws-path=/?ed=2560, ws-headers=Host:"${host}", tfo=false, udp-relay=false`;
 	content = content.replace(new RegExp(备改内容, 'g'), 正确内容)
-
+	content = `#!MANAGED-CONFIG https://${host}/${password}?surge interval=86400 strict=false` + content.substring(content.indexOf('\n'));
 	return content;
 }
 
