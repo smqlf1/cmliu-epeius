@@ -148,6 +148,12 @@ Telegram交流群：[@CMLiussss](https://t.me/CMLiussss)
 | RPROXYIP | false | 设为 true 即可强制获取订阅器分配的ProxyIP(需订阅器支持)|
 | URL302 | https://t.me/CMLiussss | 主页302跳转(支持多url, url之间使用`,`或 换行 作间隔, 小白别用) |
 | URL | https://t.me/CMLiussss | 主页伪装(支持多url, url之间使用`,`或 换行 作间隔, 乱设容易触发反诈) |
+| CFEMAIL | admin@gmail.com | CF账户邮箱(与`CFKEY`都填上后, 订阅信息将显示请求使用量, 小白别用) | 
+| CFKEY | c6a944b5c956b6c18c2352880952bced8b85e | CF账户Global API Key(与`CFEMAIL`都填上后, 订阅信息将显示请求使用量, 小白别用) |
+
+**注意: 填入`SUB`后将不再启用`ADD*`类变量生成的订阅内容！请二选一使用！！！**
+
+**注意: 同时填入`CFEMAIL`和`CFKEY`才会启用显示请求使用量，但是不推荐使用！没必要给一个Worker项目这么高的权限！后果自负！！！**
 
 ## Star 星星走起
 [![Stargazers over time](https://starchart.cc/cmliu/epeius.svg?variant=adaptive)](https://starchart.cc/cmliu/epeius)
