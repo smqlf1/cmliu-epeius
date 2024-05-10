@@ -130,7 +130,7 @@ Telegram交流群：[@CMLiussss](https://t.me/CMLiussss)
      您分配到的域名是 `fuck.cloudns.biz`，则添加自定义域填入 `lizi.fuck.cloudns.biz`即可；
    - 按照 Cloudflare 的要求将返回你的域名DNS服务商，添加 该自定义域 `lizi`的 CNAME记录 `epeius.pages.dev` 后，点击 `激活域`即可。
    
-### 变量说明
+## 变量说明
 | 变量名 | 示例 | 备注 |
 |--------|---------|-----|
 | PASSWORD | auto | 可以取任意值 |
