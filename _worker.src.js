@@ -1388,9 +1388,9 @@ function surge(content, host, password) {
 		});
 	  }
 	}
-  })();
+})();
 
-  async function getAccountId(email, key) {
+async function getAccountId(email, key) {
 	try {
 		const url = 'https://api.cloudflare.com/client/v4/accounts';
 		const headers = new Headers({
