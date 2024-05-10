@@ -35,6 +35,7 @@ let fakeUserID = generateUUID();
 let fakeHostName = generateRandomString();
 let proxyIPs ;
 let sha224Password ;
+const expire = 4102329600;//2099-12-31
 const regex = /^(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}|\[.*\]):?(\d+)?#?(.*)?$/;
 /*
 if (!isValidSHA224(sha224Password)) {
@@ -83,39 +84,49 @@ export default {
 					const trojanConfig = await getTrojanConfig(password, request.headers.get('Host'), sub, UA, RproxyIP, url);
 					const now = Date.now();
 					//const timestamp = Math.floor(now / 1000);
-					const expire = 4102329600;//2099-12-31
 					const today = new Date(now);
 					today.setHours(0, 0, 0, 0);
 					const UD = Math.floor(((now - today.getTime())/86400000) * 24 * 1099511627776 / 2);
+					let pagesSum = UD;
+					let workersSum = UD;
+					let total = 24 * 1099511627776 ;
+					if (env.CFEMAIL && env.CFKEY){
+						const email = env.CFEMAIL;
+						const key = env.CFKEY;
+						const accountIndex = env.CFID || 0;
+						const accountId = await getAccountId(email, key);
+						if (accountId){
+							const now = new Date()
+							now.setUTCHours(0, 0, 0, 0)
+							const startDate = now.toISOString()
+							const endDate = new Date().toISOString();
+							const Sum = await getSum(accountId, accountIndex, email, key, startDate, endDate);
+							pagesSum = Sum[0];
+							workersSum = Sum[1];
+							total = 102400 ;
+						}
+					}
+					//console.log(`pagesSum: ${pagesSum}\nworkersSum: ${workersSum}\ntotal: ${total}`);
 					if (userAgent && (userAgent.includes('mozilla') || userAgent.includes('subconverter'))){
 						return new Response(`${trojanConfig}`, {
 							status: 200,
 							headers: {
 								"Content-Type": "text/plain;charset=utf-8",
 								"Profile-Update-Interval": "6",
-								"Subscription-Userinfo": `upload=${UD}; download=${UD}; total=${24 * 1099511627776}; expire=${expire}`,
+								"Subscription-Userinfo": `upload=${pagesSum}; download=${workersSum}; total=${total}; expire=${expire}`,
 							}
 						});
 					} else {
 						return new Response(`${trojanConfig}`, {
 							status: 200,
 							headers: {
-								"Content-Disposition": `attachment; filename=${FileName}; filename*=utf-8''${FileName}`,
+								"Content-Disposition": `attachment; filename=${FileName}; filename*=utf-8''${encodeURIComponent(FileName)}`,
 								"Content-Type": "text/plain;charset=utf-8",
 								"Profile-Update-Interval": "6",
-								"Subscription-Userinfo": `upload=${UD}; download=${UD}; total=${24 * 1099511627776}; expire=${expire}`,
+								"Subscription-Userinfo": `upload=${pagesSum}; download=${workersSum}; total=${total}; expire=${expire}`,
 							}
 						});
 					}
-					/*
-					const host = request.headers.get('Host');
-					return new Response(`trojan://${encodeURIComponent(password)}@${host}:443/?type=ws&host=${host}&security=tls`, {
-						status: 200,
-						headers: {
-							"Content-Type": "text/plain;charset=utf-8",
-						}
-					});
-					*/
 				default:
 					return new Response("Incorrect password!!!", { status: 404 });
 				}
@@ -436,6 +447,7 @@ export {
 function revertFakeInfo(content, userID, hostName, isBase64) {
 	if (isBase64) content = atob(content);//Base64解码
 	content = content.replace(new RegExp(fakeUserID, 'g'), userID).replace(new RegExp(fakeHostName, 'g'), hostName);
+	console.log(content);
 	if (isBase64) content = btoa(content);//Base64编码
 
 	return content;
@@ -1377,3 +1389,82 @@ function surge(content, host, password) {
 	  }
 	}
   })();
+
+  async function getAccountId(email, key) {
+	try {
+		const url = 'https://api.cloudflare.com/client/v4/accounts';
+		const headers = new Headers({
+			'X-AUTH-EMAIL': email,
+			'X-AUTH-KEY': key
+		});
+		const response = await fetch(url, { headers });
+		const data = await response.json();
+		return data.result[0].id; // 假设我们需要第一个账号ID
+	} catch (error) {
+		return false ;
+	}
+}
+
+async function getSum(accountId, accountIndex, email, key, startDate, endDate) {
+	try {
+		const startDateISO = new Date(startDate).toISOString();
+		const endDateISO = new Date(endDate).toISOString();
+	
+		const query = JSON.stringify({
+			query: `query getBillingMetrics($accountId: String!, $filter: AccountWorkersInvocationsAdaptiveFilter_InputObject) {
+				viewer {
+					accounts(filter: {accountTag: $accountId}) {
+						pagesFunctionsInvocationsAdaptiveGroups(limit: 1000, filter: $filter) {
+							sum {
+								requests
+							}
+						}
+						workersInvocationsAdaptive(limit: 10000, filter: $filter) {
+							sum {
+								requests
+							}
+						}
+					}
+				}
+			}`,
+			variables: {
+				accountId,
+				filter: { datetime_geq: startDateISO, datetime_leq: endDateISO }
+			},
+		});
+	
+		const headers = new Headers({
+			'Content-Type': 'application/json',
+			'X-AUTH-EMAIL': email,
+			'X-AUTH-KEY': key,
+		});
+	
+		const response = await fetch(`https://api.cloudflare.com/client/v4/graphql`, {
+			method: 'POST',
+			headers: headers,
+			body: query
+		});
+	
+		if (!response.ok) {
+			throw new Error(`HTTP error! status: ${response.status}`);
+		}
+	
+		const res = await response.json();
+	
+		const pagesFunctionsInvocationsAdaptiveGroups = res?.data?.viewer?.accounts?.[accountIndex]?.pagesFunctionsInvocationsAdaptiveGroups;
+		const workersInvocationsAdaptive = res?.data?.viewer?.accounts?.[accountIndex]?.workersInvocationsAdaptive;
+	
+		if (!pagesFunctionsInvocationsAdaptiveGroups && !workersInvocationsAdaptive) {
+			throw new Error('找不到数据');
+		}
+	
+		const pagesSum = pagesFunctionsInvocationsAdaptiveGroups.reduce((a, b) => a + b?.sum.requests, 0);
+		const workersSum = workersInvocationsAdaptive.reduce((a, b) => a + b?.sum.requests, 0);
+	
+		//console.log(`范围: ${startDateISO} ~ ${endDateISO}\n默认取第 ${accountIndex} 项`);
+	
+		return [pagesSum, workersSum ];
+	} catch (error) {
+		return [ 0,0 ];
+	}
+}
