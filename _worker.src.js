@@ -16,7 +16,7 @@ let addresses = [
 	//'[2606:4700:e7:25:4b9:f8f8:9bfb:774a]#IPv6也OK',
 ];
 
-let sub = '';// 'trojan.fxxk.dedyn.io' 
+let sub = ''; 
 let subconverter = 'url.v1.mk';// clash订阅转换后端，目前使用肥羊的订阅转换功能。自带虚假节点信息防泄露
 let subconfig = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Mini.ini"; //订阅配置文件
 let RproxyIP = 'false';
@@ -71,9 +71,10 @@ export default {
 			const currentDate = new Date();
 			currentDate.setHours(0, 0, 0, 0); // 设置时间为当天
 			const timestamp = Math.ceil(currentDate.getTime() / 1000);
-			fakeUserID = await MD5MD5(`${password}${timestamp}`);
+			const fakeUserIDMD5 = await MD5MD5(`${password}${timestamp}`);
+			fakeUserID = fakeUserIDMD5.slice(0, 8) + "-" + fakeUserIDMD5.slice(8, 12) + "-" + fakeUserIDMD5.slice(12, 16) + "-" + fakeUserIDMD5.slice(16, 20) + "-" + fakeUserIDMD5.slice(20);
+			fakeHostName = fakeUserIDMD5.slice(6, 9) + "." + fakeUserIDMD5.slice(13, 19);
 			//console.log(fakeUserID); // 打印fakeID
-			fakeHostName = await MD5MD5(`${fakeUserID}${password}`);
 
 			if (!upgradeHeader || upgradeHeader !== "websocket") {
 				//const url = new URL(request.url);
@@ -87,8 +88,8 @@ export default {
 					}
 					return new Response(JSON.stringify(request.cf, null, 4), { status: 200 });
 				case `/${fakeUserID}`:
-					const fakeTrojanConfig = await getTrojanConfig(password, request.headers.get('Host'), sub, 'CF-Workers-SUB', RproxyIP, url);
-					return new Response(`${fakeTrojanConfig}`, { status: 200 });
+					const fakeConfig = await getTrojanConfig(password, request.headers.get('Host'), sub, 'CF-Workers-SUB', RproxyIP, url);
+					return new Response(`${fakeConfig}`, { status: 200 });
 				case `/${password}`:
 					await sendMessage(`#获取订阅 ${FileName}`, request.headers.get('CF-Connecting-IP'), `UA: ${UA}</tg-spoiler>\n域名: ${url.hostname}\n<tg-spoiler>入口: ${url.pathname + url.search}</tg-spoiler>`);
 					const trojanConfig = await getTrojanConfig(password, request.headers.get('Host'), sub, UA, RproxyIP, url);
@@ -469,13 +470,13 @@ async function MD5MD5(text) {
 	const firstPass = await crypto.subtle.digest('MD5', encoder.encode(text));
 	const firstPassArray = Array.from(new Uint8Array(firstPass));
 	const firstHex = firstPassArray.map(b => b.toString(16).padStart(2, '0')).join('');
-  
-	const secondPass = await crypto.subtle.digest('MD5', encoder.encode(firstHex));
+
+	const secondPass = await crypto.subtle.digest('MD5', encoder.encode(firstHex.slice(7, 27)));
 	const secondPassArray = Array.from(new Uint8Array(secondPass));
 	const secondHex = secondPassArray.map(b => b.toString(16).padStart(2, '0')).join('');
   
 	return secondHex.toLowerCase();
-  }
+}
 
 async function ADD(envadd) {
 	var addtext = envadd.replace(/[	|"'\r\n]+/g, ',').replace(/,+/g, ',');  // 双引号、单引号和换行符替换为逗号
@@ -576,9 +577,9 @@ https://github.com/cmliu/epeius
 		}
 		// 如果是使用默认域名，则改成一个workers的域名，订阅器会加上代理
 		if (hostName.includes(".workers.dev") || hostName.includes(".pages.dev")){
-			fakeHostName = `${fakeHostName}.${await MD5MD5(fakeHostName)}.workers.dev`;
+			fakeHostName = `${fakeHostName}.workers.dev`;
 		} else {
-			fakeHostName = `${fakeHostName}.${await MD5MD5(fakeHostName)}.xyz`
+			fakeHostName = `${fakeHostName}.xyz`
 		}
 
 		let url = `https://${sub}/sub?host=${fakeHostName}&pw=${fakeUserID}&password=${fakeUserID}&epeius=cmliu&proxyip=${RproxyIP}`;
@@ -1457,6 +1458,6 @@ async function getSum(accountId, accountIndex, email, key, startDate, endDate) {
 	
 		return [pagesSum, workersSum ];
 	} catch (error) {
-		return [ 0,0 ];
+		return [ 0, 0 ];
 	}
 }
