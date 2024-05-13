@@ -61,13 +61,15 @@ export default {
 			proxyIP = proxyIPs[Math.floor(Math.random() * proxyIPs.length)];
 			socks5Address = env.SOCKS5 || socks5Address;
 			if (socks5Address) {
-				RproxyIP = env.RPROXYIP || 'false';
 				try {
 					parsedSocks5Address = socks5AddressParser(socks5Address);
+					RproxyIP = env.RPROXYIP || 'false';
 					enableSocks = true;
 				} catch (err) {
-  			/** @type {Error} */ let e = err;
+  					/** @type {Error} */ 
+					let e = err;
 					console.log(e.toString());
+					RproxyIP = env.RPROXYIP || !proxyIP ? 'true' : 'false';
 					enableSocks = false;
 				}
 			} else {
