@@ -134,7 +134,8 @@ Telegram交流群：[@CMLiussss](https://t.me/CMLiussss)
 | 变量名 | 示例 | 备注 |
 |--------|---------|-----|
 | PASSWORD | auto | 可以取任意值 |
-| PROXYIP | proxyip.fxxk.dedyn.io | 作为访问CloudFlareCDN站点的代理节点(支持多ProxyIP, ProxyIP之间使用`,`或 换行 作间隔) |
+| PROXYIP | proxyip.fxxk.dedyn.io | 备选作为访问CloudFlareCDN站点的代理节点(支持多ProxyIP, ProxyIP之间使用`,`或 换行 作间隔) |
+| SOCKS5  | user:password@127.0.0.1:1080 | 优先作为访问CloudFlareCDN站点的SOCKS5代理 |
 | ADD | www.csgo.com:2087,icook.hk | 本地优选域名/优选IP(支持多元素之间`,`或 换行 作间隔) |
 | ADDAPI |  | 不解释, 懂得都懂 |
 | ADDCSV |  | 不解释, 懂得都懂 |
@@ -151,6 +152,8 @@ Telegram交流群：[@CMLiussss](https://t.me/CMLiussss)
 | CFEMAIL | admin@gmail.com | CF账户邮箱(与`CFKEY`都填上后, 订阅信息将显示请求使用量, 小白别用) | 
 | CFKEY | c6a944b5c956b6c18c2352880952bced8b85e | CF账户Global API Key(与`CFEMAIL`都填上后, 订阅信息将显示请求使用量, 小白别用) |
 
+**注意: 填入`SOCKS5`后将不再启用`PROXYIP`！请二选一使用！！！**
+
 **注意: 填入`SUB`后将不再启用`ADD*`类变量生成的订阅内容！请二选一使用！！！**
 
 **注意: 同时填入`CFEMAIL`和`CFKEY`才会启用显示请求使用量，但是不推荐使用！没必要给一个Worker项目这么高的权限！后果自负！！！**
@@ -159,4 +162,4 @@ Telegram交流群：[@CMLiussss](https://t.me/CMLiussss)
 [![Stargazers over time](https://starchart.cc/cmliu/epeius.svg?variant=adaptive)](https://starchart.cc/cmliu/epeius)
 
 # 感谢
-[ca110us](https://github.com/ca110us/epeius)、[3Kmfi6HP](https://github.com/3Kmfi6HP/EDtunnel/tree/trojan)、[zizifn](https://github.com/zizifn/edgetunnel)、[emn178](https://github.com/emn178/js-sha256)、[ACL4SSR](https://github.com/ACL4SSR/ACL4SSR/tree/master/Clash/config)、[SHIJS1999](https://github.com/SHIJS1999/cloudflare-worker-vless-ip)、
+[ca110us](https://github.com/ca110us/epeius)、[xream](https://github.com/xream)、[3Kmfi6HP](https://github.com/3Kmfi6HP/EDtunnel/tree/trojan)、[zizifn](https://github.com/zizifn/edgetunnel)、[emn178](https://github.com/emn178/js-sha256)、[ACL4SSR](https://github.com/ACL4SSR/ACL4SSR/tree/master/Clash/config)、[SHIJS1999](https://github.com/SHIJS1999/cloudflare-worker-vless-ip)、
