@@ -1,7 +1,11 @@
-// src/worker.js
+// worker.src.js
 import { connect } from "cloudflare:sockets";
 let password = 'auto';
 let proxyIP = '';
+// The user name and password do not contain special characters
+// Setting the address will ignore proxyIP
+// Example:  user:pass@host:port  or  host:port
+let socks5Address = '';
 
 let addresses = [
 	//当sub为空时启用本地优选域名/优选IP，若不带端口号 TLS默认端口为443，#号后为备注别名
@@ -37,15 +41,12 @@ let proxyIPs ;
 let sha224Password ;
 const expire = 4102329600;//2099-12-31
 const regex = /^(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}|\[.*\]):?(\d+)?#?(.*)?$/;
+
 /*
 if (!isValidSHA224(sha224Password)) {
     throw new Error('sha224Password is not valid');
 }
 */
-// The user name and password do not contain special characters
-// Setting the address will ignore proxyIP
-// Example:  user:pass@host:port  or  host:port
-let socks5Address = '';
 
 let parsedSocks5Address = {}; 
 let enableSocks = false;
@@ -168,19 +169,21 @@ export default {
 				if (new RegExp('/proxyip=', 'i').test(url.pathname)) proxyIP = url.pathname.toLowerCase().split('/proxyip=')[1];
 				else if (new RegExp('/proxyip.', 'i').test(url.pathname)) proxyIP = `proxyip.${url.pathname.toLowerCase().split("/proxyip.")[1]}`;
 				else if (!proxyIP || proxyIP == '') proxyIP = 'proxyip.fxxk.dedyn.io';
+
 				socks5Address = url.searchParams.get('socks5') || socks5Address;
-				if (socks5Address) {
-					RproxyIP = env.RPROXYIP || 'false';
+				if (new RegExp('/socks5=', 'i').test(url.pathname)) socks5Address = url.pathname.toLowerCase().split('/socks5=')[1];
+				if (!socks5Address || socks5Address == '') {
+					enableSocks = false;
+				} else {
 					try {
 						parsedSocks5Address = socks5AddressParser(socks5Address);
 						enableSocks = true;
 					} catch (err) {
-					/** @type {Error} */ let e = err;
+						/** @type {Error} */ 
+						let e = err;
 						console.log(e.toString());
 						enableSocks = false;
 					}
-				} else {
-					RproxyIP = env.RPROXYIP || !proxyIP ? 'true' : 'false';
 				}
 				return await trojanOverWSHandler(request);
 			}
