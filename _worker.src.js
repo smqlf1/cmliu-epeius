@@ -61,13 +61,15 @@ export default {
 			proxyIP = proxyIPs[Math.floor(Math.random() * proxyIPs.length)];
 			socks5Address = env.SOCKS5 || socks5Address;
 			if (socks5Address) {
-				RproxyIP = env.RPROXYIP || 'false';
 				try {
 					parsedSocks5Address = socks5AddressParser(socks5Address);
+					RproxyIP = env.RPROXYIP || 'false';
 					enableSocks = true;
 				} catch (err) {
-  			/** @type {Error} */ let e = err;
+  					/** @type {Error} */ 
+					let e = err;
 					console.log(e.toString());
+					RproxyIP = env.RPROXYIP || !proxyIP ? 'true' : 'false';
 					enableSocks = false;
 				}
 			} else {
@@ -171,7 +173,7 @@ export default {
 				else if (!proxyIP || proxyIP == '') proxyIP = 'proxyip.fxxk.dedyn.io';
 
 				socks5Address = url.searchParams.get('socks5') || socks5Address;
-				if (new RegExp('/socks5=', 'i').test(url.pathname)) socks5Address = url.pathname.toLowerCase().split('/socks5=')[1];
+				if (new RegExp('/socks5=', 'i').test(url.pathname)) socks5Address = url.pathname.split('5=')[1];
 				if (!socks5Address || socks5Address == '') {
 					enableSocks = false;
 				} else {
